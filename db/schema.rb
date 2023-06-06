@@ -10,9 +10,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_05_145031) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_06_122622) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "challenges", force: :cascade do |t|
+    t.string "name"
+    t.float "saving_carbonamount"
+    t.text "description"
+    t.bigint "category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_challenges_on_category_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "status"
+    t.date "due_date"
+    t.bigint "habit_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["habit_id"], name: "index_events_on_habit_id"
+  end
+
+  create_table "friendships", force: :cascade do |t|
+    t.string "status"
+    t.bigint "user_1_id"
+    t.bigint "user_2_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_1_id"], name: "index_friendships_on_user_1_id"
+    t.index ["user_2_id"], name: "index_friendships_on_user_2_id"
+  end
+
+  create_table "habits", force: :cascade do |t|
+    t.string "implementation_cycle"
+    t.string "day_of_week"
+    t.bigint "challenge_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["challenge_id"], name: "index_habits_on_challenge_id"
+    t.index ["user_id"], name: "index_habits_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,8 +69,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_05_145031) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "age_range"
+    t.string "city"
+    t.text "profile_description"
+    t.float "carbon_count"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "challenges", "categories"
+  add_foreign_key "events", "habits"
+  add_foreign_key "friendships", "users", column: "user_1_id"
+  add_foreign_key "friendships", "users", column: "user_2_id"
+  add_foreign_key "habits", "challenges"
+  add_foreign_key "habits", "users"
 end
