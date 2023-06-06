@@ -13,7 +13,7 @@ require 'faker'
 puts 'Seed: Deleting existing records...'
 # update
 
-Categoty.destroy_all
+Category.destroy_all
 Challenge.destroy_all
 Habit.destroy_all
 Event.destroy_all
@@ -50,14 +50,14 @@ puts 'Seed: Seeding...'
 5 times do
 user = User.create!(
 	username: Faker::Name.name,
-  first_name: Faker::Name.first_name,
-  last_name: Faker::Name.last_name,
+  	first_name: Faker::Name.first_name,
+  	last_name: Faker::Name.last_name,
 	age_range: 18,
 	city: "Berlin",
-  email: Faker:Internet.email,
-  password: '123456',
+  	email: Faker:Internet.email,
+  	password: '123456',
 	profile_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  carbon_count: 0
+  	carbon_count: 0
 )
 end
 
@@ -111,7 +111,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do ei
 #challenges PHOTO NEEDED - do manually; and manual creation later
 
 5 times do
-chalenge = Chalenge.create!(
+challenge = Challenge.create!(
   name: "Save the planet",
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   saved_carbonamount: rand(5..1000),
@@ -120,7 +120,7 @@ chalenge = Chalenge.create!(
 end
 
 5 times do
-chalenge = Chalenge.create!(
+challenge = Challenge.create!(
   name: "Save the planet",
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   saved_carbonamount: rand(5..1000),
@@ -129,7 +129,7 @@ chalenge = Chalenge.create!(
 end
 
 5 times do
-chalenge = Chalenge.create!(
+challenge = Challenge.create!(
   name: "Save the planet",
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   saved_carbonamount: rand(5..1000),
@@ -138,7 +138,7 @@ chalenge = Chalenge.create!(
 end
 
 5 times do
-chalenge = Chalenge.create!(
+challenge = Challenge.create!(
   name: "Save the planet",
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   saved_carbonamount: rand(5..1000),
@@ -147,7 +147,7 @@ chalenge = Chalenge.create!(
 end
 
 5 times do
-chalenge = Chalenge.create!(
+challenge = Challenge.create!(
   name: "Save the planet",
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   saved_carbonamount: rand(5..1000),
@@ -156,7 +156,7 @@ chalenge = Chalenge.create!(
 end
 
 5 times do
-chalenge = Chalenge.create!(
+challenge = Challenge.create!(
   name: "Save the planet",
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   saved_carbonamount: rand(5..1000),
@@ -165,7 +165,7 @@ chalenge = Chalenge.create!(
 end
 
 5 times do
-chalenge = Chalenge.create!(
+challenge = Challenge.create!(
   name: "Save the planet",
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   saved_carbonamount: rand(5..1000),
@@ -174,7 +174,7 @@ chalenge = Chalenge.create!(
 end
 
 5 times do
-chalenge = Chalenge.create!(
+challenge = Challenge.create!(
   name: "Save the planet",
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   saved_carbonamount: rand(5..1000),
@@ -183,7 +183,7 @@ chalenge = Chalenge.create!(
 end
 
 5 times do
-chalenge = Chalenge.create!(
+challenge = Challenge.create!(
   name: "Save the planet",
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   saved_carbonamount: rand(5..1000),
@@ -192,7 +192,7 @@ chalenge = Chalenge.create!(
 end
 
 5 times do
-chalenge = Chalenge.create!(
+challenge = Challenge.create!(
   name: "Save the planet",
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   saved_carbonamount: rand(5..1000),
@@ -206,14 +206,14 @@ day = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sund
 
 habit1 = Habit.create!(
 	user: user11, # User.all.sample,
-  implementation_cycle: "daily", # ["daily", "weekly", "monthly", "one-off"].sample,
+  	implementation_cycle: "daily", # ["daily", "weekly", "monthly", "one-off"].sample,
 	challenge: Challenge.all.sample, #challenge1
 	day_of_the_week: day.sample
 )
 
 habit2 = Habit.create!(
 	user: user11, # User.all.sample,
-  implementation_cycle: "weekly", # ["daily", "weekly", "monthly"].sample,
+  	implementation_cycle: "weekly", # ["daily", "weekly", "monthly"].sample,
 	challenge: Challenge.all.sample, #challenge1
 	day_of_the_week: day.sample
 )
@@ -224,12 +224,12 @@ habit2 = Habit.create!(
 event= Event.create!(
   habit: habit1,
   status: ["completed", "overdue", "pending"].sample,
-  due_date: DateTime.strptime("08/01/2018 11:00", "%m/%d/%Y %H:%M"),
+  due_date: DateTime.strptime("08/06/2023 11:00", "%m/%d/%Y %H:%M"),
 )
 event2= Event.create!(
   habit: habit1,
   status: ["completed", "overdue", "pending"].sample,
-  due_date: DateTime.strptime("08/01/2018 11:00", "%m/%d/%Y %H:%M"),
+  due_date: DateTime.strptime("08/06/2023 11:00", "%m/%d/%Y %H:%M"),
 )
 
 
