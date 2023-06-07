@@ -8,13 +8,12 @@
 
 require 'faker'
 # for Cloudinary photos later
-## require 'open-uri'
+#require 'open-uri'
 
 puts 'Seed: Deleting existing records...'
 # update
-
-Category.destroy_all
 Challenge.destroy_all
+Category.destroy_all
 Habit.destroy_all
 Event.destroy_all
 User.destroy_all
@@ -22,7 +21,7 @@ User.destroy_all
 # test user
 puts 'Seed: Creating test user...'
 
-user11 = User.create!(
+user1 = User.create!(
   username: "Claraboo",
   first_name: "Clara",
   last_name: "Kane",
@@ -47,19 +46,52 @@ puts 'Seed: Seeding...'
 
 # user PHOTO NEEDED ignore right now , random photo later with user.attach.photo later to read about it
 
-5 times do
-user = User.create!(
+
+user2 = User.create!(
 	username: Faker::Name.name,
-  	first_name: Faker::Name.first_name,
-  	last_name: Faker::Name.last_name,
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
 	age_range: 18,
 	city: "Berlin",
-  	email: Faker:Internet.email,
-  	password: '123456',
+  email: Faker::Internet.email,
+  password: '123456',
 	profile_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  	carbon_count: 0
+  carbon_count: 0
 )
-end
+user3 = User.create!(
+	username: Faker::Name.name,
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+	age_range: 18,
+	city: "Berlin",
+  email: Faker::Internet.email,
+  password: '123456',
+	profile_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  carbon_count: 0
+)
+user4 = User.create!(
+	username: Faker::Name.name,
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+	age_range: 18,
+	city: "Berlin",
+  email: Faker::Internet.email,
+  password: '123456',
+	profile_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  carbon_count: 0
+)
+user5 = User.create!(
+	username: Faker::Name.name,
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+	age_range: 18,
+	city: "Berlin",
+  email: Faker::Internet.email,
+  password: '123456',
+	profile_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  carbon_count: 0
+)
+
 
 # CATEGORY PHOTO NEEDED - do manually
 category1 = Category.create!(
@@ -100,7 +132,7 @@ name: "Conscious Consumerism",
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 )
 category9 = Category.create!(
-name: "Conscious Consumerism",
+name: "Conscious Sth",
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 )
 category10 = Category.create!(
@@ -109,95 +141,19 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do ei
 )
 
 #challenges PHOTO NEEDED - do manually; and manual creation later
+# whyyyyyyy??? I changed it from useres and now this
+my_categories = [category1, category2, category3, category4, category5, category6, category7, category8, category9, category10]
 
-5 times do
-challenge = Challenge.create!(
-  name: "Save the planet",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  saved_carbonamount: rand(5..1000),
-  category: category1
-)
-end
 
-5 times do
-challenge = Challenge.create!(
-  name: "Save the planet",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  saved_carbonamount: rand(5..1000),
-  category: category2
-)
-end
-
-5 times do
-challenge = Challenge.create!(
-  name: "Save the planet",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  saved_carbonamount: rand(5..1000),
-  category: category3
-)
-end
-
-5 times do
-challenge = Challenge.create!(
-  name: "Save the planet",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  saved_carbonamount: rand(5..1000),
-  category: category4
-)
-end
-
-5 times do
-challenge = Challenge.create!(
-  name: "Save the planet",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  saved_carbonamount: rand(5..1000),
-  category: category5
-)
-end
-
-5 times do
-challenge = Challenge.create!(
-  name: "Save the planet",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  saved_carbonamount: rand(5..1000),
-  category: category6
-)
-end
-
-5 times do
-challenge = Challenge.create!(
-  name: "Save the planet",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  saved_carbonamount: rand(5..1000),
-  category: category7
-)
-end
-
-5 times do
-challenge = Challenge.create!(
-  name: "Save the planet",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  saved_carbonamount: rand(5..1000),
-  category: category8
-)
-end
-
-5 times do
-challenge = Challenge.create!(
-  name: "Save the planet",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  saved_carbonamount: rand(5..1000),
-  category: category9
-)
-end
-
-5 times do
-challenge = Challenge.create!(
-  name: "Save the planet",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  saved_carbonamount: rand(5..1000),
-  category: category10
-)
+my_categories.each do |category|
+  5.times do
+  challenge = Challenge.create!(
+    name: "Save the Earth #{rand(1..10000)}",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    saving_carbonamount: rand(5..1000),
+    category: category
+  )
+  end
 end
 
 # habit as booking for a test user> CREATE MANUALY
@@ -205,17 +161,17 @@ end
 day = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
 habit1 = Habit.create!(
-	user: user11, # User.all.sample,
+	user: user1, # User.all.sample,
   	implementation_cycle: "daily", # ["daily", "weekly", "monthly", "one-off"].sample,
 	challenge: Challenge.all.sample, #challenge1
-	day_of_the_week: day.sample
+	day_of_week: day.sample
 )
 
 habit2 = Habit.create!(
-	user: user11, # User.all.sample,
+	user: user1, # User.all.sample,
   	implementation_cycle: "weekly", # ["daily", "weekly", "monthly"].sample,
 	challenge: Challenge.all.sample, #challenge1
-	day_of_the_week: day.sample
+	day_of_week: day.sample
 )
 
 
