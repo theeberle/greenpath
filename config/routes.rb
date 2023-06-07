@@ -8,5 +8,5 @@ Rails.application.routes.draw do
 
   # challenges routues to show on index and show page
   resources :challenges, only: [:index, :show]
-
+  resources :events
 end
