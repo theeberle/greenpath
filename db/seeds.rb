@@ -8,14 +8,14 @@
 
 require 'faker'
 # for Cloudinary photos later
-#require 'open-uri'
+# require 'open-uri'
 
 puts 'Seed: Deleting existing records...'
 # update
+Event.destroy_all
+Habit.destroy_all
 Challenge.destroy_all
 Category.destroy_all
-Habit.destroy_all
-Event.destroy_all
 User.destroy_all
 
 # test user
@@ -45,7 +45,6 @@ puts 'Seed: Seeding...'
 ## category=
 
 # user PHOTO NEEDED ignore right now , random photo later with user.attach.photo later to read about it
-
 
 user2 = User.create!(
 	username: Faker::Name.name,
@@ -95,63 +94,61 @@ user5 = User.create!(
 
 # CATEGORY PHOTO NEEDED - do manually
 category1 = Category.create!(
-name: "Transportation",
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  name: "Transportation",
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 )
 category2 = Category.create!(
-name: "Energy Consumption",
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  name: "Energy Consumption",
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 )
 category3 = Category.create!(
-name: "Waste Managment",
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  name: "Waste Managment",
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 )
 category4 = Category.create!(
-name: "Water Conservation",
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  name: "Water Conservation",
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 )
 category5 = Category.create!(
-name: "Sustainable Fashion",
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  name: "Sustainable Fashion",
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 )
 
 category6 = Category.create!(
-name: "Home Energy Efficiency",
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  name: "Home Energy Efficiency",
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 )
 category7 = Category.create!(
-name: "Green Gardening",
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  name: "Green Gardening",
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 )
 category8 = Category.create!(
-name: "Sustainable Diet",
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  name: "Sustainable Diet",
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 )
 category8 = Category.create!(
-name: "Conscious Consumerism",
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  name: "Conscious Consumerism",
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 )
 category9 = Category.create!(
-name: "Conscious Sth",
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  name: "Conscious Sth",
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 )
 category10 = Category.create!(
-name: "Community Engagement",
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  name: "Community Engagement",
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 )
 
-#challenges PHOTO NEEDED - do manually; and manual creation later
-# whyyyyyyy??? I changed it from useres and now this
+# challenges PHOTO NEEDED - do manually; and manual creation later
 my_categories = [category1, category2, category3, category4, category5, category6, category7, category8, category9, category10]
-
 
 my_categories.each do |category|
   5.times do
-  challenge = Challenge.create!(
-    name: "Save the Earth #{rand(1..10000)}",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    saving_carbonamount: rand(5..1000),
-    category: category
+    challenge = Challenge.create!(
+      name: "Save the Earth #{rand(1..10000)}",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      saving_carbonamount: rand(5..1000),
+      category: category
   )
   end
 end
@@ -162,14 +159,14 @@ day = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sund
 
 habit1 = Habit.create!(
 	user: user1, # User.all.sample,
-  	implementation_cycle: "daily", # ["daily", "weekly", "monthly", "one-off"].sample,
+  implementation_cycle: "daily", # ["daily", "weekly", "monthly", "one-off"].sample,
 	challenge: Challenge.all.sample, #challenge1
 	day_of_week: day.sample
 )
 
 habit2 = Habit.create!(
 	user: user1, # User.all.sample,
-  	implementation_cycle: "weekly", # ["daily", "weekly", "monthly"].sample,
+  implementation_cycle: "weekly", # ["daily", "weekly", "monthly"].sample,
 	challenge: Challenge.all.sample, #challenge1
 	day_of_week: day.sample
 )

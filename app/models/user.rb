@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
   has_many :habits, dependent: :destroy
+  # uncomment when freindship logic and seeds is created
   # has_many :friendships, dependent: :destroy
 
   validates :username, presence: true
