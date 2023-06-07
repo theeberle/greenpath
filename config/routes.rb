@@ -5,15 +5,14 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-
+  resources :categories, only: %i[show]
   # challenges routues to show on index and show page
-  
+
   resources :challenges, only: %i[index show]
 
   resources :challenges do
     resources :habits, only: %i[create]
   end
-  
-  // to be finished
+  # to be finished
   resources :events
 end
