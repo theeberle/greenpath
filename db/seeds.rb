@@ -12,10 +12,10 @@ require 'faker'
 
 puts 'Seed: Deleting existing records...'
 # update
+Event.destroy_all
+Habit.destroy_all
 Challenge.destroy_all
 Category.destroy_all
-Habit.destroy_all
-Event.destroy_all
 User.destroy_all
 
 # test user

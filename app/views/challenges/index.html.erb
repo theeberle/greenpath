@@ -1,0 +1,14 @@
+
+<h1>Challenges</h1>
+
+<div class="challenges-container">
+  <% @challenges.each do |challenge| %>
+    <div class="challenge-card">
+      <div class="challenge-details">
+        <h2 class="challenge-title"><%= challenge.name %></h2>
+        <p class="challenge-description"><%= challenge.description %></p>
+        <p class="carbon-footprint">Carbon Footprint: <%= challenge.saving_carbonamount %> kg CO2e</p>
+      </div>
+    </div>
+  <% end %>
+</div>
