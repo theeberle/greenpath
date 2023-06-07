@@ -25,10 +25,11 @@
                 autofocus: true,
                 input_html: { autocomplete: "city" }%>
     <%= f.input :age_range,
+                label: "Age-range",
                 collection: User::AGE_RANGES,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "age-range" }%>
+                input_html: { autocomplete: "age_range" }%>
     <%= f.input :email,
                 placeholder: "max@email.de",
                 required: true,
