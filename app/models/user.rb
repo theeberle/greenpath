@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  # Creating a variable AGE_RANGE which can later be used in other contexts and for the form:
+  AGE_RANGES = ["under 18", "18-25", "26-40", "41-60", "above 60"]
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
