@@ -34,7 +34,7 @@ user1 = User.create!(
 # chceck if it work first with one photo and this is to be replicated for each user, category and challenge
 filepaht = 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60'
 file = URI.open(filepaht)
-user1.avatar.attach(io: file, filename: "#{user1.username}.jgp", content_type: 'image/jpg')
+user1.profile_picture.attach(io: file, filename: "#{user1.username}.jgp", content_type: 'image/jpg')
 user1.save!
 puts 'Seed: Test user created...'
 
