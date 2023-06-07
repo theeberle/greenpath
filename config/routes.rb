@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   resources :challenges do
     resources :habits, only: %i[create]
   end
+
   # to be finished
   resources :events
+
+  get 'dashboard', to: "dashboards#show"
 end
