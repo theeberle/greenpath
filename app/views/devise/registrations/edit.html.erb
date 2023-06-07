@@ -10,6 +10,36 @@
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
+     <%= f.input :username,
+                placeholder: "leave it blank if you don't want to change it",
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "username" }%>
+    <%= f.input :first_name,
+                placeholder: "leave it blank if you don't want to change it",
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "first_name" }%>
+    <%= f.input :last_name,
+                placeholder: "leave it blank if you don't want to change it",
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "last_name" }%>
+    <%= f.input :city,
+                placeholder: "leave it blank if you don't want to change it",
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "city" }%>
+    <%= f.input :age_range,
+                collection: User::AGE_RANGES,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "age-range" }%>
+    <%= f.input :email,
+                placeholder: "leave it blank if you don't want to change it",
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "email" }%>
     <%= f.input :password,
                 hint: "leave it blank if you don't want to change it",
                 required: false,
@@ -21,6 +51,16 @@
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
+    <%= f.input :profile_description,
+                placeholder: "leave it blank if you don't want to change it",
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "profile_description" }%>
+     <%= f.input :profile_picture, as: :file,
+                placeholder: "leave it blank if you don't want to change it",
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "profile_picture" }%>
   </div>
 
   <div class="form-actions">
