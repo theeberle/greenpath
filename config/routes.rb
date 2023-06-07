@@ -5,4 +5,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  # challenges routues to show on index and show page
+  resources :challenges, only: [:index, :show]
+
 end

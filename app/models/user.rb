@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
   has_many :habits, dependent: :destroy
-  has_many :friendships, dependent: :destroy
+  # has_many :friendships, dependent: :destroy
 
   validates :username, presence: true
   validates :username, uniqueness: true
