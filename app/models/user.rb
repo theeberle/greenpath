@@ -6,14 +6,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_one_attached :avatar
+  has_one_attached :profile_picture
   has_many :habits, dependent: :destroy
+  # uncomment when freindship logic and seeds is created
   # has_many :friendships, dependent: :destroy
 
   validates :username, presence: true
   validates :username, uniqueness: true
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :password, presence: true
-  validates :email, presence: true
 end

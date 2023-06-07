@@ -31,6 +31,7 @@
                 autofocus: true,
                 input_html: { autocomplete: "city" }%>
     <%= f.input :age_range,
+                label: "Age-range",
                 collection: User::AGE_RANGES,
                 required: false,
                 autofocus: true,

@@ -7,6 +7,13 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   # challenges routues to show on index and show page
-  resources :challenges, only: [:index, :show]
+  
+  resources :challenges, only: %i[index show]
+
+  resources :challenges do
+    resources :habits, only: %i[create]
+  end
+  
+  // to be finished
   resources :events
 end
