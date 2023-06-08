@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="carousel"
 export default class extends Controller {
-  static targets = ["category"];
+  static targets = ["category", "categoryContainer"];
 
   connect() {
 
@@ -18,7 +18,7 @@ export default class extends Controller {
   filterChallenges(event) {
     const categoryId = event.target.dataset.categoryId;
 
-    // Show/hide challenges based on the selected category
+    // Show/hide challenges and categories based on the selected category
     const challenges = document.querySelectorAll(".challenge-card");
     challenges.forEach((challenge) => {
       const challengeCategoryId = challenge.dataset.categoryId;
@@ -28,5 +28,16 @@ export default class extends Controller {
         challenge.style.display = "none";
       }
     });
+
+    const categoryContainers = this.categoryContainerTargets;
+    categoryContainers.forEach((container) => {
+      const containerCategoryId = container.dataset.categoryId;
+      if (categoryId === "all" || containerCategoryId === categoryId) {
+        container.style.display = "block";
+      } else {
+        container.style.display = "none";
+      }
+    });
   }
 }
+
