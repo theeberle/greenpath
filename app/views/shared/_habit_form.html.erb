@@ -1,23 +1,25 @@
-
 <div class="booking-form">
   <div class="habit-salutation">
     <h1>Yay You!</h1>
-    <h2><strong><%= @challenge.saving_carbonamount %></strong> CO2 reduced</h2>
+<h2><strong><%= @challenge.saving_carbonamount %></strong> CO2 reduced</h2>
   </div>
   <div class="form-habit">
     <%= simple_form_for([@challenge, @habit], html: { data: {
     controller: "alert",
-    alert_icon_value: "info",
-    alert_title_value: "Form Submission",
-    alert_html_value: "Submit the form?",
-    confirm_button_text: "Submit",
-    show_cancel_button: true,
-    cancel_button_text: "Cancel",
+    alert_icon_value: "success",
+    alert_title_value: "Hooray!",
+    alert_html_value: "Your habit has been created!",
+    alert_confirm_button_text_value: "OK",
+    alert_show_cancel_button_value: true,
+    alert_cancel_button_text_value: "Cancel",
     action: "submit->alert#initSweetalert",
     turbo: false
     } }) do |f| %>
-      <%= f.input :day_of_week %>
-      <%= f.input :implementation_cycle %>
+      <%= f.input :day_of_week,
+      collection: Habit::DAYS_OF_WEEK,
+      include_blank: true %>
+      <%= f.input :implementation_cycle,
+      collection: Habit::IMPLEMENTATION_CYCLE, include_blank: true %>
       <%= f.button :submit, class: "btn btn-primary" %>
     <% end %>
   </div>
