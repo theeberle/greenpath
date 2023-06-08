@@ -1,6 +1,10 @@
 class HabitsController < ApplicationController
   before_action :set_challenge, only: %i[new create]
 
+  def index
+    @habits = Habit.all
+  end
+
   def create
     @habit = Habit.new(habit_params)
     @habit.user = current_user
