@@ -1,21 +1,21 @@
 
 <% @challenges.each do |challenge| %>
   <div>
-    <h2><%= link_to challenge.name, challenge_path(challenge) %></h2>
+    <h5><%= link_to challenge.name, challenge_path(challenge) %></h5>
     <p><%= challenge.description %></p>
   </div>
 <% end %>
 
 <% @categories.each do |category| %>
   <div>
-    <h2><%= link_to category.name, category_path(category) %></h2>
+    <h5><%= link_to category.name, category_path(category) %></h5>
     <p><%= category.description %></p>
   </div>
 <% end %>
 
 <% @users.each do |user| %>
   <div>
-    <h2><%= link_to user.username, user_path(user) %></h2>
+    <h5><%= link_to user.username, user_path(user) %></h5>
     <p><%= user.profile_description %></p>
   </div>
 <% end %>
