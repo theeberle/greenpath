@@ -10,15 +10,15 @@
 
     <div class="search-form-control form-group">
       <form novalidate="novalidate" class="simple_form search" action="/search_results" accept-charset="UTF-8" method="get">
-        <input class="form-control string required" type="text" name="query" id="search_query" />
-        <button name="button" type="submit" class="btn btn-flat">
-          <i class="fas fa-search"></i> Search
-        </button>
+        <div class="search-input-wrapper">
+          <input class="form-control string required" type="text" name="query" id="search_query" placeholder="&#x1F50D; Search" style="width: 500px; height: 40px;" />
+        </div>
       </form>
+      <div class="magnifier-position">
+      </div>
     </div>
 
-
-
+    <ul style="list-style-type: none;">
       <li class="nav-item dropdown">
         <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -29,5 +29,6 @@
           <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
         </div>
       </li>
-    </div>
+    </ul>
+  </div>
 </div>

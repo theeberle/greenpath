@@ -4,4 +4,5 @@ class Challenge < ApplicationRecord
   validates :name, uniqueness: true
   validates :saving_carbonamount, presence: true
   validates :description, presence: true
+  has_one_attached :picture
 end
