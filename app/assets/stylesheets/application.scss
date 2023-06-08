@@ -9,5 +9,11 @@
 
 // Your CSS partials
 @import "components/index";
+
+@import 'components/banner';
+@import'components/habit_form';
+
+// To repair later with future push of navbar
 @import "pages/index";
 @import 'navbar';
+

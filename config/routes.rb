@@ -14,7 +14,8 @@ Rails.application.routes.draw do
     resources :habits, only: %i[create]
   end
 
-  # to be finished
+
+  ## to be finished
   resources :events
 
   get 'dashboard', to: "dashboards#show"
