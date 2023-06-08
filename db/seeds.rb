@@ -3,6 +3,8 @@ require 'faker'
 require 'open-uri'
 require 'csv'
 
+
+
 puts 'Seed: Deleting existing records...'
 # update when Friendship is done
 
