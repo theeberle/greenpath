@@ -1,0 +1,21 @@
+.category-filter-button {
+  background-color: $rose;
+  text-decoration: none;
+  color: $light-green;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 12px 26px;
+  border-radius: 5px;
+  box-shadow: 0 0 16px rgba(0,0,0,0.1);
+  border-color: none;
+  text-align: center;
+  font-family: $body-font;
+  display: inline-block;
+
+   &:hover {
+     background-color: $ligh-rose;
+     color: $dark-green;
+   }
+}
+
+
