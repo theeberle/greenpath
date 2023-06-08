@@ -8,6 +8,7 @@
 
 require 'faker'
 require 'open-uri'
+require 'yaml'
 
 puts 'Seed: Deleting existing records...'
 # update

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'search_results', to: "search#index"
+
   devise_for :users
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -11,7 +13,7 @@ Rails.application.routes.draw do
   resources :challenges, only: %i[index show]
 
   resources :challenges do
-    resources :habits, only: %i[create]
+    resources :habits, only: %i[index create]
   end
 
   # to be finished
