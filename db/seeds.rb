@@ -7,8 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 require 'faker'
-# for Cloudinary photos later
-# require 'open-uri'
+require 'open-uri'
 
 puts 'Seed: Deleting existing records...'
 # update
@@ -32,8 +31,12 @@ user1 = User.create!(
 	profile_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   carbon_count: 0
 )
+# chceck if it work first with one photo and this is to be replicated for each user, category and challenge
+filepaht = 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60'
+file = URI.open(filepaht)
+user1.profile_picture.attach(io: file, filename: "#{user1.username}.jgp", content_type: 'image/jpg')
+user1.save!
 puts 'Seed: Test user created...'
-
 
 puts 'Seed: Seeding...'
 # pictures arrays still upload photos to claudinary and link later without column follow active storage
@@ -43,8 +46,6 @@ puts 'Seed: Seeding...'
 # not needed as arrays as it will be attached to a specific category and challenge
 ## challenges_url =
 ## category=
-
-# user PHOTO NEEDED ignore right now , random photo later with user.attach.photo later to read about it
 
 user2 = User.create!(
 	username: Faker::Name.name,
