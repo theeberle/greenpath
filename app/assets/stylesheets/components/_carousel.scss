@@ -1,0 +1,32 @@
+.categories-carousel {
+  overflow-x: scroll;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.categories-container {
+  display: inline-flex;
+}
+
+.category-container {
+  flex: 0 0 auto;
+  margin-right: 10px; /* Adjust spacing between categories */
+}
+
+.category-filter-button {
+  /* Add styles as needed */
+}
+
+.categories-carousel {
+  overflow-x: scroll;
+  white-space: nowrap;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  scrollbar-width: none; /* Hide scrollbar for modern browsers */
+  -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer and Edge */
+}
+
+.categories-carousel::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+}
