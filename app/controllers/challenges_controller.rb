@@ -1,9 +1,17 @@
 class ChallengesController < ApplicationController
 
- # to show all the challenges in the index page & show page
-
   def index
     @challenges = Challenge.all
+    @categories = Category.all
+    @category = params[:category]
+    @description = "general description"
+
+    # filter with category
+    if @category.present?
+      @challenges = @challenges.where(category: params[:category])
+      @category_name = Category.find(@category).name
+      @category_description = Category.find(@category).description
+    end
   end
 
   def show

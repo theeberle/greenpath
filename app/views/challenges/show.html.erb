@@ -1,14 +1,11 @@
-<div class="challnege show container">
-    <div class="skill-view">
 
-
-<%= render 'shared/banner' %>
+<div class="challenge-show container">
+  <%= render 'shared/banner' %>
+  <div class="challenge-left-side">
+    <p><%= @challenge.description %></p>
+    <p><%= @challenge.saving_carbonamount %> Co2/ per occurance</p>
+  </div>
+  <div class="challenge-right-side">
+    <%= render 'shared/habit_form' %>
   </div>
 </div>
-
-
-    <%= simple_form_for([@challenge, @habit]) do |f| %>
-      <%= f.input :day_of_week %>
-       <%= f.input :implementation_cycle %>
-    <%= f.button :submit, class: "btn bth-primary" %>
-  <% end %>
