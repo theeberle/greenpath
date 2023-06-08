@@ -4,15 +4,16 @@ import Swal from "sweetalert2"
 export default class extends Controller {
   static values = {
     icon: String,
-    alertTitle: String,
-    alertHtml: String,
+    title: String,
+    html: String,
     confirmButtonText: String,
     showCancelButton: Boolean,
     cancelButtonText: String
   }
   connect(){
-    console.log("Alert controller connected")
-  }
+    console.log("Hi from alert_controller.js")
+    }
+  consoleL
 
   initSweetalert(event) {
     event.preventDefault(); // Prevent the form to be submited after the submit button has been clicked

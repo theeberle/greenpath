@@ -10,7 +10,7 @@ class HabitsController < ApplicationController
     @habit.user = current_user
     @habit.challenge = Challenge.find(params[:challenge_id])
     if @habit.save
-      redirect_to challenge_path(@habit.challenge)
+      redirect_to dashboard_path
     else
       render "challenges/show"
     end
