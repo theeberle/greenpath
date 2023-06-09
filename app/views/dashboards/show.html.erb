@@ -1,67 +1,50 @@
-<div class="left-side">
-  <%# Switch button: %>
-  <%# <label class="switch">
-    <input type="checkbox">
-    <span class="slider"></span>
-  </label> %>
+<div class="green-background">
+  <div class="switch-side">
 
-  <div class="challenges-display">
-    <br>
-      <h1>Hello, <strong><%= current_user.first_name %>!</strong></h1>
-    <br>
+    <div class="challenges-side">
+              <h1>Hello, <strong><%= current_user.first_name %>!</strong></h1>
 
-    <br>
+      <div class="container-habits-listing">
+            <% if @habits.any? %>
 
-    <div class="container-habits-listing">
-          <% if @habits.any? %>
+              <div class="long-cards">
+                <% @habits.each do |habit| %>
+                  <div class="long-card-frame">
+                    <div class="card-challenge-foto">
+                    <%# CHANGE WITH CLOUDINARY %>
+                    <%# <%= image_tag(skill.photo_url) %>
+                    </div>
 
-            <div class="long-cards">
-              <% @habits.each do |habit| %>
-                <div class="long-card-frame>
-                  <div class="card-challenge-foto">
-                  <%# CHANGE WITH CLOUDINARY %>
-                  <%# <%= image_tag(skill.photo_url) %>
+                    <div class="card-challenge-infos">
+                      <h2><%= challenge.name %></h2>
+                      <%= challenge.category %></p>
+                    </div>
+
+                    <div class="card-carbon">
+                      <h2><%= challenge.saving_carbonamount %></h2>
+                    </div>
+
+                    <%# Still implement %>
+                    <div class="card-buttons">
+                    </div>
+
                   </div>
 
-                  <div class="card-challenge-infos">
-                    <h2><%= challenge.name %></h2>
-                    <%= challenge.category %></p>
-                  </div>
+                <% end %>
 
-                  <div class="card-carbon">
-                    <h2><%= @challenge.saving_carbonamount %></h2>
-                  </div>
+              </div>
+            <% else %>
+              <p>You didn't pick a challege yet!</p>
+            <% end %>
+          </div>
+    </div>
 
-                  <%# Still implement %>
-                  <div class="card-buttons">
-                  </div>
-
-
-                    <%# <p>Price: <%= number_to_currency(skill.price)</p>  %>
-                    <p>Address: <%= skill.address %></p>
-                  </div>
-                  <div class="card-button">
-                  <%= link_to "Details", skill_path(skill), class: "btn-turquoise small" %>
-
-
-                 </div>
-
-              <% end %>
-
-            </div>
-          <% else %>
-            <p>You didn't pick a challege yet!</p>
-          <% end %>
-        </div>
-  </div>
-
-  <div class="statistic-display">
-    <br>
+    <div class="statistic-side">
       <h3>See how you are contributing!</h1>
-    <br>
+    </div>
   </div>
-</div>
 
-<div class="right-side">
-  <h1><strong>Your tree</strong></h1>
+  <div class="tree-side">
+    <h1><strong>Your tree</strong></h1>
+  </div>
 </div>
