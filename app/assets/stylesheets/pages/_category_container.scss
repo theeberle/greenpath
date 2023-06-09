@@ -1,15 +1,14 @@
 .category-container-carousel {
-  border: 1px solid blue;
+  // border: 1px solid blue;
   margin: 5px;
 }
 .category-container-infos {
-  border: 1px solid black;
-  // margin: 15px;
+  // border: 1px solid black;
 }
 
 .title {
   display: flex;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
   height: 90px;
   padding: 16px;
@@ -20,7 +19,6 @@
   display: flex;
   justify-content: left;
   align-items: center;
-  // height: 90px;
   padding: 16px;
   color: black;
 }
