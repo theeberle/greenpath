@@ -1,9 +1,9 @@
-<div class="green-background">
-  <div class="two-sides-view">
-  <%# <div class="switch-side">
+<div class="two-sides-view">
 
-    <div class="challenges-side">
-              <h1>Hello, <strong><%= current_user.first_name %>!</strong></h1>
+  <div class="switching-container">
+
+    <%# <div class="challenges-side"> %>
+              <%# <h1>Hello, <strong><%= current_user.first_name %>!</strong></h1> %>
 
       <%# <div class="container-habits-listing">
             <% if @habits.any? %>
@@ -38,15 +38,17 @@
               <%# <p>You didn't pick a challege yet!</p> %>
             <%# <% end %>
           <%# </div> %>
-    <%# </div>  %>
+      <%# </div>  %>
 
     <%# <div class="statistic-side"> %>
       <%# <h3>See how you are contributing!</h1> %>
     <%# </div> %>
-  <%# </div> %>
+    <%# </div> %>
+  </div>
 
-  <%# <div class="tree-side">
-    <h1><strong>Your tree</strong></h1> %>
-  <%# </div> %>
+  <div class="tree-side">
+    <h1 class="title"><strong>Hooray!</strong></h1>
+    <p class="text">Your tree grew today!</p>
+    <img class="tree-image" src="https://www.freepik.com/free-vector/tree-transparent-background_20424342.htm#query=illustrations%20tree&position=2&from_view=search&track=ais" alt="Tree-Image">
   </div>
 </div>
