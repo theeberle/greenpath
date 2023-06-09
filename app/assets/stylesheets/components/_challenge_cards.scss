@@ -5,6 +5,7 @@
   padding: 10px;
   border-radius: 8px;
   position: relative;
+  width: 250px;
 
   &:hover {
     background-color: $rose;
@@ -23,8 +24,7 @@
 .challenge-image {
     object-fit: cover;
     // height: 60%;
-    width: 100%;
-    width: 200px;
+    width: 229px;
     border-radius: 8px;
 }
 
