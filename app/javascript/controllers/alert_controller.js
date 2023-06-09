@@ -13,7 +13,7 @@ export default class extends Controller {
   connect(){
     console.log("Hi from alert_controller.js")
     }
-  consoleL
+
 
   initSweetalert(event) {
     event.preventDefault(); // Prevent the form to be submited after the submit button has been clicked
