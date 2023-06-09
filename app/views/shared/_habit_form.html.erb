@@ -1,7 +1,7 @@
 <div class="booking-form">
   <div class="habit-salutation">
     <h1>Yay You!</h1>
-<h2><strong><%= @challenge.saving_carbonamount %></strong> CO2 reduced</h2>
+    <h2><strong class="carbon"><%= @challenge.saving_carbonamount.to_i %></strong> kg CO2 reduced</h2>
   </div>
   <div class="form-habit">
     <%= simple_form_for([@challenge, @habit], html: { data: {
@@ -20,7 +20,7 @@
       include_blank: true %>
       <%= f.input :implementation_cycle,
       collection: Habit::IMPLEMENTATION_CYCLE, include_blank: true %>
-      <%= f.button :submit, class: "btn btn-primary" %>
+      <%= f.button :submit, class: "btn-habit" %>
     <% end %>
   </div>
 </div>

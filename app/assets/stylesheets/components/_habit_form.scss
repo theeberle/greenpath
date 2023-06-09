@@ -1,5 +1,4 @@
 .booking-form {
-  display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: white;
@@ -9,22 +8,34 @@
   margin: 0 auto;
 }
 
+.carbon{
+  color: $green;
+  font-weight: bold;
+  font-size: 35px;
+}
 .habit-salutation {
-  flex: 1;
+  margin-bottom: 20px;
+  padding: 20px;
+
 }
 
 .habit-salutation h1 {
   font-size: 24px;
   font-weight: bold;
+  margin-left: 50px;
+
 }
 
 .habit-salutation h2 {
   font-size: 18px;
+  margin-left: 0px;
+  margin-bottom: 5px;
+
 }
 
 .form-habit {
-  flex: 1;
-  padding-left: 20px;
+  align-items: center;
+
 }
 
 .form-habit input[type="text"],
@@ -37,14 +48,15 @@
 }
 
 .form-habit input[type="submit"] {
-  background-color: #007bff;
+  background-color: #20cd8d;
   color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: auto;
 }
 
 .form-habit input[type="submit"]:hover {
-  background-color: #0056b3;
+  background-color: #2d4048;
 }

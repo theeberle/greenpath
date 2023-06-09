@@ -1,10 +1,20 @@
- <div class="challenge-show-container">
-    <%= render 'shared/banner' %>
-  <div class="challenge-left-side">
-    <p><%= @challenge.description %></p>
-    <p><%= @challenge.saving_carbonamount %> Co2/ per occurance</p>
-  </div>
-  <div class="challenge-right-side">
-    <%= render 'shared/habit_form' %>
+<div class="challenge-show-container">
+  <%= render 'shared/banner' %>
+  <div class="challenge-content">
+    <div class="challenge-left-side">
+      <h2>About This Challenge</h2>
+        <br>
+      <p><%= @challenge.description %></p>
+         <div class="divider"></div>
+      <p>By committing to this challenge once, you will cut:</p>
+      <p class="carbon-tag"><%= @challenge.saving_carbonamount.to_i %> kg CO2</p>
+      <%= link_to 'Back', :back, class: 'btn btn-primary' %>
+               <div class="divider"></div>
+    <h2>Did you know...</h2>
+    <p>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."</p>
+    </div>
+    <div class="challenge-right-side">
+      <%= render 'shared/habit_form' %>
+    </div>
   </div>
 </div>
