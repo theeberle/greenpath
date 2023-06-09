@@ -18,6 +18,32 @@ class HabitsController < ApplicationController
     end
   end
 
+  def update
+    @habit = Habit.find(params[:id])
+    if @habit.update(habit_params)
+      # Update the existing recurring events based on the updated habit details
+      @habit.events.each { |event| event.destroy if event.due_date > Date.tomorrow }
+      event = Event.new(habit: @habit, status: "upcoming", due_date: calculate_due_date(@habit))
+      event.generate_recurring_events(event, Date.today.next_month.next_month)
+
+      redirect_to dashboard_path, notice: "Habit was successfully updated."
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @habit = Habit.find(params[:id])
+    @habit.update(active: false)
+    @habit.events.each {|event| event.destroy if event.due_date > Date.tomorrow }  # Delete all associated events in the future
+
+    if @habit.save
+      redirect_to dashboard_path, notice: "Habit and upcoming events were successfully deleted."
+    else
+      redirect_to dashboard_path, alert: "Failed to delete habit and upcoming events."
+    end
+  end
+
   private
 
   def set_challenge
