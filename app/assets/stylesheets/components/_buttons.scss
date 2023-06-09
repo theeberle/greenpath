@@ -1,7 +1,7 @@
 .category-filter-button {
   background-color: $rose;
   text-decoration: none;
-  color: $light-green;
+  color: $dark-green;
   font-weight: bold;
   font-size: 16px;
   padding: 12px 26px;
@@ -12,7 +12,7 @@
   font-family: $body-font;
   display: inline-block;
 
-   &:hover {
+   &:hover, &.active {
      background-color: $light-rose;
      color: $dark-green;
    }
