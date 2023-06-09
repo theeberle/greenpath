@@ -1,29 +1,27 @@
-.title {
-  display: flex;
-  justify-content: center;
+.dashboard-title {
+  justify-content: left;
   align-items: center;
   height: 90px;
   padding: 16px;
   color: $rose;
 }
 
-.text {
-  display: flex;
-  justify-content: center;
+.dashboard-text {
+  justify-content: left;
   align-items: center;
   padding: 16px;
   color: black;
 }
 
 .two-sides-view {
-  border: 1px solid green;
+  // border: 1px solid green;
   margin: 5px;
   display: flex;
   justify-content: space-between;
 }
 
 .switching-container {
-  border: 1px solid orange;
+  // border: 1px solid orange;
   margin: 5px;
   height: 100vh;
   width: 60%;
@@ -32,6 +30,12 @@
   padding: 20px;
 }
 
+
+.dashboard-card {
+  background-color: $light-rose  ;
+  padding: 16px;
+  border-radius: 8px;
+}
 
 // .container-habits-listing {
 //   border: 1px solid blue;
@@ -44,7 +48,7 @@
 // }
 
 .tree-side {
-  border: 1px solid red;
+  // border: 1px solid red;
   margin: 5px;
   height: 100vh;
   width: 40%;
@@ -60,6 +64,6 @@
   width: 300px;
   border-radius: 8px;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
 }

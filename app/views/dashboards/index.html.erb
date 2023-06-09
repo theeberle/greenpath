@@ -1,0 +1,45 @@
+<div class="two-sides-view">
+
+  <div class="switching-container">
+
+    <div class="challenges-side">
+      <h2 class="dashboard-title">Hello,     <strong><%= @user.username %></strong>!</h2>
+      <h3 class="dashboard-text">You have <strong><%= @user_challenges.count %></strong> active challenges!</h2>
+
+
+      <div class="">
+          <% if @user_challenges.any? %>
+
+            <div class="dashboard-card">
+              <% @user_challenges.each do |user_challenge| %>
+
+                <div class="card-skill-info">
+                <%# <%= image_tag(habit.challenge(params[:id]).photo_url) %>
+                  <div class="card-product-infos">
+                    <h2><%= user_challenge.name %></h2>
+                    <p class="category-tag"><%= user_challenge.category.name %></p>
+                    <p> <%= user_challenge.saving_carbonamount %></p>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+
+          <% else %>
+            <p>You don't have any challenges yet!</p>
+          <% end %>
+      </div>
+    </div>
+
+     <%# Statitsitcs part: %>
+     <%# <div class="statistic-side"> %>
+       <%# <h3>See how you are contributing!</h1> %>
+     <%# </div> %>
+
+  </div>
+
+  <div class="tree-side">
+    <h1 class="title"><strong>Hooray!</strong></h1>
+    <p class="text">Your tree grew today!</p>
+    <img class="tree-image" src="https://img.freepik.com/free-vector/isolated-tree-white-background_1308-26130.jpg?w=740&t=st=1686312266~exp=1686312866~hmac=3fed4dcd746c35b100a3dfc809bc895d82e5aea7153a2c59fa23ce200f880f13" alt="Tree-Image">
+  </div>
+</div>

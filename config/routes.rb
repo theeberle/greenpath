@@ -20,5 +20,5 @@ Rails.application.routes.draw do
 
   resources :events
 
-  get 'dashboard', to: "dashboards#show"
+  get 'dashboard', to: "dashboards#index"
 end
