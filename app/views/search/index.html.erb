@@ -21,12 +21,3 @@
     <p><%= user.profile_description %></p>
   </div>
 <% end %>
-
-    <div class="challenge-card">
-      <%= link_to '', challenge_path(challenge), class: 'card-link'  %>
-      <img class="challenge-image" src="https://images.unsplash.com/photo-1502101872923-d48509bff386?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80" alt="Challenge-Image">
-      <div class="challenge-details">
-        <h2 class="challenge-title"><%= challenge.name %></h2>
-        <p class="carbon-footprint"><%= challenge.saving_carbonamount %> kg CO2e</p>
-      </div>
-    </div>
