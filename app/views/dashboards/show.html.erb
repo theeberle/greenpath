@@ -1,50 +1,52 @@
 <div class="green-background">
-  <div class="switch-side">
+  <div class="two-sides-view">
+  <%# <div class="switch-side">
 
     <div class="challenges-side">
               <h1>Hello, <strong><%= current_user.first_name %>!</strong></h1>
 
-      <div class="container-habits-listing">
+      <%# <div class="container-habits-listing">
             <% if @habits.any? %>
 
-              <div class="long-cards">
-                <% @habits.each do |habit| %>
-                  <div class="long-card-frame">
-                    <div class="card-challenge-foto">
+              <%# <div class="long-cards"> %>
+                <%# <% @habits.each do |habit| %>
+                  <%# <div class="long-card-frame"> %>
+                    <%# <div class="card-challenge-foto"> %>
                     <%# CHANGE WITH CLOUDINARY %>
                     <%# <%= image_tag(skill.photo_url) %>
-                    </div>
+                    <%# </div> %>
 
-                    <div class="card-challenge-infos">
-                      <h2><%= challenge.name %></h2>
-                      <%= challenge.category %></p>
-                    </div>
+                    <%# <div class="card-challenge-infos"> %>
+                      <%# <h2><%= challenge.name %></h2>
+                      <%# <%= challenge.category %></p>
+                    <%# </div> %>
 
-                    <div class="card-carbon">
-                      <h2><%= challenge.saving_carbonamount %></h2>
-                    </div>
+                    <%# <div class="card-carbon">
+                      <%# <h2><%= challenge.saving_carbonamount %></h2>
+                    <%# </div> %>
 
                     <%# Still implement %>
-                    <div class="card-buttons">
-                    </div>
+                    <%# <div class="card-buttons"> %>
+                    <%# </div> %>
 
-                  </div>
+                  <%# </div> %>
 
-                <% end %>
+                <%# <% end %>
 
-              </div>
+              <%# </div>
             <% else %>
-              <p>You didn't pick a challege yet!</p>
-            <% end %>
-          </div>
-    </div>
+              <%# <p>You didn't pick a challege yet!</p> %>
+            <%# <% end %>
+          <%# </div> %>
+    <%# </div>  %>
 
-    <div class="statistic-side">
-      <h3>See how you are contributing!</h1>
-    </div>
-  </div>
+    <%# <div class="statistic-side"> %>
+      <%# <h3>See how you are contributing!</h1> %>
+    <%# </div> %>
+  <%# </div> %>
 
-  <div class="tree-side">
-    <h1><strong>Your tree</strong></h1>
+  <%# <div class="tree-side">
+    <h1><strong>Your tree</strong></h1> %>
+  <%# </div> %>
   </div>
 </div>

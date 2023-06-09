@@ -5,9 +5,9 @@
 
 
       <div class="category-container-carousel">
-        <%= link_to "All", challenges_path, class: "category-filter-button" %>
+        <%= link_to "All", challenges_path, class: "category-filter-button #{params[:category].blank? ? 'active' : ''}" %>
           <% @categories.each do |category| %>
-            <%= link_to category.name, challenges_path(category: category.id), class: "category-filter-button" %>
+            <%= link_to category.name, challenges_path(category: category.id), class: "category-filter-button #{params[:category] == category.id.to_s ? 'active' : ''}" %>
           <% end %>
       </div>
     </div>
