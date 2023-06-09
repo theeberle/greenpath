@@ -14,7 +14,7 @@
   font-size: 35px;
 }
 .habit-salutation {
-  margin-bottom: 20px;
+  // margin-bottom: 20px;
   padding: 20px;
 
 }
@@ -22,13 +22,13 @@
 .habit-salutation h1 {
   font-size: 24px;
   font-weight: bold;
-  margin-left: 50px;
+  margin-left: 70px;
 
 }
 
 .habit-salutation h2 {
   font-size: 18px;
-  margin-left: 0px;
+  margin-left: 30px;
   margin-bottom: 5px;
 
 }
@@ -59,4 +59,15 @@
 
 .form-habit input[type="submit"]:hover {
   background-color: #2d4048;
+}
+.btn-habit{
+  background-color: $green;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: auto;
+  margin-left: 70px;
+  margin-bottom: 20px;
 }
