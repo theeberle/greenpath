@@ -16,8 +16,13 @@
   <div class="two-sides">
     <div class="category-container-infos">
       <div>
-        <h1 class="title"><%= @category_name %></h1>
-        <p class="text"><%= @category_description %>
+        <% if params[:category].blank? %>
+          <h1 class="title">All Categories</h1>
+          <p class="text">General challenges impacting the climate.</p>
+        <% else %>
+          <h1 class="title"><%= @category_name %></h1>
+          <p class="text"><%= @category_description %></p>
+        <% end %>
       </div>
     </div>
 
