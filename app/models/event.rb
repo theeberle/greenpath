@@ -3,6 +3,8 @@ class Event < ApplicationRecord
   validates :status, presence: true
   validates :due_date, presence: true
 
+  # enum status: { upcoming: 0, overdue: 1, accomplished: 2 }
+
   def generate_recurring_events(event, end_date)
     schedule = IceCube::Schedule.new(event.due_date.to_date)
     case event.habit.implementation_cycle.downcase
