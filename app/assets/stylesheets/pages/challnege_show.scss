@@ -23,6 +23,22 @@
   // box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   // position: relative;
 }
+.icon{
+  color: $green;
+  animation-name: spin;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .divider {
   border-top: 1px solid #ccc;
   margin: 20px auto; /* Adjust margin as needed */
@@ -41,9 +57,3 @@
   margin-top: 10px;
   font-size: large;
 }
-
-// .btn-primary {
-//   position: absolute;
-//   bottom: 20px;
-//   right: 20px;
-// }
