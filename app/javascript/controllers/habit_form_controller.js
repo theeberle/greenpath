@@ -5,26 +5,28 @@ export default class extends Controller {
   static values = { initialCarbonAmount: Number };
 
   connect(){
-    console.log(parseInt(this.carbonAmountTarget.innerText))
+    // console.log(parseInt(this.carbonAmountTarget.innerText))
+    this.initialCarbonAmount = parseInt(this.carbonAmountTarget.innerText);
     }
 
   updateCarbonAmount(event) {
     console.log("hi")
-    // const selectedCycle = event.target.value();
-    // let updatedCarbonAmount = this.initialCarbonAmountValue;
+    const selectedCycle = event.currentTarget.value;
+    let updatedCarbonAmount = this.initialCarbonAmount;
 
-  //   switch (selectedCycle) {
-  //     case "daily":
-  //       updatedCarbonAmount *= 365;
-  //       break;
-  //     case "weekly":
-  //       updatedCarbonAmount *= 52;
-  //       break;
-  //     case "monthly":
-  //       updatedCarbonAmount *= 12;
-  //       break;
-  //   }
+    switch (selectedCycle) {
+      case "Daily":
+        updatedCarbonAmount *= 365;
+        break;
+      case "Weekly":
+        updatedCarbonAmount *= 52;
+        break;
+      case "Monthly":
+        updatedCarbonAmount *= 12;
+        break;
+    }
+    // console.log(updatedCarbonAmount)
 
-  //   this.carbonAmountTarget.textContent = updatedCarbonAmount;
+  this.carbonAmountTarget.innerText = updatedCarbonAmount;
   }
 }
