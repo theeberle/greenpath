@@ -30,7 +30,7 @@ profile_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, s
 carbon_count: 0
 )
 # Picture for text user
-filepaht = 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60'
+filepaht = 'https://res.cloudinary.com/dd45bmmjg/image/upload/v1686248215/michael-dam-mEZ3PoFGs_k-unsplash_aoscdc.jpg'
 file = URI.open(filepaht)
 user1.profile_picture.attach(io: file, filename: "#{user1.username}.jgp", content_type: 'image/jpg')
 user1.save!
@@ -91,34 +91,34 @@ end
 
 # habit as booking for a test user> CREATE MANUALY
 
-day = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+# day = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
-habit1 = Habit.create!(
-user: user1, # User.all.sample,
-implementation_cycle: "daily", # ["daily", "weekly", "monthly", "one-off"].sample,
-challenge: Challenge.all.sample, #challenge1
-day_of_week: day.sample
-)
+# habit1 = Habit.create!(
+# user: user1, # User.all.sample,
+# implementation_cycle: "daily", # ["daily", "weekly", "monthly", "one-off"].sample,
+# challenge: Challenge.all.sample, #challenge1
+# day_of_week: day.sample
+# )
 
-habit2 = Habit.create!(
-user: user1, # User.all.sample,
-implementation_cycle: "weekly", # ["daily", "weekly", "monthly"].sample,
-challenge: Challenge.all.sample, #challenge1
-day_of_week: day.sample
-)
+# habit2 = Habit.create!(
+# user: user1, # User.all.sample,
+# implementation_cycle: "weekly", # ["daily", "weekly", "monthly"].sample,
+# challenge: Challenge.all.sample, #challenge1
+# day_of_week: day.sample
+# )
 
 # this is for the booked habit that a person can manipulate on their dashboard
 
-event= Event.create!(
-habit: habit1,
-status: ["completed", "overdue", "pending"].sample,
-due_date: DateTime.strptime("08/06/2023 11:00", "%m/%d/%Y %H:%M"),
-)
-event2= Event.create!(
-habit: habit1,
-status: ["completed", "overdue", "pending"].sample,
-due_date: DateTime.strptime("08/06/2023 11:00", "%m/%d/%Y %H:%M"),
-)
+# event= Event.create!(
+# habit: habit1,
+# status: ["completed", "overdue", "pending"].sample,
+# due_date: DateTime.strptime("08/06/2023 11:00", "%m/%d/%Y %H:%M"),
+# )
+# event2= Event.create!(
+# habit: habit1,
+# status: ["completed", "overdue", "pending"].sample,
+# due_date: DateTime.strptime("08/06/2023 11:00", "%m/%d/%Y %H:%M"),
+# )
 
 
 ## skip for now

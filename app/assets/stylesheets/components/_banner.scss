@@ -1,5 +1,6 @@
 .banner-category {
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
   height: 300px;
   width: 100%;
@@ -7,10 +8,11 @@
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 35px;
+  margin: 0;
+}
+.banner-category h1{
+  font-size: 70px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  // border-radius: 5px;
-  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin: 0;
+
 }
