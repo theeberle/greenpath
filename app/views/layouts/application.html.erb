@@ -14,8 +14,11 @@
 
   <body>
     <%= render "shared/navbar" %>
-    <%= render "shared/flashes" %>
+    <div class="green-background">
 
-    <%= yield %>
+      <%= render "shared/flashes" %>
+
+      <%= yield %>
+    </div>
   </body>
 </html>
