@@ -1,22 +1,65 @@
-.container-habits-listing {
-  border: 1px solid blue;
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90px;
+  padding: 16px;
+  color: $rose;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  color: black;
+}
+
+.two-sides-view {
+  border: 1px solid green;
   margin: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.switching-container {
+  border: 1px solid orange;
+  margin: 5px;
+  height: 100vh;
+  width: 60%;
+  position: sticky;
+  top: 0;
+  padding: 20px;
 }
 
 
+// .container-habits-listing {
+//   border: 1px solid blue;
+//   margin: 5px;
+// }
 
-
-.container-habits-listing {
-  border: 1px solid blue;
-  margin: 5px;
-}
-
-.statistic-side {
-  border: 1px solid yellow;
-  margin: 5px;
-}
+// .statistic-side {
+//   border: 1px solid yellow;
+//   margin: 5px;
+// }
 
 .tree-side {
   border: 1px solid red;
   margin: 5px;
+  height: 100vh;
+  width: 40%;
+  position: sticky;
+  top: 0;
+  padding: 20px;
+}
+
+.tree-image {
+  object-fit: cover;
+  // height: 60%;
+  width: 100%;
+  width: 300px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
