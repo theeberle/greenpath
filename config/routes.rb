@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   devise_for :users
  # root to: "challenges#index"
- 
+
  # added landing page for the web app
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -24,4 +24,5 @@ Rails.application.routes.draw do
   resources :events
 
   get 'dashboard', to: "dashboards#index"
+
 end
