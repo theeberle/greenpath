@@ -1,8 +1,33 @@
 
-.categories-carousel {
+// scroll buttons styles
+
+.carousel-container {
+  position: relative;
   width: 90%;
+  margin: auto;
+}
+
+.scroll-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: center;
+}
+
+.scroll-button-left {
+  left: 0;
+}
+
+.scroll-button-right {
+  right: 0;
+}
+/// carousles styles
+
+.categories-carousel {
   padding: 10px;
-  margin: 0 auto; /* Center the carousel */
   margin-bottom: 20px;
   overflow-x: scroll;
   scrollbar-width: none; /* Hide the scrollbar for modern browsers */
@@ -19,6 +44,7 @@
   gap: 10px; /* Adjust the gap between category items */
   scroll-snap-type: x mandatory;
 }
+
 
 .category-item {
   flex: 0 0 auto;

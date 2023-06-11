@@ -1,13 +1,13 @@
-<div data-controller="carousel">
+<div data-controller="carousel" class="carousel-container">
+    <div class="scroll-button scroll-button-left">
+      <i class="fa-solid fa-angles-left"></i>
+    </div>
   <div class="categories-carousel <%= params[:category].blank? ? 'active' : '' %>">
     <div class="category-container-carousel">
-      <div class="scroll-button scroll-button-left">
-        <i class="fa-solid fa-angles-left"></i>
-      </div>
       <div class="category-item">
         <%= link_to challenges_path, class: "category-filter-button #{params[:category].blank? ? 'active' : ''} filter-indicator-left" do %>
           <i class="fa-solid fa-border-all"></i>
-          All
+         Check All
         <% end %>
       </div>
       <% @categories.each_with_index do |category, index| %>
@@ -18,14 +18,12 @@
           <% end %>
         </div>
       <% end %>
-      </div>
-      <div class="scroll-button scroll-button-right">
-      <i class="fa-solid fa-angles-right"></i>
-      </div>
     </div>
   </div>
+    <div class="scroll-button scroll-button-right">
+      <i class="fa-solid fa-angles-right"></i>
+    </div>
 </div>
-
 
 <div class="two-sides">
   <div class="category-container-infos">
