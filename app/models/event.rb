@@ -28,7 +28,7 @@ class Event < ApplicationRecord
 
       recurring_event = event.dup
       recurring_event.due_date = date
-# recurring_event.name = event.habit.challenge.name if event.habit.present? # Set the name only if the habit is present
+    # recurring_event.name = event.habit.challenge.name if event.habit.present? # Set the name only if the habit is present
 
       recurring_event.save
     end

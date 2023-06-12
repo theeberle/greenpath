@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   has_one_attached :profile_picture
   has_many :habits, dependent: :destroy
+  has_many :events, through: :habits
   has_many :challenges, through: :habits
   # uncomment when freindship logic and seeds is created
   # has_many :friendships, dependent: :destroy
