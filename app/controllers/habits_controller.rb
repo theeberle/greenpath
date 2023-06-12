@@ -25,7 +25,7 @@ class HabitsController < ApplicationController
   def update
     @habit = Habit.find(params[:id])
     if @habit.update(habit_params)
-      update_carbon_amount
+      # update_carbon_amount
       redirect_to dashboard_path, notice: "Habit was successfully updated."
     else
       render :edit
@@ -41,6 +41,20 @@ class HabitsController < ApplicationController
       redirect_to dashboard_path, notice: "Habit and upcoming events were successfully deleted."
     else
       redirect_to dashboard_path, alert: "Failed to delete habit and upcoming events."
+    end
+  end
+
+# link the evnt completion with the carbon score
+
+  def event_completed
+
+    event = Event.find(params[:event_id])
+
+    if event.update(status: "accomplished")
+      update_user_carbon_score(event.habit)
+      redirect_to dashboard_path, notice: "Event completed successfully."
+    else
+      redirect_to dashboard_path, alert: "Failed to complete the event."
     end
   end
 
@@ -72,6 +86,7 @@ class HabitsController < ApplicationController
     params.require(:habit).permit(:day_of_week, :implementation_cycle)
   end
 
+
   def calculate_due_date(habit)
     if habit.implementation_cycle.downcase == "daily"
       Date.tomorrow
@@ -80,8 +95,15 @@ class HabitsController < ApplicationController
     end
   end
 
+  # for the total score of the user
+  def update_user_carbon_score(habit)
+    carbon_amount = habit.challenge.saving_carbonamount
+    user = habit.user
+    user.update(carbon_count: user.carbon_count + carbon_amount)
+  end
+
   # might not be needed
-  
+
   # def update_carbon_amount
   #   case @habit.implementation_cycle.downcase
   #   when "daily"

@@ -49,7 +49,7 @@
       <%= pie_chart @pie_data, empty: "No challenges", colors: ["#b00", "#666"] %>
     </div>
   </div>
-  
+
 <%# testing calender for event view working %>
   <div class="calendar-side">
     <h2>Weekly View</h2>
@@ -63,28 +63,18 @@
       <tbody>
         <% (0..6).each do |day_offset| %>
           <% current_day = Date.today + day_offset %>
-          <% events = [] %>
-          <% @user_challenges.each do |habit| %>
-            <% case habit.implementation_cycle.downcase %>
-            <% when "daily" %>
-              <% events << { habit: habit, due_date: current_day } %>
-            <% when "weekly" %>
-              <% events << { habit: habit, due_date: current_day } if current_day.strftime("%A").downcase == habit.day_of_week.downcase %>
-            <% when "monthly" %>
-              <% events << { habit: habit, due_date: current_day } if current_day.strftime("%A").downcase == habit.day_of_week.downcase && current_day.day <= 7 %>
-            <% end %>
-          <% end %>
           <tr>
             <td><%= current_day.strftime("%A") %></td>
             <td>
-              <% events.each do |event| %>
+              <% @events.each do |event| %>
                 <div>
-                  <% if event[:habit].present? %>
-                    <%= event[:habit].challenge.name %>
-                    <%= event[:habit].challenge.saving_carbonamount %>
+                  <% if event.habit.present? && event.status != "accomplished" && (event.due_date - 7) == current_day %>
+                    <%= event.habit.challenge.name %>
+                    <%= event.habit.challenge.saving_carbonamount %>
+                    <%= link_to "Done", event_completed_path(event_id: event.id), onclick: "startAnimation()"%>
                   <% end %>
-                  <button>Edit</button>
-                  <button onclick="startAnimation()">Complete</button>
+                  <%# doesn't work %>
+
                 </div>
               <% end %>
             </td>
@@ -97,6 +87,8 @@
  <div class="tree-side">
   <h1 class="title"><strong>Hooray!</strong></h1>
   <p class="text">Your tree grew today!</p>
+  <p>Your toatal co2 saving:<%= current_user.carbon_count %> </p>
+  <p>Daily saved Co2: ?????</p>
   <lottie-player
     id="tree-animation"
     src="https://assets8.lottiefiles.com/private_files/lf30_jdygihq2.json"

@@ -3,9 +3,9 @@ class DashboardsController < ApplicationController
     @user = current_user
     @habits = current_user.habits
 
-    # change this to current_user.habits
     @user_challenges = @user.habits
-    set_pie_chart_data
+    # set_pie_chart_data
+    @events = current_user.events.where(due_date: Date.today.next_week..(Date.today.next_week + 6))
 
   end
 
