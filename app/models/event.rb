@@ -1,11 +1,18 @@
 class Event < ApplicationRecord
+# added the status  global variables
+# event has a status enum status: { upcoming: 0, overdue: 1, accomplished: 2 }
+
+
+
   belongs_to :habit
+
+  # added the status inclusion
+
   validates :status, presence: true
   validates :due_date, presence: true
 
   has_one :challenge, through: :habit  # Add this association for the access to the event
 
-  # enum status: { upcoming: 0, overdue: 1, accomplished: 2 }
 
   # new def for testing event
   def challenge_name
@@ -25,12 +32,12 @@ class Event < ApplicationRecord
 
     schedule.occurrences(end_date.to_date).each do |date|
       next if date <= Date.current
-
       recurring_event = event.dup
       recurring_event.due_date = date
     # recurring_event.name = event.habit.challenge.name if event.habit.present? # Set the name only if the habit is present
-
       recurring_event.save
     end
   end
+
+
 end

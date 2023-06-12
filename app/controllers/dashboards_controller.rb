@@ -3,8 +3,10 @@ class DashboardsController < ApplicationController
     @user = current_user
     # @habits = current_user.habits
 
-    # change this to current_user.habits
     @user_challenges = @user.habits
+
+    @events = current_user.events.where(due_date: Date.today.next_week..(Date.today.next_week + 6))
+
 
     @user_events_completed = Event.joins(habit: :user).where(users: { id: @user.id }, status: "completed")
     # @user_carbon_completed = Event.joins(habit: :user).where(users: { id: @user.id }, status: "completed")
