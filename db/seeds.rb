@@ -91,7 +91,7 @@ end
 
 # habit as booking for a test user> CREATE MANUALY
 
-day = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+# day = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
 # habit1 = Habit.create!(
 # user: user1, # User.all.sample,

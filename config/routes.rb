@@ -24,5 +24,6 @@ Rails.application.routes.draw do
   resources :events
 
   get 'dashboard', to: "dashboards#index"
-
+  # create a route for the event completion
+  get "event_complete", to: "events#event_completed"
 end

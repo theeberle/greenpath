@@ -58,8 +58,8 @@
                     <%= event[:habit].challenge.name %>
                   <% end %>
                   <button>Edit</button>
-                  <button>Delete</button>
                   <button onclick="startAnimation()">Complete</button>
+                  <%= button_to "Complete", event_completed_path(id: event.id ) %>
                 </div>
               <% end %>
             </td>
