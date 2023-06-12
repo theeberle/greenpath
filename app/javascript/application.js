@@ -3,3 +3,7 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import "@popperjs/core"
 import "bootstrap"
+
+//  For statistics (Chartkick)
+import "chartkick"
+import "Chart.bundle"
