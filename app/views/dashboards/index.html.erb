@@ -9,9 +9,9 @@
             <div class="card-skill-info">
               <%# <%= image_tag(habit.challenge(params[:id]).photo_url) %>
               <div class="card-product-infos">
-                <h2><%= user_challenge.name %></h2>
-                <p class="category-tag"><%= user_challenge.category.name %></p>
-                <p><%= user_challenge.saving_carbonamount %></p>
+                <h2><%= user_challenge.challenge.name %></h2>
+                <p class="category-tag"><%= user_challenge.challenge.category.name %></p>
+                <p><%= user_challenge.challenge.saving_carbonamount %></p>
               </div>
             </div>
           <% end %>
