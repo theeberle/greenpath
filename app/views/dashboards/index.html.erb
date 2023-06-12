@@ -30,10 +30,25 @@
       </div>
     </div>
 
-     <%# Statitsitcs part: %>
-     <%# <div class="statistic-side"> %>
-       <%# <h3>See how you are contributing!</h1> %>
-     <%# </div> %>
+    <%# Statitsitcs part: %>
+    <div class="statistic-side">
+      <h3>-----------------------------</h1>
+      <h3>See how you are contributing:</h1>
+
+      <%# Showing Level: %>
+
+      <%# Column chart of saved Co2: %>
+      <h4>Your saved C02 emission:</h4>
+      <%# <%= column_chart @carbon_data %>
+
+      <%# Column chart of completed events: %>
+      <h4>Your achieved challenges:</h4>
+      <%# <%= column_chart @event_data %>
+
+      <%# Pie chart of chosen categories: %>
+      <h4>Your favourite challenge-categories:</h4>
+      <%= pie_chart @pie_data, empty: "No challenges", colors: ["#b00", "#666"] %>
+    </div>
 
   </div>
 
