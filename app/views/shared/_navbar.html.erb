@@ -1,12 +1,9 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "logolong.png", alt: "Logo" %>
-    <% end %>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <div class="container-fluid">
+    <% if user_signed_in? %>
+      <%= link_to dashboard_path, class: "navbar-brand" do %>
+          <%= image_tag "logolong.png", alt: "Logo" %>
+      <% end %>
 
     <div class="search-form-control form-group">
       <form novalidate="novalidate" class="simple_form search" action="/search_results" accept-charset="UTF-8" method="get">
@@ -37,6 +34,18 @@
         </div>
       </li>
     </ul>
+  <% else %>
+      <%= link_to challenges_path, class: "navbar-brand" do %>
+          <%= image_tag "logolong.png", alt: "Logo" %>
+      <% end %>
 
+  <div class="navbar-buttons">
+    <%= link_to "Log In", new_user_session_path, class: "navbar-button" %>
+    <%= link_to "Sign Up", new_user_registration_path, class: "navbar-button" %>
+  </div>
+
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <% end %>
   </div>
 </div>
