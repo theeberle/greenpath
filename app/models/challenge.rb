@@ -7,4 +7,5 @@ class Challenge < ApplicationRecord
   has_one_attached :picture
   # added to test the challenge completed
   has_many :habits, dependent: :destroy
+  has_many :events, through: :habits
 end

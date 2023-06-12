@@ -14,7 +14,6 @@ class HabitsController < ApplicationController
     @habit.user = current_user
     @habit.challenge = Challenge.find(params[:challenge_id])
     if @habit.save
-      update_carbon_amount
       event = Event.new(habit: @habit, status: "upcoming", due_date: calculate_due_date(@habit))
       event.generate_recurring_events(event, Date.today.next_month.next_month)
       redirect_to dashboard_path
@@ -82,16 +81,18 @@ class HabitsController < ApplicationController
     end
   end
 
-  def update_carbon_amount
-    case @habit.implementation_cycle.downcase
-    when "daily"
-      @challenge.update(saving_carbonamount: @challenge.saving_carbonamount.to_i * 365)
-    when "weekly"
-      @challenge.update(saving_carbonamount: @challenge.saving_carbonamount.to_i * 52)
-    when "monthly"
-      @challenge.update(saving_carbonamount: @challenge.saving_carbonamount.to_i * 12)
-    end
-  end
+  # might not be needed
+  
+  # def update_carbon_amount
+  #   case @habit.implementation_cycle.downcase
+  #   when "daily"
+  #     @challenge.update(saving_carbonamount: @challenge.saving_carbonamount.to_i * 365)
+  #   when "weekly"
+  #     @challenge.update(saving_carbonamount: @challenge.saving_carbonamount.to_i * 52)
+  #   when "monthly"
+  #     @challenge.update(saving_carbonamount: @challenge.saving_carbonamount.to_i * 12)
+  #   end
+  # end
 
 
 end

@@ -11,7 +11,15 @@
               <div class="card-product-infos">
                 <h2><%= user_challenge.challenge.name %></h2>
                 <p class="category-tag"><%= user_challenge.challenge.category.name %></p>
-                <p><%= user_challenge.challenge.saving_carbonamount %></p>
+                <% if user_challenge.implementation_cycle == "Daily" %>
+
+                  <% habit_saving_carbonamount =  user_challenge.challenge.saving_carbonamount * 365 %>
+                <% elsif user_challenge.implementation_cycle == "Weekly" %>
+                  <% habit_saving_carbonamount =  user_challenge.challenge.saving_carbonamount * 52 %>
+                 <% elsif user_challenge.implementation_cycle == "Monthly" %>
+                  <% habit_saving_carbonamount =  user_challenge.challenge.saving_carbonamount * 12 %>
+                 <% end %>
+                <p><%= habit_saving_carbonamount  %></p>
               </div>
             </div>
           <% end %>
@@ -35,18 +43,14 @@
         <% (0..6).each do |day_offset| %>
           <% current_day = Date.today + day_offset %>
           <% events = [] %>
-          <% @user_challenges.each do |user_challenge| %>
-            <% user_challenge.habits.each do |habit| %>
-              <% if habit.present? %>
-                <% case habit.implementation_cycle.downcase %>
-                <% when "daily" %>
-                  <% events << { habit: habit, due_date: current_day } %>
-                <% when "weekly" %>
-                  <% events << { habit: habit, due_date: current_day } if current_day.strftime("%A").downcase == habit.day_of_week.downcase %>
-                <% when "monthly" %>
-                  <% events << { habit: habit, due_date: current_day } if current_day.strftime("%A").downcase == habit.day_of_week.downcase && current_day.day <= 7 %>
-                <% end %>
-              <% end %>
+          <% @user_challenges.each do |habit| %>
+            <% case habit.implementation_cycle.downcase %>
+            <% when "daily" %>
+              <% events << { habit: habit, due_date: current_day } %>
+            <% when "weekly" %>
+              <% events << { habit: habit, due_date: current_day } if current_day.strftime("%A").downcase == habit.day_of_week.downcase %>
+            <% when "monthly" %>
+              <% events << { habit: habit, due_date: current_day } if current_day.strftime("%A").downcase == habit.day_of_week.downcase && current_day.day <= 7 %>
             <% end %>
           <% end %>
           <tr>
@@ -56,6 +60,7 @@
                 <div>
                   <% if event[:habit].present? %>
                     <%= event[:habit].challenge.name %>
+                    <%= event[:habit].challenge.saving_carbonamount %>
                   <% end %>
                   <button>Edit</button>
                   <button onclick="startAnimation()">Complete</button>
