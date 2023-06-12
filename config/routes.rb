@@ -19,11 +19,16 @@ Rails.application.routes.draw do
     resources :habits, only: %i[index create]
   end
 
+
   # to be finished
 
   resources :events
 
   get 'dashboard', to: "dashboards#index"
+  
+  get 'community', to: "communities#index"
+
   # create a route for the event completion
   get "event_complete", to: "events#event_completed"
+
 end
