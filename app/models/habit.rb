@@ -4,6 +4,7 @@ class Habit < ApplicationRecord
 
   belongs_to :challenge
   belongs_to :user
+  has_one :category, through: :challenge
   has_many :events, dependent: :destroy
   validates :implementation_cycle, presence: true
   validates :day_of_week, inclusion: { in: DAYS_OF_WEEK }

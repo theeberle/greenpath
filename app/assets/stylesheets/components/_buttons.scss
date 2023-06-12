@@ -17,3 +17,24 @@
 //      color: $dark-green;
 //    }
 // }
+
+.dash-button {
+  display: inline-block;
+  background-color: #73cc76;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  padding: 10px;
+  height: auto;
+}
+
+.dash-button:hover {
+  background-color: #9df7ac;
+}
+
+.dash-button:active {
+  background-color: #1fa524;
+}

@@ -1,3 +1,5 @@
+<% if user_signed_in? %>
+
 <div class="two-sides-view">
   <div class="challenges-side">
     <h2 class="dashboard-title">Hello, <strong><%= @user.username %></strong>!</h2>
@@ -38,15 +40,15 @@
 
       <%# Column chart of saved Co2: %>
       <h4>Your saved C02 emission:</h4>
-      <%# <%= column_chart @carbon_data %>
+      <%# <%= column_chart @carbon_data, empty: "No challenges", colors: ["#b00", "#666"] %>
 
       <%# Column chart of completed events: %>
       <h4>Your achieved challenges:</h4>
-      <%# <%= column_chart @event_data %>
+      <%= column_chart @event_data, empty: "No challenges", colors: ["#ff5722"] %>
 
       <%# Pie chart of chosen categories: %>
       <h4>Your favourite challenge-categories:</h4>
-      <%= pie_chart @pie_data, empty: "No challenges", colors: ["#b00", "#666"] %>
+      <%= pie_chart @pie_data, empty: "No challenges", colors: ["#ef5350", "#ec407a", "#7e57c2", "#42a5f5", "#26c6da", "#26a69a", "#9ccc65", "#ffee58", "#ffa726", "#ff7043"] %>
     </div>
   </div>
 
@@ -112,3 +114,5 @@
     animation.stop();
   }
 </script>
+
+<% end %>
