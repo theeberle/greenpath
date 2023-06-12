@@ -16,9 +16,11 @@ Rails.application.routes.draw do
     resources :habits, only: %i[index create]
   end
 
+
   # to be finished
 
   resources :events
 
   get 'dashboard', to: "dashboards#index"
+  get 'community', to: "communities#index"
 end
