@@ -1,3 +1,5 @@
+<% if user_signed_in? %>
+
 <div class="two-sides-view">
   <div class="challenges-side">
     <h2 class="dashboard-title">Hello, <strong><%= @user.username %></strong>!</h2>
@@ -120,3 +122,5 @@
     animation.stop();
   }
 </script>
+
+<% end %>
