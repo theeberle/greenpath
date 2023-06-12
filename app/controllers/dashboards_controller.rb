@@ -2,9 +2,11 @@ class DashboardsController < ApplicationController
   def index
     @user = current_user
     @habits = current_user.habits
-    @user_challenges = @user.challenges
-    # @user_challenges_habits = @habits.challenges
+
+    # change this to current_user.habits
+    @user_challenges = @user.habits
     set_pie_chart_data
+
   end
 
   private

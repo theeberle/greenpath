@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Greenpath Ranking</h1>
+  <ul class="responsive-table">
+    <li class="table-header">
+      <div class="col col-1">Rank</div>
+      <div class="col col-2">User</div>
+      <div class="col col-3">City</div>
+      <div class="col col-4">Carbon Saved</div>
+      <div class="col col-5">Level</div>
+    </li>
+    <% @users.each.with_index(1) do |user, index| %>
+    <li class="table-row <%= 'active' if user == current_user %>">
+      <div class="col col-1" data-label="Rank"><%= index %></div>
+      <div class="col col-2" data-label="Username"><%= user.username %></div>
+      <div class="col col-3" data-label="City"><%= user.city %></div>
+      <div class="col col-4" data-label="Amount"><%= user.carbon_count %></div>
+      <div class="col col-5" data-label="Level">Badges</div>
+    </li>
+    <% end %>
+  </ul>
+</div>

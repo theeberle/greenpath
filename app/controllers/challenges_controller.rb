@@ -18,4 +18,6 @@ class ChallengesController < ApplicationController
     @challenge = Challenge.find(params[:id])
     @habit = Habit.new
   end
+
+
 end
