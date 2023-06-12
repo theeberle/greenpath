@@ -1,4 +1,5 @@
 <div class="container">
+  <% if user_signed_in? %>
 
 
   <div class="two-sides-view">
@@ -88,33 +89,68 @@
 
         <%# Showing Level: %>
 
-        <%# Column chart of saved Co2: %>
-        <h4>Your saved C02 emission:</h4>
-        <%# <%= column_chart @carbon_data %>
 
-        <%# Column chart of completed events: %>
-        <h4>Your achieved challenges:</h4>
-        <%# <%= column_chart @event_data %>
+      <%# Column chart of saved Co2: %>
+      <h4>Your saved C02 emission:</h4>
+      <%# <%= column_chart @carbon_data, empty: "No challenges", colors: ["#b00", "#666"] %>
 
-        <%# Pie chart of chosen categories: %>
-        <h4>Your favourite challenge-categories:</h4>
-        <%= pie_chart @pie_data, empty: "No challenges", colors: ["#b00", "#666"] %>
-      </div>
+      <%# Column chart of completed events: %>
+      <h4>Your achieved challenges:</h4>
+      <%= column_chart @event_data, empty: "No challenges", colors: ["#ff5722"] %>
+
+      <%# Pie chart of chosen categories: %>
+      <h4>Your favourite challenge-categories:</h4>
+      <%= pie_chart @pie_data, empty: "No challenges", colors: ["#ef5350", "#ec407a", "#7e57c2", "#42a5f5", "#26c6da", "#26a69a", "#9ccc65", "#ffee58", "#ffa726", "#ff7043"] %>
     </div>
-
-  <div class="tree-side">
-   <h1 class="title"><strong>Hooray!</strong></h1>
-   <p class="text">Your tree grew today!</p>
-   <lottie-player
-      id="tree-animation"
-      src="https://assets8.lottiefiles.com/private_files/lf30_jdygihq2.json"
-      background="transparent"
-      speed="1"
-      style="width: 600px; height: 600px;"
-      loop>
-   </lottie-player>
   </div>
 
+<%# testing calender for event view working %>
+  <div class="calendar-side">
+    <h2>Weekly View</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Events</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% (0..6).each do |day_offset| %>
+          <% current_day = Date.today + day_offset %>
+          <tr>
+            <td><%= current_day.strftime("%A") %></td>
+            <td>
+              <% @events.each do |event| %>
+                <div>
+                  <% if event.habit.present? && event.status != "accomplished" && (event.due_date - 7) == current_day %>
+                    <%= event.habit.challenge.name %>
+                    <%= event.habit.challenge.saving_carbonamount %>
+                    <%= link_to "Done", event_completed_path(event_id: event.id), onclick: "startAnimation()"%>
+                  <% end %>
+                  <%# doesn't work %>
+
+                </div>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+ <div class="tree-side">
+  <h1 class="title"><strong>Hooray!</strong></h1>
+  <p class="text">Your tree grew today!</p>
+  <p>Your toatal co2 saving:<%= current_user.carbon_count %> </p>
+  <p>Daily saved Co2: ?????</p>
+  <lottie-player
+    id="tree-animation"
+    src="https://assets8.lottiefiles.com/private_files/lf30_jdygihq2.json"
+    background="transparent"
+    speed="1"
+    style="width: 600px; height: 600px;"
+    loop
+  ></lottie-player>
 </div>
 
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
@@ -129,3 +165,5 @@
     animation.stop();
   }
 </script>
+
+<% end %>
