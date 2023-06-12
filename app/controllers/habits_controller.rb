@@ -22,7 +22,6 @@ class HabitsController < ApplicationController
     end
   end
 
-
   def update
     @habit = Habit.find(params[:id])
     if @habit.update(habit_params)
