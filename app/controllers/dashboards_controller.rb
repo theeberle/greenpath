@@ -5,7 +5,9 @@ class DashboardsController < ApplicationController
 
     # change this to current_user.habits
     @user_challenges = @user.habits
-    set_pie_chart_data
+    
+    # commented out as the pgae was breaking
+    # set_pie_chart_data
 
   end
 
