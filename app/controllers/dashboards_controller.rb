@@ -5,6 +5,7 @@ class DashboardsController < ApplicationController
 
     @user_challenges = @user.habits
 
+
     @events = current_user.events.where(due_date: Date.today.next_week..(Date.today.next_week + 6))
 
 
@@ -30,6 +31,7 @@ class DashboardsController < ApplicationController
   def set_event_chart_data
     @sum_challenges_day = @user_events_completed.group(:day_of_week).count # Adds up data of all Mondays, not current?
     @event_data = []
+
 
     @sum_challenges_day.map do |day_of_week, count|
       @event_data << [day_of_week, count]
