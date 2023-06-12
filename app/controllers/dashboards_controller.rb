@@ -5,8 +5,7 @@ class DashboardsController < ApplicationController
 
     # change this to current_user.habits
     @user_challenges = @user.habits
-    set_pie_chart_data
-
+    # set_pie_chart_data
   end
 
   private
@@ -27,5 +26,4 @@ class DashboardsController < ApplicationController
   # def set_event_chart_data
   #   @event_data = []
   # end
-
 end
