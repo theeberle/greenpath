@@ -1,14 +1,28 @@
-<div data-controller="carousel">
+<div data-controller="carousel" class="carousel-container">
+    <div class="scroll-button scroll-button-left">
+      <i class="fa-solid fa-angles-left"></i>
+    </div>
   <div class="categories-carousel <%= params[:category].blank? ? 'active' : '' %>">
-
-
     <div class="category-container-carousel">
-      <%= link_to "All", challenges_path, class: "category-filter-button #{params[:category].blank? ? 'active' : ''}" %>
-        <% @categories.each do |category| %>
-          <%= link_to category.name, challenges_path(category: category.id), class: "category-filter-button #{params[:category] == category.id.to_s ? 'active' : ''}" %>
+      <div class="category-item">
+        <%= link_to challenges_path, class: "category-filter-button #{params[:category].blank? ? 'active' : ''} filter-indicator-left" do %>
+          <i class="fa-solid fa-border-all"></i>
+         Check All
         <% end %>
+      </div>
+      <% @categories.each_with_index do |category, index| %>
+        <div class="category-item">
+          <%= link_to challenges_path(category: category.id), class: "category-filter-button #{params[:category] == category.id.to_s ? 'active' : ''}" do %>
+            <i class="fa <%= "fa-thin-icon-class-#{index}" %>"></i>
+            <span class="category-name"><%= category.name %></span>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
+    <div class="scroll-button scroll-button-right">
+      <i class="fa-solid fa-angles-right"></i>
+    </div>
 </div>
 
 <div class="two-sides">
@@ -16,7 +30,7 @@
     <div>
       <% if params[:category].blank? %>
         <h1 class="title">All Categories</h1>
-        <p class="text">General challenges impacting the climate.</p>
+        <p class="text">Climate pollution caused by CO2 emissions has reached critical levels this year, posing a significant threat to our planet. As CO2 accumulates in the atmosphere, it traps heat, leading to global warming and climate change. This escalating crisis is resulting in rising sea levels, extreme weather events, ecosystem disruptions, and adverse impacts on human health and livelihoods. Urgent action is needed to curb CO2 emissions, transition to renewable energy sources, and implement sustainable practices across all sectors. Together, we can mitigate the effects of climate change and secure a sustainable future for generations to come.</p>
       <% else %>
         <h1 class="title"><%= @category_name %></h1>
         <p class="text"><%= @category_description %></p>
@@ -34,7 +48,7 @@
         <% challenges.each do |challenge| %>
           <div class="challenge-card">
             <%= link_to '', challenge_path(challenge), class: 'card-link'  %>
-            <img class="challenge-image" src="https://images.unsplash.com/photo-1502101872923-d48509bff386?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80" alt="Challenge-Image">
+            <img class="challenge-image" src="<%= cl_image_path(challenge.picture.key) %>" alt="Challenge Image">
             <div class="challenge-details">
               <h2 class="challenge-title"><%= challenge.name %></h2>
               <p class="carbon-footprint"><%= challenge.saving_carbonamount %> kg CO2e</p>
@@ -45,7 +59,7 @@
         <% @challenges.each do |challenge| %>
           <div class="challenge-card">
           <%= link_to '', challenge_path(challenge), class: 'card-link'  %>
-            <img class="challenge-image" src="https://images.unsplash.com/photo-1502101872923-d48509bff386?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80" alt="Challenge-Image">
+            <img class="challenge-image" src="<%= cl_image_path(challenge.picture.key) %>" alt="Challenge Image">
             <div class="challenge-details">
               <h2 class="challenge-title"><%= challenge.name %></h2>
               <p class="carbon-footprint"><%= challenge.saving_carbonamount %> kg CO2e</p>

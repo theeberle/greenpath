@@ -1,0 +1,37 @@
+<%# old with buttons%>
+
+  <div data-controller="carousel">
+     <div class="categories-carousel <%= params[:category].blank? ? 'active' : '' %>">
+        <div class="category-container-carousel">
+            <%= link_to "All", challenges_path, class: "category-filter-button #{params[:category].blank? ? 'active' : ''}" %>
+              <% @categories.each do |category| %>
+                <%= link_to category.name, challenges_path(category: category.id), class: "category-filter-button #{params[:category] == category.id.to_s ? 'active' : ''}" %>
+              <% end %>
+    </div>
+  </div>
+</div>
+
+
+<%# mine %>
+
+<div data-controller="carousel">
+  <div class="categories-carousel <%= params[:category].blank? ? 'active' : '' %>">
+    <div class="category-container-carousel">
+            <div class="category-item">
+
+    <%= link_to challenges_path, class: "category-filter-button #{params[:category].blank? ? 'active' : ''}" do %>
+  <i class="fa-solid fa-border-all"></i>
+  All
+<% end %>
+</div>
+      <% @categories.each_with_index do |category, index| %>
+        <div class="category-item">
+          <%= link_to challenges_path(category: category.id), class: "category-filter-button #{params[:category] == category.id.to_s ? 'active' : ''}" do %>
+            <i class="fa <%= "fa-thin-icon-class-#{index}" %>"></i>
+            <span class="category-name"><%= category.name %></span>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
