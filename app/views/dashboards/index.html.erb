@@ -43,7 +43,7 @@
       <div class="calendar-side div1" data-toggle-target="div1">
         <h2>Weekly View</h2>
         <div class="calendar-carousel" data-target="carousel.carousel">
-          <table>
+            <table>
             <thead>
               <tr>
                 <th>Day</th>
@@ -56,12 +56,13 @@
                 <tr>
                   <td><%= current_day.strftime("%A") %></td>
                   <td>
-                    <% events = @events.select { |event| event.habit.present? && event.status != "accomplished" && (event.due_date - 7) == current_day } %>
-                    <% events.each do |event| %>
+                    <% @events.each do |event| %>
                       <div>
-                        <%= event.habit.challenge.name %>
-                        <%= event.habit.challenge.saving_carbonamount %>
-                        <%= link_to "Done", event_completed_path(event_id: event.id), onclick: "startAnimation()" %>
+                        <% if event.habit.present? && event.status != "accomplished" && (event.due_date - 7) == current_day %>
+                          <%= event.habit.challenge.name %>
+                          <%= event.habit.challenge.saving_carbonamount %>
+                          <%= link_to "Done", event_completed_path(event_id: event.id), onclick: "startAnimation()"%>
+                        <% end %>
                       </div>
                     <% end %>
                   </td>
