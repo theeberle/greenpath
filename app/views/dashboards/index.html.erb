@@ -61,7 +61,10 @@
                         <% if event.habit.present? && event.status != "accomplished" && (event.due_date - 7) == current_day %>
                           <%= event.habit.challenge.name %>
                           <%= event.habit.challenge.saving_carbonamount %>
-                          <%= link_to "Done", event_completed_path(event_id: event.id), onclick: "startAnimation()"%>
+
+                          <%= link_to "Done", event_completed_path(event_id: event.id)%>
+
+
                         <% end %>
                       </div>
                     <% end %>
@@ -96,31 +99,19 @@
   </div>
 
  <div class="tree-side">
-  <h1 class="title"><strong>Hooray!</strong></h1>
-  <p class="text">Your tree grew today!</p>
-  <p>Your toatal co2 saving:<%= current_user.carbon_count %> </p>
-  <p>Daily saved Co2: ?????</p>
-  <lottie-player
-    id="tree-animation"
-    src="https://assets8.lottiefiles.com/private_files/lf30_jdygihq2.json"
-    background="transparent"
-    speed="1"
-    style="width: 600px; height: 600px;"
-    loop
-  ></lottie-player>
+     <%= render "dashboards/tree" %> <%# this is the tree animation %>
 </div>
 
-<%# <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-<script>
-  function startAnimation() {
-    var animation = document.getElementById("tree-animation");
-    animation.play();
-  }
+   
+<%# tree 1%>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<%# tree 2 %>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<%# tree 3- big %>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
-  function stopAnimation() {
-    var animation = document.getElementById("tree-animation");
-    animation.stop();
-  }
-</script> %>
+<%# <script>
+
+<%# <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
 <% end %>

@@ -1,12 +1,18 @@
 class DashboardsController < ApplicationController
   def index
     @user = current_user
-    # @habits = current_user.habits
-
     @user_challenges = @user.habits
-
-
     @events = current_user.events.where(due_date: Date.today.next_week..(Date.today.next_week + 6))
+
+    # add the 3 different animations depending on the user's points level
+    if current_user.carbon_count < 100
+      @tree = "https://assets4.lottiefiles.com/packages/lf20_e3ux72wx.json"
+    elsif current_user.carbon_count > 100 && current_user.carbon_count < 500
+      @tree = "https://assets4.lottiefiles.com/private_files/lf30_I6qCjk.json"
+    else
+      @tree = "https://assets8.lottiefiles.com/private_files/lf30_jdygihq2.json"
+    end
+    # tree logic end
 
 
     @user_events_completed = Event.joins(habit: :user).where(users: { id: @user.id }, status: "accomplished")
