@@ -34,13 +34,16 @@
       <% end %>
     </div>
 
-      <button data-action="click->toggle#toggleDiv">Toggle</button>
+      <div class="toggle">
+        <input type="checkbox" id="temp" data-action="click->toggle#toggleDiv">
+        <label for="temp"></label>
+      </div>
 
       <%# testing calender for event view working %>
       <div class="calendar-side div1" data-toggle-target="div1">
         <h2>Weekly View</h2>
         <div class="calendar-carousel" data-target="carousel.carousel">
-          <table>
+            <table>
             <thead>
               <tr>
                 <th>Day</th>
@@ -58,7 +61,10 @@
                         <% if event.habit.present? && event.status != "accomplished" && (event.due_date - 7) == current_day %>
                           <%= event.habit.challenge.name %>
                           <%= event.habit.challenge.saving_carbonamount %>
+
                           <%= link_to "Done", event_completed_path(event_id: event.id)%>
+
+
                         <% end %>
                       </div>
                     <% end %>
@@ -96,6 +102,7 @@
      <%= render "dashboards/tree" %> <%# this is the tree animation %>
 </div>
 
+   
 <%# tree 1%>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 <%# tree 2 %>
@@ -104,16 +111,7 @@
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
 <%# <script>
-  function startAnimation() {
-    var animation = document.getElementById("tree-animation");
-    animation.play();
-  }
 
-  function stopAnimation() {
-    var animation = document.getElementById("tree-animation");
-    animation.stop();
-  }
-</script> %>
-<%# onclick="startAnimation() %>
+<%# <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
 <% end %>
