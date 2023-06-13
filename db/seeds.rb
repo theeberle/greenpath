@@ -113,10 +113,24 @@ habit1_clara = Habit.create!(
   user: user1, # User.all.sample,
   implementation_cycle: "Daily",
   challenge: Challenge.all.sample, #challenge1
-  day_of_week: "Tuesday"
+  day_of_week: "Monday"
 )
 
 habit2_clara = Habit.create!(
+  user: user1, # User.all.sample,
+  implementation_cycle: "Daily",
+  challenge: Challenge.all.sample, #challenge1
+  day_of_week: "Monday"
+)
+
+habit3_clara = Habit.create!(
+  user: user1, # User.all.sample,
+  implementation_cycle: "Daily",
+  challenge: Challenge.all.sample, #challenge1
+  day_of_week: "Monday"
+)
+
+habit4_clara = Habit.create!(
   user: user1, # User.all.sample,
   implementation_cycle: "Daily",
   challenge: Challenge.all.sample, #challenge1
@@ -178,6 +192,67 @@ event9_clara = Event.create!(
   status: "accomplished",
   due_date: "07/06/2023 11:00"
 )
+
+event10_clara = Event.create!(
+  habit: habit3_clara,
+  status: "accomplished",
+  due_date: "13/06/2023 11:00"
+)
+
+event11_clara = Event.create!(
+  habit: habit4_clara,
+  status: "accomplished",
+  due_date: "13/06/2023 11:00"
+)
+
+event12_clara = Event.create!(
+  habit: habit3_clara,
+  status: "accomplished",
+  due_date: "12/06/2023 11:00"
+)
+
+event13_clara = Event.create!(
+  habit: habit3_clara,
+  status: "accomplished",
+  due_date: "11/06/2023 11:00"
+)
+
+event14_clara = Event.create!(
+  habit: habit3_clara,
+  status: "accomplished",
+  due_date: "10/06/2023 11:00"
+)
+
+event15_clara = Event.create!(
+  habit: habit4_clara,
+  status: "accomplished",
+  due_date: "10/06/2023 11:00"
+)
+
+event16_clara = Event.create!(
+  habit: habit3_clara,
+  status: "accomplished",
+  due_date: "09/06/2023 11:00"
+)
+
+event17_clara = Event.create!(
+  habit: habit3_clara,
+  status: "accomplished",
+  due_date: "08/06/2023 11:00"
+)
+
+event18_clara = Event.create!(
+  habit: habit3_clara,
+  status: "accomplished",
+  due_date: "07/06/2023 11:00"
+)
+
+event19_clara = Event.create!(
+  habit: habit3_clara,
+  status: "accomplished",
+  due_date: "06/06/2023 11:00"
+)
+
 
 puts "created #{Habit.count}(habits), and #{Event.count}(events)"
 ## skip for now
