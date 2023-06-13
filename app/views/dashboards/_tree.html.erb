@@ -1,0 +1,13 @@
+<div class="tree-container">
+  <h1 class="title"><strong>Hooray!</strong></h1>
+    <p class="text">Your tree grew today!</p>
+    <p>Your toatal co2 saving:<%= current_user.carbon_count.to_i %> </p>
+      <lottie-player
+        id="tree-animation"
+        src="<%= @tree %>"
+        background="transparent"
+        speed="1"
+        style="width: 600px; height: 600px;"
+        autoplay
+    ></lottie-player>
+</div>
