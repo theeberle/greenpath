@@ -3,13 +3,16 @@ class DashboardsController < ApplicationController
     @user = current_user
 
     @user_challenges = @user.habits
-    
-    @events = current_user.events.where(due_date: Date.today.next_week..(Date.today.next_week + 6))
+
+    @events = current_user.events.where(due_date: Date.today..Date.today.next_week)
+  
     
     @past_events = current_user.events.where(due_date: Date.today.last_week..Date.today, status: "accomplished")
-    
+
     # add the 3 different animations depending on the user's points level
-    if current_user.carbon_count < 100
+    if current_user.carbon_count == 0
+      @tree = "https://assets4.lottiefiles.com/packages/lf20_o32VvNhBlv.json"
+    elsif current_user.carbon_count < 100
       @tree = "https://assets4.lottiefiles.com/packages/lf20_e3ux72wx.json"
     elsif current_user.carbon_count > 100 && current_user.carbon_count < 500
       @tree = "https://assets4.lottiefiles.com/private_files/lf30_I6qCjk.json"

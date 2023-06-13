@@ -58,12 +58,11 @@
                   <td>
                     <% @events.each do |event| %>
                       <div>
-                        <% if event.habit.present? && event.status != "accomplished" && (event.due_date - 7) == current_day %>
+                        <% if event.habit.present? && event.status != "accomplished" && (event.due_date) == current_day %>
                           <%= event.habit.challenge.name %>
                           <%= event.habit.challenge.saving_carbonamount %>
 
                           <%= link_to "Done", event_completed_path(event_id: event.id)%>
-
 
                         <% end %>
                       </div>
@@ -101,13 +100,5 @@
  <div class="tree-side">
      <%= render "dashboards/tree" %> <%# this is the tree animation %>
 </div>
-
-
-<%# tree 1%>
-<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-<%# tree 2 %>
-<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-<%# tree 3- big %>
-<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
  <% end %>
+ </div>
