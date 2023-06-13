@@ -58,7 +58,7 @@
                   <td>
                     <% @events.each do |event| %>
                       <div>
-                        <% if event.habit.present? && event.status != "accomplished" && (event.due_date - 7) == current_day %>
+                        <% if event.habit.present? && event.status != "accomplished" && (event.due_date) == current_day %>
                           <%= event.habit.challenge.name %>
                           <%= event.habit.challenge.saving_carbonamount %>
 
