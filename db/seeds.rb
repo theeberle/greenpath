@@ -89,6 +89,8 @@ CSV.foreach(Rails.root.join('db', 'challenges.csv'), headers: true, col_sep: ";"
   challenge.save!
 end
 
+
+
 # habit as booking for a test user> CREATE MANUALY
 
 # day = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
@@ -107,20 +109,77 @@ end
 # day_of_week: day.sample
 # )
 
+habit1_clara = Habit.create!(
+  user: user1, # User.all.sample,
+  implementation_cycle: "Daily",
+  challenge: Challenge.all.sample, #challenge1
+  day_of_week: "Tuesday"
+)
+
+habit2_clara = Habit.create!(
+  user: user1, # User.all.sample,
+  implementation_cycle: "Daily",
+  challenge: Challenge.all.sample, #challenge1
+  day_of_week: "Monday"
+)
+
 # this is for the booked habit that a person can manipulate on their dashboard
 
-# event= Event.create!(
-# habit: habit1,
-# status: ["completed", "overdue", "pending"].sample,
-# due_date: DateTime.strptime("08/06/2023 11:00", "%m/%d/%Y %H:%M"),
-# )
-# event2= Event.create!(
-# habit: habit1,
-# status: ["completed", "overdue", "pending"].sample,
-# due_date: DateTime.strptime("08/06/2023 11:00", "%m/%d/%Y %H:%M"),
-# )
+event1_clara = Event.create!(
+  habit: habit1_clara,
+  status: "accomplished",
+  due_date: "13/06/2023 11:00"
+)
 
+event2_clara = Event.create!(
+  habit: habit2_clara,
+  status: "accomplished",
+  due_date: "13/06/2023 11:00"
+)
 
+event3_clara = Event.create!(
+  habit: habit1_clara,
+  status: "accomplished",
+  due_date: "12/06/2023 11:00"
+)
+
+event4_clara = Event.create!(
+  habit: habit2_clara,
+  status: "accomplished",
+  due_date: "11/06/2023 11:00"
+)
+
+event5_clara = Event.create!(
+  habit: habit1_clara,
+  status: "accomplished",
+  due_date: "10/06/2023 11:00"
+)
+
+event6_clara = Event.create!(
+  habit: habit2_clara,
+  status: "accomplished",
+  due_date: "10/06/2023 11:00"
+)
+
+event7_clara = Event.create!(
+  habit: habit1_clara,
+  status: "accomplished",
+  due_date: "09/06/2023 11:00"
+)
+
+event8_clara = Event.create!(
+  habit: habit2_clara,
+  status: "accomplished",
+  due_date: "08/06/2023 11:00"
+)
+
+event9_clara = Event.create!(
+  habit: habit2_clara,
+  status: "accomplished",
+  due_date: "07/06/2023 11:00"
+)
+
+puts "created #{Habit.count}(habits), and #{Event.count}(events)"
 ## skip for now
 
 # friendship= Friendship.create!(
