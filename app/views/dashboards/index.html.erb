@@ -34,7 +34,10 @@
       <% end %>
     </div>
 
-      <button data-action="click->toggle#toggleDiv">Toggle</button>
+      <div class="toggle">
+        <input type="checkbox" id="temp" data-action="click->toggle#toggleDiv">
+        <label for="temp"></label>
+      </div>
 
       <%# testing calender for event view working %>
       <div class="calendar-side div1" data-toggle-target="div1">
@@ -91,7 +94,6 @@
       <%= pie_chart @pie_data, empty: "No challenges", colors: ["#ef5350", "#ec407a", "#7e57c2", "#42a5f5", "#26c6da", "#26a69a", "#9ccc65", "#ffee58", "#ffa726", "#ff7043"] %>
     </div>
   </div>
-
 
  <div class="tree-side">
   <h1 class="title"><strong>Hooray!</strong></h1>
