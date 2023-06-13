@@ -20,6 +20,7 @@
 
 .dash-button {
   display: inline-block;
+  padding: 8px 16px;
   background-color: #73cc76;
   color: #ffffff;
   border: none;
@@ -33,6 +34,8 @@
 
 .dash-button:hover {
   background-color: #9df7ac;
+  color: white;
+  box-shadow: .5px;
 }
 
 .dash-button:active {
