@@ -40,7 +40,7 @@
       <div class="calendar-side div1" data-toggle-target="div1">
         <h2>Weekly View</h2>
         <div class="calendar-carousel" data-target="carousel.carousel">
-          <table>
+            <table>
             <thead>
               <tr>
                 <th>Day</th>
@@ -50,28 +50,16 @@
             <tbody>
               <% (0..6).each do |day_offset| %>
                 <% current_day = Date.today + day_offset %>
-                <% events = [] %>
-                <% @user_challenges.each do |habit| %>
-                  <% case habit.implementation_cycle.downcase %>
-                  <% when "daily" %>
-                    <% events << { habit: habit, due_date: current_day } %>
-                  <% when "weekly" %>
-                    <% events << { habit: habit, due_date: current_day } if current_day.strftime("%A").downcase == habit.day_of_week.downcase %>
-                  <% when "monthly" %>
-                    <% events << { habit: habit, due_date: current_day } if current_day.strftime("%A").downcase == habit.day_of_week.downcase && current_day.day <= 7 %>
-                  <% end %>
-                <% end %>
                 <tr>
                   <td><%= current_day.strftime("%A") %></td>
                   <td>
-                    <% events.each do |event| %>
+                    <% @events.each do |event| %>
                       <div>
-                        <% if event[:habit].present? %>
-                          <%= event[:habit].challenge.name %>
-                          <%= event[:habit].challenge.saving_carbonamount %>
+                        <% if event.habit.present? && event.status != "accomplished" && (event.due_date - 7) == current_day %>
+                          <%= event.habit.challenge.name %>
+                          <%= event.habit.challenge.saving_carbonamount %>
+                          <%= link_to "Done", event_completed_path(event_id: event.id), onclick: "startAnimation()"%>
                         <% end %>
-                        <button>Edit</button>
-                        <button onclick="startAnimation()">Complete</button>
                       </div>
                     <% end %>
                   </td>
@@ -104,39 +92,6 @@
     </div>
   </div>
 
-<%# testing calender for event view working %>
-  <div class="calendar-side">
-    <h2>Weekly View</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Day</th>
-          <th>Events</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% (0..6).each do |day_offset| %>
-          <% current_day = Date.today + day_offset %>
-          <tr>
-            <td><%= current_day.strftime("%A") %></td>
-            <td>
-              <% @events.each do |event| %>
-                <div>
-                  <% if event.habit.present? && event.status != "accomplished" && (event.due_date - 7) == current_day %>
-                    <%= event.habit.challenge.name %>
-                    <%= event.habit.challenge.saving_carbonamount %>
-                    <%= link_to "Done", event_completed_path(event_id: event.id), onclick: "startAnimation()"%>
-                  <% end %>
-                  <%# doesn't work %>
-
-                </div>
-              <% end %>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
 
  <div class="tree-side">
   <h1 class="title"><strong>Hooray!</strong></h1>
@@ -153,7 +108,7 @@
   ></lottie-player>
 </div>
 
-<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<%# <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 <script>
   function startAnimation() {
     var animation = document.getElementById("tree-animation");
@@ -164,6 +119,6 @@
     var animation = document.getElementById("tree-animation");
     animation.stop();
   }
-</script>
+</script> %>
 
 <% end %>
