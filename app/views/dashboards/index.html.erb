@@ -1,7 +1,6 @@
 <div class="container">
   <% if user_signed_in? %>
 
-
   <div class="two-sides-view">
 
     <div class="challenges-side" data-controller="toggle">
@@ -39,36 +38,29 @@
         <label for="temp"></label>
       </div>
 
-      <%# testing calender for event view working %>
+      <%# calender for event view %>
       <div class="calendar-side div1" data-toggle-target="div1">
-        <h2>Weekly View</h2>
-        <div class="calendar-carousel" data-target="carousel.carousel">
-          <table>
-            <thead>
-              <tr>
-                <th>Day</th>
-                <th>Events</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% (0..6).each do |day_offset| %>
-                <% current_day = Date.today + day_offset %>
-                <tr>
-                  <td><%= current_day.strftime("%A") %></td>
-                  <td>
-                    <% events = @events.select { |event| event.habit.present? && event.status != "accomplished" && (event.due_date - 7) == current_day } %>
-                    <% events.each do |event| %>
-                      <div>
-                        <%= event.habit.challenge.name %>
-                        <%= event.habit.challenge.saving_carbonamount %>
-                        <%= link_to "Done", event_completed_path(event_id: event.id), onclick: "startAnimation()" %>
-                      </div>
-                    <% end %>
-                  </td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
+        <div class="calendar-carousel" data-target="carousel.carousel" data-controller="carousel">
+          <h2>Weekly View</h2>
+          <div class="carousel-inner" data-carousel-target="carouselInner">
+            <% (0..6).each do |day_offset| %>
+            <% current_day = Date.today + day_offset %>
+              <div class="carousel-day-content" data-action="click->carousel#filterEvents" data-day="<%= current_day.strftime("%A") %>">
+                <%= current_day.strftime("%A") %>
+                <% events = @events.select { |event| event.habit.present? && event.status != "accomplished" && (event.due_date - 7) == current_day } %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <%= console %>
+        <div class="events-container">
+          <% @events.each do |event| %>
+            <div class="event" data-day="<%= event.due_date.strftime("%A") %>">
+              <%= event.habit.challenge.name %>
+              <%= event.habit.challenge.saving_carbonamount %>
+              <%= link_to "Done", event_completed_path(event_id: event.id), onclick: "startAnimation()" %>
+            </div>
+          <% end %>
         </div>
       </div>
 
@@ -94,19 +86,21 @@
     </div>
   </div>
 
- <div class="tree-side">
-  <h1 class="title"><strong>Hooray!</strong></h1>
-  <p class="text">Your tree grew today!</p>
-  <p>Your toatal co2 saving:<%= current_user.carbon_count %> </p>
-  <p>Daily saved Co2: ?????</p>
-  <lottie-player
-    id="tree-animation"
-    src="https://assets8.lottiefiles.com/private_files/lf30_jdygihq2.json"
-    background="transparent"
-    speed="1"
-    style="width: 600px; height: 600px;"
-    loop
-  ></lottie-player>
+  <div class="tree-side">
+    <h1 class="title"><strong>Hooray!</strong></h1>
+    <p class="text">Your tree grew today!</p>
+    <p>Your toatal co2 saving:<%= current_user.carbon_count %> </p>
+    <p>Daily saved Co2: ?????</p>
+    <lottie-player
+      id="tree-animation"
+      src="https://assets8.lottiefiles.com/private_files/lf30_jdygihq2.json"
+      background="transparent"
+      speed="1"
+      style="width: 600px; height: 600px;"
+      loop
+    ></lottie-player>
+  </div>
+  <% end %>
 </div>
 
 <%# <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
@@ -121,5 +115,3 @@
     animation.stop();
   }
 </script> %>
-
-<% end %>

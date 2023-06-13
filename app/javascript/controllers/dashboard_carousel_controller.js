@@ -1,41 +1,36 @@
-import { Controller } from "@hotwired/stimulus"
+import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-  static targets = ["day", "carousel"];
+  static targets = ["carouselInner", "carouselDayContent", "event"];
 
   connect() {
-    this.filterDays();
+    this.showCurrentSlide();
   }
 
-  filterDays() {
-    const totalDays = 10; // Total number of upcoming days to display
-    const currentDate = new Date();
+  showCurrentSlide() {
+    const carouselItems = Array.from(this.carouselInnerTarget.children);
+    carouselItems.forEach((item, index) => {
+      item.classList.toggle("active", index === this.currentIndex);
+    });
+  }
 
-    this.dayTargets.forEach((day) => {
-      const dayOffset = parseInt(day.dataset.dayOffset);
-      const currentDay = new Date(currentDate.getTime() + dayOffset * 24 * 60 * 60 * 1000);
+  filterEvents(event) {
+    const clickedDayContent = event.currentTarget;
+    const selectedDay = clickedDayContent.dataset.day;
 
-      if (dayOffset >= 0 && dayOffset < totalDays) {
-        day.style.display = "block";
-        day.querySelector("td").textContent = currentDay.toLocaleDateString("en-US", { weekday: "long" });
-
-        const events = day.querySelectorAll(".event");
-        events.forEach((event) => {
-          const eventDate = new Date(event.dataset.eventDate);
-          if (eventDate.toDateString() === currentDay.toDateString()) {
-            event.style.display = "block";
-          } else {
-            event.style.display = "none";
-          }
-        });
-      } else {
-        day.style.display = "none";
-      }
+    // Hide all events
+    this.eventTargets.forEach((event) => {
+      event.classList.add("hidden");
     });
 
-    // Initialize the carousel if it's available
-    if (this.hasCarouselTarget) {
-      this.carouselTarget.classList.add("initialized");
-    }
+    // Show events for the selected day
+    const filteredEvents = this.eventTargets.filter((event) => {
+      return event.dataset.day === selectedDay;
+    });
+
+    filteredEvents.forEach((event) => {
+      event.classList.remove("hidden");
+    });
   }
 }
+
