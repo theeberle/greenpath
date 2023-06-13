@@ -12,11 +12,12 @@
 
 @import 'components/banner';
 @import'components/habit_form';
+@import 'components/tree';
 
 
 
 // To repair later with future push of navbar
 @import "pages/index";
 @import 'navbar';
-
+@import 'footer';
 @import "pages/challnege_show";

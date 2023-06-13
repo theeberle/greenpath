@@ -40,27 +40,39 @@
 
       <%# calender for event view %>
       <div class="calendar-side div1" data-toggle-target="div1">
-        <div class="calendar-carousel" data-target="carousel.carousel" data-controller="carousel">
-          <h2>Weekly View</h2>
-          <div class="carousel-inner" data-carousel-target="carouselInner">
-            <% (0..6).each do |day_offset| %>
-            <% current_day = Date.today + day_offset %>
-              <div class="carousel-day-content" data-action="click->carousel#filterEvents" data-day="<%= current_day.strftime("%A") %>">
-                <%= current_day.strftime("%A") %>
-                <% events = @events.select { |event| event.habit.present? && event.status != "accomplished" && (event.due_date - 7) == current_day } %>
-              </div>
-            <% end %>
-          </div>
-        </div>
-        <%= console %>
-        <div class="events-container">
-          <% @events.each do |event| %>
-            <div class="event" data-day="<%= event.due_date.strftime("%A") %>">
-              <%= event.habit.challenge.name %>
-              <%= event.habit.challenge.saving_carbonamount %>
-              <%= link_to "Done", event_completed_path(event_id: event.id), onclick: "startAnimation()" %>
-            </div>
-          <% end %>
+
+        <h2>Weekly View</h2>
+        <div class="calendar-carousel" data-target="carousel.carousel">
+            <table>
+            <thead>
+              <tr>
+                <th>Day</th>
+                <th>Events</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% (0..6).each do |day_offset| %>
+                <% current_day = Date.today + day_offset %>
+                <tr>
+                  <td><%= current_day.strftime("%A") %></td>
+                  <td>
+                    <% @events.each do |event| %>
+                      <div>
+                        <% if event.habit.present? && event.status != "accomplished" && (event.due_date - 7) == current_day %>
+                          <%= event.habit.challenge.name %>
+                          <%= event.habit.challenge.saving_carbonamount %>
+
+                          <%= link_to "Done", event_completed_path(event_id: event.id)%>
+
+
+                        <% end %>
+                      </div>
+                    <% end %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
         </div>
       </div>
 
@@ -74,7 +86,7 @@
 
       <%# Column chart of saved Co2: %>
       <h4>Your saved C02 emission:</h4>
-      <%# <%= column_chart @carbon_data, empty: "No challenges", colors: ["#b00", "#666"] %>
+      <%= column_chart @display, empty: "No challenges", colors: ["#ff5722"] %>
 
       <%# Column chart of completed events: %>
       <h4>Your achieved challenges:</h4>
@@ -86,32 +98,16 @@
     </div>
   </div>
 
-  <div class="tree-side">
-    <h1 class="title"><strong>Hooray!</strong></h1>
-    <p class="text">Your tree grew today!</p>
-    <p>Your toatal co2 saving:<%= current_user.carbon_count %> </p>
-    <p>Daily saved Co2: ?????</p>
-    <lottie-player
-      id="tree-animation"
-      src="https://assets8.lottiefiles.com/private_files/lf30_jdygihq2.json"
-      background="transparent"
-      speed="1"
-      style="width: 600px; height: 600px;"
-      loop
-    ></lottie-player>
-  </div>
-  <% end %>
+ <div class="tree-side">
+     <%= render "dashboards/tree" %> <%# this is the tree animation %>
 </div>
 
-<%# <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-<script>
-  function startAnimation() {
-    var animation = document.getElementById("tree-animation");
-    animation.play();
-  }
 
-  function stopAnimation() {
-    var animation = document.getElementById("tree-animation");
-    animation.stop();
-  }
-</script> %>
+<%# tree 1%>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<%# tree 2 %>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<%# tree 3- big %>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+ <% end %>
