@@ -1,22 +1,23 @@
-<h3>Showing results for "<%= params[:query] %>"</h3>
+<div class="results-container">
 
-<div class="challenges-grid-search">
+  <div class="challenges-grid-search">
 
-  <% @challenges.each do |challenge| %>
+    <% @challenges.each do |challenge| %>
 
-    <div class="challenge-card">
-      <%= link_to '', challenge_path(challenge), class: 'card-link'  %>
-      <img class="challenge-image" src="<%= cl_image_path(challenge.picture.key) %>" alt="Challenge-Image">
-      <div class="challenge-details">
-        <h2 class="challenge-title"><%= challenge.name %></h2>
-        <p class="carbon-footprint"><%= challenge.saving_carbonamount.to_i %> kg CO2e</p>
+      <div class="challenge-card">
+        <%= link_to '', challenge_path(challenge), class: 'card-link'  %>
+        <img class="challenge-image" src="<%= cl_image_path(challenge.picture.key) %>" alt="Challenge-Image">
+        <div class="challenge-details">
+          <h2 class="challenge-title"><%= challenge.name %></h2>
+          <p class="carbon-footprint"><%= challenge.saving_carbonamount.to_i %> kg CO2e</p>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
 
-  <% @users.each do |user| %>
-    <div>
-      <h5><%= link_to user.username, user_path(user) %></h5>
-      <p><%= user.profile_description %></p>
-    </div>
-  <% end %>
+    <% @users.each do |user| %>
+      <div>
+        <h5><%= link_to user.username, user_path(user) %></h5>
+        <p><%= user.profile_description %></p>
+      </div>
+    <% end %>
+  </div>
