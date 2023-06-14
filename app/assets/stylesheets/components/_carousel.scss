@@ -4,7 +4,8 @@
 .carousel-container {
   position: relative;
   width: 90%;
-  margin: auto;
+  margin: 0 auto;
+  // border: 1px solid blue;
 }
 
 .scroll-button {
@@ -15,6 +16,7 @@
   border: none;
   cursor: pointer;
   position: center;
+  // border: 1px solid green;
 }
 
 .scroll-button-left {
@@ -23,6 +25,7 @@
 
 .scroll-button-right {
   right: 0;
+  // margin-left: 10px
 }
 /// carousles styles
 
@@ -30,19 +33,23 @@
   padding: 10px;
   margin-bottom: 20px;
   overflow-x: scroll;
-  scrollbar-width: none; /* Hide the scrollbar for modern browsers */
+  scrollbar-color: $light-grey;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin; /* Hide the scrollbar for modern browsers */
   -ms-overflow-style: none; /* Hide the scrollbar for Internet Explorer and Edge */
   white-space: nowrap;
   scroll-snap-type: x mandatory;
   display: flex; /* Add display:flex */
   align-items: center; /* Add align-items:center */
   position: relative; /* Add relative positioning */
+  // border: 1px solid green;
 }
 
 .category-container-carousel {
   display: inline-flex;
   gap: 10px; /* Adjust the gap between category items */
   scroll-snap-type: x mandatory;
+  // border: 1px solid yellow;
 }
 
 
@@ -52,6 +59,7 @@
   height: 50px; /* Adjust the height of each category item */
   scroll-snap-align: start;
   text-align: center;
+  // border: 1px solid green;
 }
 
 .category-item i {
@@ -98,6 +106,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
+  // margin: 0;
   width: 50px; /* Adjust the width of the indicators */
   pointer-events: none;
   opacity: 0.7;
