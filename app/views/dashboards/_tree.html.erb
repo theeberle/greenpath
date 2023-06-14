@@ -1,3 +1,4 @@
+      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 <div class="tree-container">
   <div class="salutation">
     <h1 class="yay"><strong>Hooray!</strong></h1>
@@ -6,13 +7,14 @@
     <div class="tree-animation">
       <lottie-player
         id="tree-animation"
-        src="<%= @tree %>"
+        src="<%= tree %>"
         background="transparent"
         speed="1"
-        style="width: 600px; height: 600px;"
-        autoplay>
-        </lottie-player>
-    </div>
+        style="width: 300px; height: 300px;"
+        autoplay
+    ></lottie-player>
+     </div>
+       <p>Badge: <i class="fa-solid fa-<%= badge %>"></i></p>
 </div>
   <%# no tree %>
       <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
