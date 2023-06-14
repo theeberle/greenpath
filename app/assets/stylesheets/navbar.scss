@@ -9,17 +9,17 @@
 
 .navbar-brand {
   font-weight: bold;
-  color: #f2e8d7;
+  color: white;
 }
 
 .nav-link {
-  color: #f2e8d7;
+  color: white;
   font-weight: 500;
   margin-right: 10px;
 }
 
 .nav-link:hover {
-  color: #ffcc99;
+  color: $light-green;
 }
 
 
@@ -42,8 +42,8 @@
 .navbar-button {
   display: inline-block;
   padding: 8px 16px;
-  background-color: #73cc76;
-  color: #ffffff;
+  background-color: $dark-green;
+  color: white;
   border: none;
   border-radius: 4px;
   text-align: center;
@@ -55,13 +55,13 @@
 }
 
 .navbar-button:hover {
-  background-color: #9df7ac;
+  background-color: $light-green;
   color: white;
   box-shadow: .5px;
 }
 
 .navbar-button:active {
-  background-color: #3e8e41;
+  background-color: $light-green;
 }
 
 .recenter {
@@ -96,7 +96,7 @@
 }
 
 .navigation a:hover {
-  color: #9df7ac;
+  color: dark-green;
   opacity: 1;
 }
 
@@ -110,7 +110,7 @@
   position: relative;
   width: 60px;
   height: 60px;
-  background: #fff;
+  background: white;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -123,7 +123,7 @@
 }
 .navigation .userBx .username {
   white-space: nowrap;
-  color: #555;
+  color: $grey-blue;
   font-size: 1.1em;
 }
 .navigation .userBx .imgBx {
@@ -131,7 +131,7 @@
   min-width: 60px;
   height: 60px;
   overflow: hidden;
-  background: #000;
+  background: $dark-blue;
   border-radius: 50%;
   border: 10px solid #fff;
 }
@@ -161,10 +161,10 @@
   margin: 5px 0;
   font-size: 1.1em;
   text-decoration: none;
-  color: #555;
+  color: $dark-blue;
 }
 .menu li a:hover {
-  color: #9df7ac;
+  color: $dark-green;
 }
 .menu li a ion-icon {
   font-size: 1.5em;
@@ -174,7 +174,7 @@
   position: relative;
   width: 60px;
   height: 60px;
-  background: #fff;
+  background: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -185,9 +185,9 @@
   position: absolute;
   width: 32px;
   height: 2px;
-  background: #555;
+  background: $grey-blue;
   transform: translateY(-10px);
-  box-shadow: 0 10px #555;
+  box-shadow: 0 10px $grey-blue;
   transition: 0.5s;
 }
 
@@ -196,13 +196,13 @@
   position: absolute;
   width: 32px;
   height: 2px;
-  background: #555;
+  background: $grey-blue;
   transform: translateY(10px);
   transition: 0.5s;
 }
 .navigation.active .menuToggle::before {
   transform: translateY(0px) rotate(45deg);
-  box-shadow: 0 0 #555;
+  box-shadow: 0 0 $grey-blue;
 }
 .navigation.active .menuToggle::after {
   transform: translateY(0px) rotate(-45deg);
