@@ -8,10 +8,11 @@
   gap: 10px;
 }
 
+
 .tab {
   padding: 10px;
   border-radius: 20px;
-  background-color: #e0e0e0;
+  background-color: white;
   border: none;
   cursor: pointer;
 }
@@ -24,8 +25,13 @@
 .calendar-day-button {
   font-size: 15px;
   padding: 5px 10px;
+
 }
 
+// tab
+.tab-content {
+  margin-top: 10px;
+}
 // events
 
 .event {
@@ -35,9 +41,11 @@
 }
 
 .event-image {
-  width: 75px; /* Adjust the size as needed */
-  height: 75px; /* Adjust the size as needed */
-  margin-right: 10px; /* Adjust the spacing between image and details as needed */
+  height: 80px;
+  width: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 16px;
 }
 
 .event-details {
@@ -45,6 +53,7 @@
   align-items: center;
   justify-content: space-between;
   flex-grow: 1;
+
 }
 
 .event-title {
@@ -52,24 +61,22 @@
   font-size: 16px; /* Adjust the font size as needed */
 }
 
-.event-category {
-  margin: 0;
-  font-size: 14px; /* Adjust the font size as needed */
-}
-
-.event-carbon-saving {
-  margin: 0;
-  text-align: center;
-  font-size: 18px; /* Adjust the font size as needed */
-  flex-grow: 1;
-  display: inline-block;
-  padding: 10px 10px;
-  background-color: $green;
-  color: $white;
-  border-radius: 4px;
-}
-
 .event-button {
   flex-grow: 1;
   text-align: right;
+  font-size: 50px;
+  margin-right: 10px;
+}
+
+.event-foot{
+  margin-left: 20%;
+}
+
+.done-button i {
+  color: $green; /* Change the color to green */
+  transition: $dark-green 0.3s ease; /* Add transition effect for smooth color change */
+}
+
+.done-button i:hover {
+  color: $gray; /* Change the color on hover */
 }

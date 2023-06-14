@@ -1,7 +1,3 @@
-.container {
-  border-color: red;
-
-}
 
 .two-sides-view {
   border: 1px solid green;
@@ -14,13 +10,16 @@
 
 .switching-container {
   border: 1px solid orange;
-  margin: 5px;
   min-height: 100vh;
   width: 60%;
   position: sticky;
   top: 0;
-  padding: 20px;
+  padding: 15px;
+  margin: 5px;
 
+}
+.enrty-message {
+  border: 1px solid red;
 }
 
 // TOGGLER button TBD
@@ -28,10 +27,12 @@
 // .toggle-top-right {
 //   align-self: flex-start;
 //   justify-self: flex-end;
+//   border: 1px solid red;
 // }
 
 .toggle {
   position: relative;
+
 }
 
 .toggle input[type="checkbox"] {
@@ -89,15 +90,12 @@
 .dashboard-title {
   justify-content: left;
   align-items: center;
-  height: 90px;
-  padding: 8px;
   color: black;
 }
 
 .dashboard-text {
   justify-content: left;
   align-items: center;
-  padding: 8px;
   color: black;
 }
 .challenge-no{

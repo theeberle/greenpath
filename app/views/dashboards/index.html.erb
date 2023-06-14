@@ -1,14 +1,15 @@
-<div class="">
+<div class="full-container">
   <% if user_signed_in? %>
     <div class="two-sides-view">
       <div class="switching-container" data-controller="toggle">
+        
+         <h2 class="dashboard-title">Hello, <strong><%= @user.username %></strong>!</h2>
+         <h3 class="dashboard-text">You have <strong class="challenge-no"><%= @user_challenges.count %></strong> active challenges!</h3>
         <div class="toggle toggle-top-right">
           <input type="checkbox" id="temp" data-action="click->toggle#toggleDiv">
           <label for="temp"></label>
         </div>
         <div data-controller="toggle1">
-          <h2 class="dashboard-title">Hello, <strong><%= @user.username %></strong>!</h2>
-          <h3 class="dashboard-text">You have <strong class="challenge-no"><%= @user_challenges.count %></strong> active challenges!</h3>
           <div class="box-1">
             <div data-action="click->toggle1#fire" class="btn btn-one">
               <span>See all my challenges</span>
@@ -18,6 +19,7 @@
             <%= render "dashboards/user_habits" %>
           </div>
         </div>
+
       <%# calender for event view %>
       <div class="calendar-side div1" data-toggle-target="div1">
           <%= render "calendar" %>

@@ -20,13 +20,13 @@
           <div class="event-details">
             <div class="event-content">
               <h3 class="event-title"><%= event.habit.challenge.name %></h3>
-              <p class="event-category"><%= event.habit.challenge.category.name %></p>
+              <p class="category-tag"><%= event.habit.challenge.category.name %></p>
             </div>
-            <span class="event-carbon-saving"><%= event.habit.challenge.saving_carbonamount %></span>
+            <span class="carbon-footprint event-foot"><%= event.habit.challenge.saving_carbonamount.to_i %> Co2</span>
             <div class="event-button">
               <%= link_to event_completed_path(event_id: event.id), class: "done-button", onclick: "startAnimation()" do %>
                 <i class="fa-solid fa-circle-check"></i>
-                Done
+                <span class="sr-only">Done</span> <!-- Screen reader-only text for accessibility -->
               <% end %>
             </div>
           </div>
