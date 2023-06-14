@@ -4,7 +4,9 @@ class DashboardsController < ApplicationController
 
     @user_challenges = @user.habits
 
-    @events = current_user.events.where(due_date: Date.today..Date.today.next_week)
+    date_range = Date.today..(Date.today + 7)
+    @events = current_user.events.where(due_date: date_range)
+
 
     @past_events = current_user.events.where(due_date: Date.today.last_week..Date.today, status: "accomplished")
 
