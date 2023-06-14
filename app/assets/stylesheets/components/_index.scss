@@ -8,15 +8,16 @@
 @import "background";
 @import "buttons";
 @import "challenge_cards";
-@import "dashboard_carousel";
-@import "toggle";
 
-@import "event";
 
 @import "footer";
 @import "navbar";
 
 @import 'banner';
 @import 'habit_form';
-@import 'tree';
 
+// dashboard
+@import "toggle";
+@import "event";
+@import 'tree';
+@import 'calendar';
