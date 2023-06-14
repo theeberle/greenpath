@@ -1,34 +1,22 @@
 class DashboardsController < ApplicationController
+  include ApplicationHelper
+  
   def index
     @user = current_user
 
     @user_challenges = @user.habits
 
+    @score = carbon_badge(@user.carbon_count)
 
     date_range = Date.today..(Date.today + 7)
     @events = current_user.events.where(due_date: date_range)
 
-
     @past_events = current_user.events.where(due_date: Date.today.last_week..Date.today, status: "accomplished")
-
-    # add the 3 different animations depending on the user's points level
-    if current_user.carbon_count == 0
-      @tree = "https://assets4.lottiefiles.com/packages/lf20_o32VvNhBlv.json"
-    elsif current_user.carbon_count < 100
-      @tree = "https://assets4.lottiefiles.com/packages/lf20_e3ux72wx.json"
-    elsif current_user.carbon_count > 100 && current_user.carbon_count < 500
-      @tree = "https://assets4.lottiefiles.com/private_files/lf30_I6qCjk.json"
-    else
-      @tree = "https://assets8.lottiefiles.com/private_files/lf30_jdygihq2.json"
-    end
-    # tree logic end
-
 
     @user_events_completed = Event.joins(habit: :user).where(users: { id: @user.id }, status: "accomplished")
     # @user_carbon_completed = Event.joins(habit: :user).where(users: { id: @user.id }, status: "accomplished")
 
     @weekdays = Date::DAYNAMES.rotate(Date.today.wday)
-
 
     set_pie_chart_data
     set_carbon_chart_data
