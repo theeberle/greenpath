@@ -17,6 +17,7 @@ class HabitsController < ApplicationController
       event = Event.new(habit: @habit, status: "upcoming", due_date: calculate_due_date(@habit))
       event.save
       event.generate_recurring_events(event, Date.today.next_month.next_month)
+      
       redirect_to dashboard_path
     else
       render "challenges/show"
