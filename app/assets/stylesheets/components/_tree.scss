@@ -6,12 +6,14 @@
   text-align: center;
   height: 100vh;
   position: sticky;
+  overflow: hidden; /* to hide anything that's not fitting */
 }
 .salutation{
   height: 30%;
+  margin-bottom: 5px;
 }
 .yay {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   margin-top: 5px;
   color: $dark-blue;
 }
@@ -19,7 +21,7 @@
   color: $green;
   font-weight: bold;
 }
-.tree-animation{
+.tree-part{
   object-fit: cover;
   height: 70%;
   display: flex;
