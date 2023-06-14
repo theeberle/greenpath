@@ -95,6 +95,19 @@
   cursor: pointer;
 }
 
+// .navhover {
+//   z-index: 10;
+//   background-color: transparent;
+// }
+
+// .navhover:hover {
+//   background-color: $hover-color;
+// }
+
+.navigation:before:hover {
+    background-color: $light-green;
+}
+
 .navigation a:hover {
   color: $dark-green;
   opacity: 1;
@@ -106,6 +119,7 @@
   transition: width 0.5s, height 0.5s;
   transition-delay: 0s, 0.75s;
 }
+
 .navigation .userBx {
   position: relative;
   width: 60px;
@@ -117,15 +131,18 @@
   transition: 0.5s;
   transition-delay: 0.5s;
 }
+
 .navigation.active .userBx {
   width: calc(100% - 60px);
   transition-delay: 0s;
 }
+
 .navigation .userBx .username {
   white-space: nowrap;
   color: $grey-blue;
   font-size: 1.1em;
 }
+
 .navigation .userBx .imgBx {
   position: relative;
   min-width: 60px;
@@ -135,6 +152,11 @@
   border-radius: 50%;
   border: 10px solid #fff;
 }
+
+.navigation .userBx .imgBx:hover {
+  background-color: red;
+}
+
 .navigation .userBx .imgBx img {
   position: absolute;
   top: 0;
@@ -143,6 +165,7 @@
   height: 100%;
   object-fit: cover;
 }
+
 .menu {
   position: absolute;
   width: 100%;
@@ -151,9 +174,11 @@
   padding: 20px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
+
 .menu li {
   list-style: none;
 }
+
 .menu li a {
   display: flex;
   align-items: center;
@@ -163,9 +188,11 @@
   text-decoration: none;
   color: $dark-blue;
 }
+
 .menu li a:hover {
   color: $dark-green;
 }
+
 .menu li a ion-icon {
   font-size: 1.5em;
 }
@@ -200,10 +227,20 @@
   transform: translateY(10px);
   transition: 0.5s;
 }
+
 .navigation.active .menuToggle::before {
   transform: translateY(0px) rotate(45deg);
   box-shadow: 0 0 $grey-blue;
 }
+
 .navigation.active .menuToggle::after {
   transform: translateY(0px) rotate(-45deg);
 }
+
+// .navigation:not(.active) .menuToggle:hover {
+//   background-color: red;
+// }
+
+// // .navigation:not(.active) .userBx:hover {
+// //   background-color: red;
+// // }
