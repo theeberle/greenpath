@@ -150,48 +150,6 @@
 // }
 
 
-
-.calendar-side {
-  display: flex;
-  flex-direction: column;
-}
-
-.calendar-tabs {
-  display: flex;
-  gap: 10px;
-}
-
-.tab {
-  padding: 10px;
-  background-color: #e0e0e0;
-  border: none;
-  cursor: pointer;
-}
-
-.calendar-events {
-  display: flex;
-  overflow-x: scroll;
-}
-
-.events-container {
-  display: flex;
-}
-
-.event-column {
-  flex: 1;
-  padding: 10px;
-}
-
-.event-column h3 {
-  text-align: center;
-}
-
-.event-column > div {
-  margin-bottom: 10px;
-  padding: 10px;
-  background-color: #e0e0e0;
-}
-
 // button for all challenges
 .btn-one {
   color: $gray;
