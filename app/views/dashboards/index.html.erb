@@ -6,7 +6,6 @@
           <input type="checkbox" id="temp" data-action="click->toggle#toggleDiv">
           <label for="temp"></label>
         </div>
-
         <div data-controller="toggle1">
           <h2 class="dashboard-title">Hello, <strong><%= @user.username %></strong>!</h2>
           <h3 class="dashboard-text">You have <strong class="challenge-no"><%= @user_challenges.count %></strong> active challenges!</h3>
@@ -15,43 +14,12 @@
             <%= render "dashboards/user_habits" %>
           </div>
         </div>
+      <%# calender for event view %>
+      <div class="calendar-side div1" data-toggle-target="div1">
+          <%= render "calendar" %>
+      </div>
 
-        <%# testing calender for event view working %>
-        <div class="calendar-side div1" data-toggle-target="div1">
-          <h2>Weekly View</h2>
-          <div class="calendar-carousel" data-target="carousel.carousel">
-              <table>
-              <thead>
-                <tr>
-                  <th>Day</th>
-                  <th>Events</th>
-                </tr>
-              </thead>
-              <tbody>
-                <% (0..6).each do |day_offset| %>
-                  <% current_day = Date.today + day_offset %>
-                  <tr>
-                    <td><%= current_day.strftime("%A") %></td>
-                    <td>
-                      <% @events.each do |event| %>
-                        <div>
-                          <% if event.habit.present? && event.status != "accomplished" && (event.due_date) == current_day %>
-                            <%= event.habit.challenge.name %>
-                            <%= event.habit.challenge.saving_carbonamount %>
-
-                            <%= link_to "Done", event_completed_path(event_id: event.id)%>
-
-                          <% end %>
-                        </div>
-                      <% end %>
-                    </td>
-                  </tr>
-                <% end %>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
+ 
         <%# Statistics part: %>
         <div class="statistic-side div2 d-none" data-toggle-target="div2">
           <h3>See how you are contributing:</h3>

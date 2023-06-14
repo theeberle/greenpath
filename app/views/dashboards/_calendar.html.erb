@@ -1,0 +1,31 @@
+<h2>Weekly View</h2>
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <% @weekdays.each_with_index do |weekday, index| %>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link <%= index.zero? ? 'active' : '' %>" id="<%= weekday.downcase %>-tab" data-bs-toggle="tab" data-bs-target="#<%= weekday.downcase %>-tab-pane" type="button" role="tab" aria-controls="<%= weekday.downcase %>-tab-pane" aria-selected="<%= index.zero? ? 'true' : 'false' %>">
+        <%= weekday %>
+      </button>
+    </li>
+  <% end %>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <% @weekdays.each_with_index do |weekday, index| %>
+    <div class="tab-pane fade <%= index.zero? ? 'show active' : '' %>" id="<%= weekday.downcase %>-tab-pane" role="tabpanel" aria-labelledby="<%= weekday.downcase %>-tab" tabindex="0">
+      <!-- Content for <%= weekday %> tab -->
+      <% events = @events.select { |event| event.habit.present? && event.status != "accomplished" && event.due_date.strftime("%A").casecmp(weekday).zero? } %>
+      <% events.each do |event| %>
+        <div class="event">
+          <img class="event-image" src="<%= cl_image_path(event.habit.challenge.picture.key) %>" alt="Event Image">
+          <%= event.habit.challenge.name %>
+          <%= event.habit.challenge.category.name %>
+          <%= event.habit.challenge.saving_carbonamount %>
+          <%= link_to event_completed_path(event_id: event.id), class: "done-button", onclick: "startAnimation()" do %>
+            <i class="fa-solid fa-circle-check"></i>
+            Done
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

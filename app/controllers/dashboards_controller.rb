@@ -4,6 +4,7 @@ class DashboardsController < ApplicationController
 
     @user_challenges = @user.habits
 
+
     date_range = Date.today..(Date.today + 7)
     @events = current_user.events.where(due_date: date_range)
 
@@ -21,6 +22,13 @@ class DashboardsController < ApplicationController
       @tree = "https://assets8.lottiefiles.com/private_files/lf30_jdygihq2.json"
     end
     # tree logic end
+
+
+    @user_events_completed = Event.joins(habit: :user).where(users: { id: @user.id }, status: "accomplished")
+    # @user_carbon_completed = Event.joins(habit: :user).where(users: { id: @user.id }, status: "accomplished")
+
+    @weekdays = Date::DAYNAMES.rotate(Date.today.wday)
+
 
     set_pie_chart_data
     set_carbon_chart_data
