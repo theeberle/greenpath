@@ -43,7 +43,9 @@
       </div>
 
       <div class="tree-side">
-        <%= render "dashboards/tree" %> <%# this is the tree animation %>
+        <%= render "dashboards/tree",
+        tree: @score[:tree],
+        badge: @score[:icon] %> <%# this is the tree animation %>
       </div>
     </div>
   <% end %>
