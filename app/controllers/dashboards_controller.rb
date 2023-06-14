@@ -3,11 +3,11 @@ class DashboardsController < ApplicationController
     @user = current_user
 
     @user_challenges = @user.habits
-    
+
     @events = current_user.events.where(due_date: Date.today.next_week..(Date.today.next_week + 6))
-    
+
     @past_events = current_user.events.where(due_date: Date.today.last_week..Date.today, status: "accomplished")
-    
+
     # add the 3 different animations depending on the user's points level
     if current_user.carbon_count < 100
       @tree = "https://assets4.lottiefiles.com/packages/lf20_e3ux72wx.json"
@@ -22,6 +22,7 @@ class DashboardsController < ApplicationController
     @user_events_completed = Event.joins(habit: :user).where(users: { id: @user.id }, status: "accomplished")
     # @user_carbon_completed = Event.joins(habit: :user).where(users: { id: @user.id }, status: "accomplished")
 
+    @weekdays = Date::DAYNAMES.rotate(Date.today.wday)
 
     set_pie_chart_data
     set_carbon_chart_data

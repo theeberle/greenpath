@@ -6,6 +6,6 @@ class AddCredentialsToUser < ActiveRecord::Migration[7.0]
     add_column :users, :age_range, :integer
     add_column :users, :city, :string
     add_column :users, :profile_description, :text
-    add_column :users, :carbon_count, :float
+    add_column :users, :carbon_count, :float, default: 0
   end
 end

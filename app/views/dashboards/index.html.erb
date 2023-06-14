@@ -40,40 +40,7 @@
 
       <%# calender for event view %>
       <div class="calendar-side div1" data-toggle-target="div1">
-
-        <h2>Weekly View</h2>
-        <div class="calendar-carousel" data-target="carousel.carousel">
-            <table>
-            <thead>
-              <tr>
-                <th>Day</th>
-                <th>Events</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% (0..6).each do |day_offset| %>
-                <% current_day = Date.today + day_offset %>
-                <tr>
-                  <td><%= current_day.strftime("%A") %></td>
-                  <td>
-                    <% @events.each do |event| %>
-                      <div>
-                        <% if event.habit.present? && event.status != "accomplished" && (event.due_date - 7) == current_day %>
-                          <%= event.habit.challenge.name %>
-                          <%= event.habit.challenge.saving_carbonamount %>
-
-                          <%= link_to "Done", event_completed_path(event_id: event.id)%>
-
-
-                        <% end %>
-                      </div>
-                    <% end %>
-                  </td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
-        </div>
+          <%= render "calendar" %>
       </div>
 
       <%# Statistics part: %>
@@ -98,16 +65,17 @@
     </div>
   </div>
 
- <div class="tree-side">
+  <div class="tree-side">
      <%= render "dashboards/tree" %> <%# this is the tree animation %>
-</div>
+  </div>
 
 
-<%# tree 1%>
-<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-<%# tree 2 %>
-<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-<%# tree 3- big %>
-<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <%# tree 1%>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <%# tree 2 %>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <%# tree 3- big %>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
  <% end %>
+</div>

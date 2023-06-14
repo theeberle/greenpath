@@ -39,7 +39,7 @@
       <div class="navigation" data-controller="menu-toggle" data-menu-toggle-target="navigation" data-action="click->menu-toggle#toggle">
         <div class="userBx">
           <div class="imgBx">
-            <% if current_user %>
+            <% if current_user && current_user.profile_picture.attached? %>
             <%= cl_image_tag current_user.profile_picture.key, width: 50, height: 50, class: "rounded-circle" %>
           <% else %>
             <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",  width: 50, height: 50, class: "rounded-circle"  %>
