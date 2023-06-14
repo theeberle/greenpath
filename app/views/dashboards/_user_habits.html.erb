@@ -1,0 +1,25 @@
+<div class="challenges-side">
+    <% if @user_challenges.any? %>
+   <div class="dashboard-card">
+          <% @user_challenges.each do |user_challenge| %>
+            <div class="card-skill-info">
+              <%# <%= image_tag(habit.challenge(params[:id]).photo_url) %>
+              <div class="card-product-infos">
+                <h2><%= user_challenge.challenge.name %></h2>
+                <p class="category-tag"><%= user_challenge.challenge.category.name %></p>
+                <% if user_challenge.implementation_cycle == "Daily" %>
+                  <% habit_saving_carbonamount =  user_challenge.challenge.saving_carbonamount * 365 %>
+                <% elsif user_challenge.implementation_cycle == "Weekly" %>
+                  <% habit_saving_carbonamount =  user_challenge.challenge.saving_carbonamount * 52 %>
+                 <% elsif user_challenge.implementation_cycle == "Monthly" %>
+                  <% habit_saving_carbonamount =  user_challenge.challenge.saving_carbonamount * 12 %>
+                 <% end %>
+                <p><%= habit_saving_carbonamount %></p>
+              </div>
+            </div>
+          <% end %>
+     </div>
+      <% else %>
+        <p>You don't have any challenges yet!</p>
+      <% end %>
+</div>

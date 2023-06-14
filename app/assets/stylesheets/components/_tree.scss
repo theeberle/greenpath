@@ -1,3 +1,21 @@
-.tree-container{
-  background-color: white;
+// .tree-container {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-direction: column;
+//   text-align: center;
+//   height: 100vh;
+//   position: sticky;
+
+// }
+
+.tree-animation{
+  object-fit: cover;
+  //   height: 60%;
+  //   width: 100%;
+  //   width: 300px;
+  //   border-radius: 8px;
+  display: flex;
+  //   justify-content: left;
+  align-items: center;
 }

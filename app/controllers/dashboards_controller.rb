@@ -4,12 +4,17 @@ class DashboardsController < ApplicationController
 
     @user_challenges = @user.habits
 
-    @events = current_user.events.where(due_date: Date.today.next_week..(Date.today.next_week + 6))
+
+    date_range = Date.today..(Date.today + 7)
+    @events = current_user.events.where(due_date: date_range)
+
 
     @past_events = current_user.events.where(due_date: Date.today.last_week..Date.today, status: "accomplished")
 
     # add the 3 different animations depending on the user's points level
-    if current_user.carbon_count < 100
+    if current_user.carbon_count == 0
+      @tree = "https://assets4.lottiefiles.com/packages/lf20_o32VvNhBlv.json"
+    elsif current_user.carbon_count < 100
       @tree = "https://assets4.lottiefiles.com/packages/lf20_e3ux72wx.json"
     elsif current_user.carbon_count > 100 && current_user.carbon_count < 500
       @tree = "https://assets4.lottiefiles.com/private_files/lf30_I6qCjk.json"
@@ -24,6 +29,7 @@ class DashboardsController < ApplicationController
 
     @weekdays = Date::DAYNAMES.rotate(Date.today.wday)
 
+
     set_pie_chart_data
     set_carbon_chart_data
     set_event_chart_data
@@ -32,10 +38,11 @@ class DashboardsController < ApplicationController
   private
 
   def set_carbon_chart_data
+    @sorted_carbon = @past_events.sort_by{ |event| event.due_date }
     @display = {
     }
 
-    @past_events.each do |event|
+    @sorted_carbon.each do |event|
       date = event.due_date.strftime("%a")
       if @display[date].nil?
         @display[date] = event.challenge.saving_carbonamount
@@ -46,11 +53,17 @@ class DashboardsController < ApplicationController
   end
 
   def set_event_chart_data
-    @sum_challenges_day = @past_events.group(:due_date).count
-    @event_data = []
+    @sorted_events = @past_events.sort_by{ |event| event.due_date }
+    @event_data = {
+    }
 
-    @sum_challenges_day.map do |due_date, count|
-      @event_data << [due_date.strftime("%a"), count]
+    @sorted_events.each do |event|
+      date = event.due_date.strftime("%a")
+      if @event_data[date].nil?
+        @event_data[date] = 1
+      else
+        @event_data[date] += 1
+      end
     end
   end
 

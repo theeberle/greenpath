@@ -15,7 +15,9 @@ class HabitsController < ApplicationController
     @habit.challenge = Challenge.find(params[:challenge_id])
     if @habit.save
       event = Event.new(habit: @habit, status: "upcoming", due_date: calculate_due_date(@habit))
+      event.save
       event.generate_recurring_events(event, Date.today.next_month.next_month)
+      
       redirect_to dashboard_path
     else
       render "challenges/show"
@@ -89,9 +91,9 @@ class HabitsController < ApplicationController
 
   def calculate_due_date(habit)
     if habit.implementation_cycle.downcase == "daily"
-      Date.tomorrow
+      Date.today
     else
-      Date.today.next_week(habit.day_of_week.downcase.to_sym)
+      Date.today.next_week(habit.day_of_week.downcase.to_sym) - 7
     end
   end
 

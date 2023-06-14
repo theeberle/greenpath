@@ -1,38 +1,114 @@
+.container {
+  border-color: red;
+
+}
+
+.two-sides-view {
+  border: 1px solid green;
+  // margin: 5px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 100%;
+}
+
+.switching-container {
+  border: 1px solid orange;
+  margin: 5px;
+  min-height: 100vh;
+  width: 60%;
+  position: sticky;
+  top: 0;
+  padding: 20px;
+
+}
+
+// TOGGLER button TBD
+
+// .toggle-top-right {
+//   align-self: flex-start;
+//   justify-self: flex-end;
+// }
+
+.toggle {
+  position: relative;
+}
+
+.toggle input[type="checkbox"] {
+  display: none;
+}
+
+.toggle label {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.toggle label::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -25px;
+  transform: translateX(-60%);
+  width: 50px;
+  height: 25px;
+  background-color: #ccc;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+}
+
+.toggle input[type="checkbox"]:checked + label::before {
+  background-color: $green; /* Update with your desired color */
+}
+
+.toggle label::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -15px;
+  transform: translateX(-60%);
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.toggle input[type="checkbox"]:checked + label::after {
+  transform: translateX(-100%);
+}
+
+// TOGGLER button TBD
+
+
+
+
 .dashboard-title {
   justify-content: left;
   align-items: center;
   height: 90px;
-  padding: 16px;
-  color: $rose;
+  padding: 8px;
+  color: black;
 }
 
 .dashboard-text {
   justify-content: left;
   align-items: center;
-  padding: 16px;
+  padding: 8px;
   color: black;
 }
-
-.two-sides-view {
-  // border: 1px solid green;
-  margin: 5px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.switching-container {
-  // border: 1px solid orange;
-  margin: 5px;
-  height: 100vh;
-  width: 60%;
-  position: sticky;
-  top: 0;
-  padding: 20px;
+.challenge-no{
+  color: $light-rose;
 }
 
 
+
+// for the user habits
 .dashboard-card {
-  background-color: $light-rose  ;
+  background-color: $light-rose;
   padding: 16px;
   border-radius: 8px;
 }
@@ -52,7 +128,7 @@
 // }
 
 .tree-side {
-  // border: 1px solid red;
+  border: 1px solid red;
   margin: 5px;
   height: 100vh;
   width: 40%;
@@ -62,13 +138,56 @@
   background-color: white;
 }
 
-.tree-image {
-  object-fit: cover;
-  // height: 60%;
-  width: 100%;
-  width: 300px;
-  border-radius: 8px;
+// .tree-image {
+//   object-fit: cover;
+//   // height: 60%;
+//   width: 100%;
+//   width: 300px;
+//   border-radius: 8px;
+//   display: flex;
+//   justify-content: left;
+//   align-items: center;
+// }
+
+
+
+.calendar-side {
   display: flex;
-  justify-content: left;
-  align-items: center;
+  flex-direction: column;
+}
+
+.calendar-tabs {
+  display: flex;
+  gap: 10px;
+}
+
+.tab {
+  padding: 10px;
+  background-color: #e0e0e0;
+  border: none;
+  cursor: pointer;
+}
+
+.calendar-events {
+  display: flex;
+  overflow-x: scroll;
+}
+
+.events-container {
+  display: flex;
+}
+
+.event-column {
+  flex: 1;
+  padding: 10px;
+}
+
+.event-column h3 {
+  text-align: center;
+}
+
+.event-column > div {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #e0e0e0;
 }
