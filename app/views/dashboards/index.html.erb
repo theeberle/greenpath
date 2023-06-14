@@ -1,103 +1,46 @@
-<div class="container">
+<div class="">
   <% if user_signed_in? %>
-
-
-  <div class="two-sides-view">
-
-    <div class="challenges-side" data-controller="toggle">
-    <h2 class="dashboard-title">Hello, <strong><%= @user.username %></strong>!</h2>
-    <h3 class="dashboard-text">You have <strong><%= @user_challenges.count %></strong> active challenges!</h3>
-    <div class="">
-      <% if @user_challenges.any? %>
-        <div class="dashboard-card">
-          <% @user_challenges.each do |user_challenge| %>
-            <div class="card-skill-info">
-              <%# <%= image_tag(habit.challenge(params[:id]).photo_url) %>
-              <div class="card-product-infos">
-                <h2><%= user_challenge.challenge.name %></h2>
-                <p class="category-tag"><%= user_challenge.challenge.category.name %></p>
-                <% if user_challenge.implementation_cycle == "Daily" %>
-
-                  <% habit_saving_carbonamount =  user_challenge.challenge.saving_carbonamount * 365 %>
-                <% elsif user_challenge.implementation_cycle == "Weekly" %>
-                  <% habit_saving_carbonamount =  user_challenge.challenge.saving_carbonamount * 52 %>
-                 <% elsif user_challenge.implementation_cycle == "Monthly" %>
-                  <% habit_saving_carbonamount =  user_challenge.challenge.saving_carbonamount * 12 %>
-                 <% end %>
-                <p><%= habit_saving_carbonamount  %></p>
-              </div>
-            </div>
-          <% end %>
+    <div class="two-sides-view">
+      <div class="switching-container" data-controller="toggle">
+        <div class="toggle toggle-top-right">
+          <input type="checkbox" id="temp" data-action="click->toggle#toggleDiv">
+          <label for="temp"></label>
         </div>
-      <% else %>
-        <p>You don't have any challenges yet!</p>
-      <% end %>
-    </div>
-
-      <div class="toggle">
-        <input type="checkbox" id="temp" data-action="click->toggle#toggleDiv">
-        <label for="temp"></label>
-      </div>
-
-      <%# testing calender for event view working %>
+        <div data-controller="toggle1">
+          <h2 class="dashboard-title">Hello, <strong><%= @user.username %></strong>!</h2>
+          <h3 class="dashboard-text">You have <strong class="challenge-no"><%= @user_challenges.count %></strong> active challenges!</h3>
+          <button data-action="click->toggle1#fire" class="btn btn-outline-primary">See all my challenges</button>
+          <div data-toggle1-target="togglableElement" class="d-none">
+            <%= render "dashboards/user_habits" %>
+          </div>
+        </div>
+      <%# calender for event view %>
       <div class="calendar-side div1" data-toggle-target="div1">
-        <h2>Weekly View</h2>
-        <div class="calendar-carousel" data-target="carousel.carousel">
-            <table>
-            <thead>
-              <tr>
-                <th>Day</th>
-                <th>Events</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% (0..6).each do |day_offset| %>
-                <% current_day = Date.today + day_offset %>
-                <tr>
-                  <td><%= current_day.strftime("%A") %></td>
-                  <td>
-                    <% @events.each do |event| %>
-                      <div>
-                        <% if event.habit.present? && event.status != "accomplished" && (event.due_date) == current_day %>
-                          <%= event.habit.challenge.name %>
-                          <%= event.habit.challenge.saving_carbonamount %>
+          <%= render "calendar" %>
+      </div>
 
-                          <%= link_to "Done", event_completed_path(event_id: event.id)%>
+ 
+        <%# Statistics part: %>
+        <div class="statistic-side div2 d-none" data-toggle-target="div2">
+          <h3>See how you are contributing:</h3>
+          <%# Showing Level: %>
+          <%# Column chart of saved Co2: %>
+          <h4>Your saved C02 emission:</h4>
+          <%= column_chart @display, empty: "No challenges", colors: ["#ff5722"] %>
 
-                        <% end %>
-                      </div>
-                    <% end %>
-                  </td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
+          <%# Column chart of completed events: %>
+          <h4>Your achieved challenges:</h4>
+          <%= column_chart @event_data, empty: "No challenges", colors: ["#ff5722"] %>
+
+          <%# Pie chart of chosen categories: %>
+          <h4>Your favourite challenge-categories:</h4>
+          <%= pie_chart @pie_data, empty: "No challenges", colors: ["#ef5350", "#ec407a", "#7e57c2", "#42a5f5", "#26c6da", "#26a69a", "#9ccc65", "#ffee58", "#ffa726", "#ff7043"] %>
         </div>
       </div>
 
-      <%# Statistics part: %>
-      <div class="statistic-side div2 hidden" data-toggle-target="div2">
-        <h3>See how you are contributing:</h3>
-
-        <%# Showing Level: %>
-
-
-      <%# Column chart of saved Co2: %>
-      <h4>Your saved C02 emission:</h4>
-      <%= column_chart @display, empty: "No challenges", colors: ["#ff5722"] %>
-
-      <%# Column chart of completed events: %>
-      <h4>Your achieved challenges:</h4>
-      <%= column_chart @event_data, empty: "No challenges", colors: ["#ff5722"] %>
-
-      <%# Pie chart of chosen categories: %>
-      <h4>Your favourite challenge-categories:</h4>
-      <%= pie_chart @pie_data, empty: "No challenges", colors: ["#ef5350", "#ec407a", "#7e57c2", "#42a5f5", "#26c6da", "#26a69a", "#9ccc65", "#ffee58", "#ffa726", "#ff7043"] %>
+      <div class="tree-side">
+        <%= render "dashboards/tree" %> <%# this is the tree animation %>
+      </div>
     </div>
-  </div>
-
- <div class="tree-side">
-     <%= render "dashboards/tree" %> <%# this is the tree animation %>
+  <% end %>
 </div>
- <% end %>
- </div>

@@ -8,8 +8,10 @@
       <%= link_to '', challenge_path(challenge), class: 'card-link'  %>
       <img class="challenge-image" src="<%= cl_image_path(challenge.picture.key) %>" alt="Challenge-Image">
       <div class="challenge-details">
-        <h2 class="challenge-title text-center"><%= challenge.name %></h2>
-        <p class="carbon-footprint"><%= challenge.saving_carbonamount %> kg CO2e</p>
+        
+        <h2 class="challenge-title"><%= challenge.name %></h2>
+        <p class="carbon-footprint"><%= challenge.saving_carbonamount.to_i %> kg CO2e</p>
+
       </div>
     </div>
   <% end %>

@@ -9,7 +9,8 @@ class Event < ApplicationRecord
   # added the status inclusion
 
   validates :status, presence: true
-  validates :due_date, presence: true
+  validates :due_date, presence: true, uniqueness: { scope: :habit }
+
 
   has_one :challenge, through: :habit  # Add this association for the access to the event
 
