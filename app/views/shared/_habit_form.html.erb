@@ -15,12 +15,12 @@
       action: "submit->alert#initSweetalert",
       turbo: false
       } })do |f| %>
+       <%= f.input :implementation_cycle,
+        collection: Habit::IMPLEMENTATION_CYCLE, include_blank: true, input_html: {
+        data: {action: "change->habit-form#updateCarbonAmount"}} %>
         <%= f.input :day_of_week,
         collection: Habit::DAYS_OF_WEEK,
         include_blank: true %>
-        <%= f.input :implementation_cycle,
-        collection: Habit::IMPLEMENTATION_CYCLE, include_blank: true, input_html: {
-        data: {action: "change->habit-form#updateCarbonAmount"}} %>
         <%= f.button :submit, class: "btn-habit" %>
       <% end %>
     </div>
