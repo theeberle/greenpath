@@ -9,7 +9,11 @@
         <div data-controller="toggle1">
           <h2 class="dashboard-title">Hello, <strong><%= @user.username %></strong>!</h2>
           <h3 class="dashboard-text">You have <strong class="challenge-no"><%= @user_challenges.count %></strong> active challenges!</h3>
-          <button data-action="click->toggle1#fire" class="btn btn-outline-primary">See all my challenges</button>
+          <div class="box-1">
+            <div data-action="click->toggle1#fire" class="btn btn-one">
+              <span>See all my challenges</span>
+            </div>
+          </div>
           <div data-toggle1-target="togglableElement" class="d-none">
             <%= render "dashboards/user_habits" %>
           </div>
@@ -19,7 +23,7 @@
           <%= render "calendar" %>
       </div>
 
- 
+
         <%# Statistics part: %>
         <div class="statistic-side div2 d-none" data-toggle-target="div2">
           <h3>See how you are contributing:</h3>
@@ -39,7 +43,9 @@
       </div>
 
       <div class="tree-side">
-        <%= render "dashboards/tree" %> <%# this is the tree animation %>
+        <%= render "dashboards/tree",
+        tree: @score[:tree],
+        badge: @score[:icon] %> <%# this is the tree animation %>
       </div>
     </div>
   <% end %>
