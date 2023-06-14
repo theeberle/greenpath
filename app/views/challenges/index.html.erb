@@ -1,7 +1,7 @@
 <div data-controller="carousel" class="carousel-container">
-    <div class="scroll-button scroll-button-left">
+    <%# <div class="scroll-button scroll-button-left">
       <i class="fa-solid fa-angles-left"></i>
-    </div>
+    </div> %>
   <div class="categories-carousel <%= params[:category].blank? ? 'active' : '' %>">
     <div class="category-container-carousel">
       <div class="category-item">
@@ -20,9 +20,9 @@
       <% end %>
     </div>
   </div>
-    <div class="scroll-button scroll-button-right">
+    <%# <div class="scroll-button scroll-button-right">
       <i class="fa-solid fa-angles-right"></i>
-    </div>
+    </div> %>
 </div>
 
 <div class="two-sides">
@@ -39,9 +39,7 @@
   </div>
 
   <div class="challenges-container">
-    <div class="title">
-      <h1>Challenges</h1>
-    </div>
+    <h1 class="title">Challenges</h1>
     <div class="challenges-grid">
       <% if params[:category].present? %>
         <% challenges = Challenge.where(category_id: params[:category]) %>
