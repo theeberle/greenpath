@@ -1,21 +1,28 @@
-// .tree-container {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   flex-direction: column;
-//   text-align: center;
-//   height: 100vh;
-//   position: sticky;
-
-// }
-
+.tree-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100vh;
+  position: sticky;
+}
+.salutation{
+  height: 30%;
+}
+.yay {
+  margin-bottom: 20px;
+  margin-top: 5px;
+  color: $dark-blue;
+}
+.carbon_saved{
+  color: $green;
+  font-weight: bold;
+}
 .tree-animation{
   object-fit: cover;
-  //   height: 60%;
-  //   width: 100%;
-  //   width: 300px;
-  //   border-radius: 8px;
+  height: 70%;
   display: flex;
-  //   justify-content: left;
+  justify-content: center;
   align-items: center;
 }

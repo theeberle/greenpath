@@ -7,6 +7,13 @@
     <%= csp_meta_tag %>
     <%# lotti files %>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js"></script>
+      <%# icon on the browser %>
+     <link rel="apple-touch-icon" sizes="180x180" href="<%= image_path 'icons/apple-touch-icon.png' %>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<%= image_path 'icons/favicon-32x32.png' %>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<%= image_path 'icons/favicon-16x16.png' %>">
+    <link rel="shortcut icon" href="<%= image_path 'icons/favicon.ico' %>">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>

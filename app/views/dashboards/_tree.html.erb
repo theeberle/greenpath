@@ -1,11 +1,10 @@
       <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 <div class="tree-container">
-  <h1 class="title"><strong>Hooray!</strong></h1>
-    <p class="text">Your tree grew today!</p>
-    <p>Your toatal co2 saving:<%= current_user.carbon_count.to_i %> </p>
+  <div class="salutation">
+    <h1 class="yay"><strong>Hooray!</strong></h1>
+      <h3>Your toatal co2 saving: <span class="carbon_saved"><%= current_user.carbon_count.to_i %></span> kg!</h3>
+  </div>
     <div class="tree-animation">
-      <%# no tree %>
-
       <lottie-player
         id="tree-animation"
         src="<%= tree %>"
@@ -14,6 +13,14 @@
         style="width: 300px; height: 300px;"
         autoplay
     ></lottie-player>
-     <p>Badge: <i class="fa-solid fa-<%= badge %>"></i></p>
-    </div>
+     </div>
+       <p>Badge: <i class="fa-solid fa-<%= badge %>"></i></p>
 </div>
+  <%# no tree %>
+      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+      <%# tree 1%>
+      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+      <%# tree 2 %>
+      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+      <%# tree 3- big %>
+      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>

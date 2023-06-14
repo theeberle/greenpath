@@ -13,3 +13,8 @@
 
 // To repair later with future push of navbar
 @import "pages/index";
+
+
+body, title, .title {
+  color: $dark-blue;
+}
