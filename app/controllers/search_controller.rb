@@ -15,13 +15,13 @@ class SearchController < ApplicationController
     SQL
     @challenges = Challenge.joins(:category).where(sql_query, query: "%#{params[:query]}%")
 
-    sql_query = <<~SQL
-    users.username @@ :query
-    OR users.profile_description @@ :query
-    OR users.email @@ :query
-    OR users.city @@ :query
+    # sql_query = <<~SQL
+    # users.username @@ :query
+    # OR users.profile_description @@ :query
+    # OR users.email @@ :query
+    # OR users.city @@ :query
 
-    SQL
-    @users = User.where(sql_query, query: "%#{params[:query]}%")
+    # SQL
+    # @users = User.where(sql_query, query: "%#{params[:query]}%")
   end
 end
