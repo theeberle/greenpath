@@ -33,7 +33,9 @@
               <h3 class="event-title"><%= event.habit.challenge.name %></h3>
               <p class="category-tag"><%= event.habit.challenge.category.name %></p>
             </div>
-            <span class="carbon-footprint event-foot"><%= event.habit.challenge.saving_carbonamount.to_i %> Co2</span>
+              <div class="event-foot">
+                <span class="carbon-footprint"><%= event.habit.challenge.saving_carbonamount.to_i %> Co2</span>
+              </div>
             <div class="event-button">
               <%= link_to event_completed_path(event_id: event.id), class: "done-button", onclick: "startAnimation()" do %>
                 <i class="fa-solid fa-circle-check"></i>
