@@ -142,115 +142,115 @@ habit4_clara = Habit.create!(
 event1_clara = Event.create!(
   habit: habit1_clara,
   status: "accomplished",
-  due_date: "13/06/2023 11:00"
+  due_date: "15/06/2023 11:00"
 )
 
 event2_clara = Event.create!(
   habit: habit2_clara,
   status: "accomplished",
-  due_date: "13/06/2023 11:00"
+  due_date: "15/06/2023 11:00"
 )
 
 event3_clara = Event.create!(
   habit: habit1_clara,
   status: "accomplished",
-  due_date: "12/06/2023 11:00"
+  due_date: "10/06/2023 11:00"
 )
 
 event4_clara = Event.create!(
   habit: habit2_clara,
   status: "accomplished",
-  due_date: "11/06/2023 11:00"
+  due_date: "09/06/2023 11:00"
 )
 
 event5_clara = Event.create!(
   habit: habit1_clara,
   status: "accomplished",
-  due_date: "10/06/2023 11:00"
+  due_date: "08/06/2023 11:00"
 )
 
 event6_clara = Event.create!(
   habit: habit2_clara,
   status: "accomplished",
-  due_date: "10/06/2023 11:00"
+  due_date: "08/06/2023 11:00"
 )
 
 event7_clara = Event.create!(
   habit: habit1_clara,
   status: "accomplished",
-  due_date: "09/06/2023 11:00"
+  due_date: "07/06/2023 11:00"
 )
 
 event8_clara = Event.create!(
   habit: habit2_clara,
   status: "accomplished",
-  due_date: "08/06/2023 11:00"
+  due_date: "06/06/2023 11:00"
 )
 
 event9_clara = Event.create!(
   habit: habit2_clara,
   status: "accomplished",
-  due_date: "07/06/2023 11:00"
+  due_date: "05/06/2023 11:00"
 )
 
 event10_clara = Event.create!(
   habit: habit3_clara,
   status: "accomplished",
-  due_date: "13/06/2023 11:00"
+  due_date: "11/06/2023 11:00"
 )
 
 event11_clara = Event.create!(
   habit: habit4_clara,
   status: "accomplished",
-  due_date: "13/06/2023 11:00"
+  due_date: "11/06/2023 11:00"
 )
 
 event12_clara = Event.create!(
   habit: habit3_clara,
   status: "accomplished",
-  due_date: "12/06/2023 11:00"
+  due_date: "10/06/2023 11:00"
 )
 
 event13_clara = Event.create!(
   habit: habit3_clara,
   status: "accomplished",
-  due_date: "11/06/2023 11:00"
+  due_date: "09/06/2023 11:00"
 )
 
 event14_clara = Event.create!(
   habit: habit3_clara,
   status: "accomplished",
-  due_date: "10/06/2023 11:00"
+  due_date: "08/06/2023 11:00"
 )
 
 event15_clara = Event.create!(
   habit: habit4_clara,
   status: "accomplished",
-  due_date: "10/06/2023 11:00"
+  due_date: "08/06/2023 11:00"
 )
 
 event16_clara = Event.create!(
   habit: habit3_clara,
   status: "accomplished",
-  due_date: "09/06/2023 11:00"
+  due_date: "07/06/2023 11:00"
 )
 
 event17_clara = Event.create!(
   habit: habit3_clara,
   status: "accomplished",
-  due_date: "08/06/2023 11:00"
+  due_date: "06/06/2023 11:00"
 )
 
 event18_clara = Event.create!(
   habit: habit3_clara,
   status: "accomplished",
-  due_date: "07/06/2023 11:00"
+  due_date: "05/06/2023 11:00"
 )
 
 event19_clara = Event.create!(
   habit: habit3_clara,
   status: "accomplished",
-  due_date: "06/06/2023 11:00"
+  due_date: "04/06/2023 11:00"
 )
 
 

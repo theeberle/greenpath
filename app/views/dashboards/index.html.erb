@@ -3,14 +3,14 @@
     <div class="two-sides-view">
       <div class="switching-container" data-controller="toggle">
 
-         <h2 class="dashboard-title">Hello, <strong><%= @user.username %></strong>!</h2>
-         <h3 class="dashboard-text">You have <strong class="challenge-no"><%= @user_challenges.count %></strong> active challenges!</h3>
-        <div class="toggle toggle-top-right">
-          <input type="checkbox" id="temp" data-action="click->toggle#toggleDiv">
-          <label for="temp"></label>
+        <div class="next-header">
+          <h2 class="dashboard-title">Hello, <strong><%= @user.username %></strong>!</h2>
+          <div class="toggle toggle-top-right">
+            <input type="checkbox" id="temp" data-action="click->toggle#toggleDiv">
+            <label for="temp"></label>
+          </div>
         </div>
-
-          
+        <h3 class="dashboard-text">You have <strong class="challenge-no"><%= @user_challenges.count %></strong> active challenges!</h3>
 
 
       <%# calender for event view %>
