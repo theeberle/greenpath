@@ -1,7 +1,6 @@
 .navbar {
   background-color: white;
   padding: 10px;
-  height: 10%;
   margin: 0 auto;
   justify-content: space-between;
   display: flex;
@@ -78,7 +77,7 @@
 
 .navigation {
   position: absolute;
-  top: 20px;
+  top: 16px;
   right: 20px;
   width: 120px;
   height: 60px;
@@ -153,9 +152,9 @@
   border: 10px solid #fff;
 }
 
-.navigation .userBx .imgBx:hover {
-  background-color: red;
-}
+// .navigation .userBx .imgBx:hover {
+//   background-color: red;
+// }
 
 .navigation .userBx .imgBx img {
   position: absolute;
@@ -244,3 +243,22 @@
 // // .navigation:not(.active) .userBx:hover {
 // //   background-color: red;
 // // }
+
+.navigation:not(.active)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(135, 248, 207, 0.212);
+  transition: opacity 0.3s ease-in-out;
+  visibility: hidden;
+  transition: visibility 0.1s linear, background-color 0.1s linear;
+  z-index: 2;
+}
+
+.navigation:not(.active):hover::before {
+  visibility: visible;
+  transition: opacity 0.3s ease-in-out;
+}

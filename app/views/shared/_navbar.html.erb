@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
     <% if user_signed_in? %>
         <div class="container-fluid recenter">
-      <%= link_to dashboard_path, class: "navbar-brand" do %>
+      <%= link_to challenges_path, class: "navbar-brand" do %>
           <%= image_tag "logolong.png", alt: "Logo" %>
       <% end %>
 
@@ -14,7 +14,6 @@
       <div class="magnifier-position">
       </div>
     </div>
-
 
       <div class="navigation" data-controller="menu-toggle" data-menu-toggle-target="navigation" data-action="click->menu-toggle#toggle">
         <div class="userBx">
