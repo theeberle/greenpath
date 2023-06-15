@@ -8,14 +8,14 @@ $font-color: #4FBCA1;
 
 .toggle{
 
-  margin-top: 40px;
+  // margin-top: 40px;
   input[type="checkbox"]{
     display: none;
   }
 
   label{
     color: $font-color;
-    position: relative;
+    // position: relative;
   }
 
   input[type="checkbox"] + label::before{
@@ -25,7 +25,7 @@ $font-color: #4FBCA1;
     width: 45px;
     border: 1px solid $toggle-bg-color;
     border-radius: 9px;
-    position: absolute;
+    // position: absolute;
     top: 0px;
     left: -65px;
     background: $toggle-bg-color;
@@ -38,7 +38,7 @@ $font-color: #4FBCA1;
     width: 30px;
     border: 1px solid $toggle-nub-color;
     border-radius: 50%;
-    position: absolute;
+    // position: absolute;
     top: -6px;
     left: -75px;
     background: $toggle-nub-color;
