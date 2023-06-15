@@ -33,6 +33,16 @@
   border: 1px solid red;
 }
 
+.switching-container {
+  position: relative;
+}
+
+.dashboard-link {
+  margin: 10px 0;
+  display: flex;
+  justify-content: end;
+}
+
 // TOGGLER button TBD
 
 // .toggle-top-right {
@@ -40,11 +50,6 @@
 //   justify-self: flex-end;
 //   border: 1px solid red;
 // }
-
-.toggle {
-  // position: relative;
-
-}
 
 .toggle input[type="checkbox"] {
   display: none;
@@ -112,7 +117,7 @@
   align-items: center;
   color: black;
 }
-.challenge-no{
+.challenge-no {
   color: $green;
 }
 

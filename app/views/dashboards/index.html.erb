@@ -15,13 +15,17 @@
 
       <%# calender for event view %>
       <div class="calendar-side div1" data-toggle-target="div1">
-          <%= render "calendar" %>
-      </div>
 
+          <%= render "calendar" %>
+        </div>
 
         <%# Statistics part: %>
         <div class="statistic-side div2 d-none" data-toggle-target="div2">
           <%= render "statistics" %>
+        </div>
+
+        <div class="dashboard-link">
+          <%= link_to "Go to Community", community_path, class: "dash-button" %>
         </div>
       </div>
 
