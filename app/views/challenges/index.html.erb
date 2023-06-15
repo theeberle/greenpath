@@ -39,7 +39,7 @@
   </div>
 
   <div class="challenges-container">
-    <h1 class="title">Challenges</h1>
+    <h1 class="title">Choose your Challenges:</h1>
     <div class="challenges-grid">
       <% if params[:category].present? %>
         <% challenges = Challenge.where(category_id: params[:category]) %>
