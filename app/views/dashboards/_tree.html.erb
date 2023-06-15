@@ -1,26 +1,31 @@
-      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 <div class="tree-container">
-  <div class="salutation">
-    <h1 class="yay"><strong>Hooray!</strong></h1>
-      <h3>Your total co2 saving: <span class="carbon_saved"><%= current_user.carbon_count.to_i %></span> kg!</h3>
-  </div>
-    <div class="tree-animation">
-      <lottie-player
-        id="tree-animation"
-        src="<%= tree %>"
-        background="transparent"
-        speed="1"
-        style="width: 300px; height: 300px;"
-        autoplay
-    ></lottie-player>
-     </div>
-       <p>Badge: <i class="fa-solid fa-<%= badge %>"></i></p>
+    <div class="salutation">
+      <h1 class="yay"><strong>Hooray!</strong></h1>
+        <h3>Your total Co2 saving: <span class="carbon_saved"><%= current_user.carbon_count.to_i %></span> kg!</h3>
+    </div>
+      <div class="tree-part">
+        <div class="tree-wrapper">
+        <lottie-player
+          id="tree-animation"
+          src="<%= tree %>"
+          background="transparent"
+          speed="2"
+          style="width: 515px; height: 515px;"
+          autoplay>
+          </lottie-player>
+        </div>
+    </div>
+      <div class="badge-space">
+        <i class="fa-solid fa-<%= badge %>"></i>
+        <p class="badge-text"> <%= carbon_badge(current_user.carbon_count.to_i)[:level] %> </p>
+      </div>
 </div>
-  <%# no tree %>
+
+      <%# no tree %>
       <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
       <%# tree 1%>
-      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+      <%# <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> %>
       <%# tree 2 %>
-      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+      <%# <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> %>
       <%# tree 3- big %>
-      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+      <%# <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> %>

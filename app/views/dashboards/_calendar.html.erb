@@ -1,9 +1,20 @@
+<div data-controller="toggle1">
+  <div class="box-1">
+    <div data-action="click->toggle1#fire" class="btn btn-one">
+      <span>See all my challenges</span>
+    </div>
+  </div>
+  <div data-toggle1-target="togglableElement" class="d-none">
+    <%= render "dashboards/user_habits" %>
+  </div>
+</div>
+
 <h2>Weekly View</h2>
 
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <% @weekdays.each_with_index do |weekday, index| %>
     <li class="nav-item" role="presentation">
-      <button class="nav-link <%= index.zero? ? 'active' : '' %>" id="<%= weekday.downcase %>-tab" data-bs-toggle="tab" data-bs-target="#<%= weekday.downcase %>-tab-pane" type="button" role="tab" aria-controls="<%= weekday.downcase %>-tab-pane" aria-selected="<%= index.zero? ? 'true' : 'false' %>">
+      <button class="nav-link <%= index.zero? ? 'active' : '' %> calendar-day-button" id="<%= weekday.downcase %>-tab" data-bs-toggle="tab" data-bs-target="#<%= weekday.downcase %>-tab-pane" type="button" role="tab" aria-controls="<%= weekday.downcase %>-tab-pane" aria-selected="<%= index.zero? ? 'true' : 'false' %>">
         <%= weekday %>
       </button>
     </li>
@@ -17,13 +28,21 @@
       <% events.each do |event| %>
         <div class="event">
           <img class="event-image" src="<%= cl_image_path(event.habit.challenge.picture.key) %>" alt="Event Image">
-          <%= event.habit.challenge.name %>
-          <%= event.habit.challenge.category.name %>
-          <%= event.habit.challenge.saving_carbonamount %>
-          <%= link_to event_completed_path(event_id: event.id), class: "done-button", onclick: "startAnimation()" do %>
-            <i class="fa-solid fa-circle-check"></i>
-            Done
-          <% end %>
+          <div class="event-details">
+            <div class="event-content">
+              <h3 class="event-title"><%= event.habit.challenge.name %></h3>
+              <p class="category-tag"><%= event.habit.challenge.category.name %></p>
+            </div>
+              <div class="event-foot">
+                <span class="carbon-footprint"><%= event.habit.challenge.saving_carbonamount.to_i %> Co2</span>
+              </div>
+            <div class="event-button">
+              <%= link_to event_completed_path(event_id: event.id), class: "done-button", onclick: "startAnimation()" do %>
+                <i class="fa-solid fa-circle-check"></i>
+                <span class="sr-only">Done</span> <!-- Screen reader-only text for accessibility -->
+              <% end %>
+            </div>
+          </div>
         </div>
       <% end %>
     </div>

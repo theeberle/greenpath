@@ -17,7 +17,7 @@
                  <% elsif user_challenge.implementation_cycle == "Monthly" %>
                   <% habit_saving_carbonamount =  user_challenge.challenge.saving_carbonamount.to_i * 12 %>
                  <% end %>
-              <span class="carbon-saving"><%= habit_saving_carbonamount %></span>
+              <span class="carbon-footprint"><%= habit_saving_carbonamount %> Co2</span>
               </div>
             </div>
           <% end %>

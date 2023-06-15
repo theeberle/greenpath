@@ -1,28 +1,56 @@
 .tree-container {
-  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
   height: 100vh;
   position: sticky;
+  overflow: hidden; /* to hide anything that's not fitting */
 }
+
 .salutation{
-  height: 30%;
+  margin-bottom: 5px;
 }
 .yay {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   margin-top: 5px;
-  color: $dark-blue;
+  color: $dark-green;
 }
 .carbon_saved{
   color: $green;
   font-weight: bold;
 }
-.tree-animation{
+.tree-part{
   object-fit: cover;
   height: 70%;
-  display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.badge-space{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.badge-text{
+  margin-bottom:0;
+}
+.fa-solid{
+  font-size: 50px;
+}
+.fa-trophy {
+  color: gold
+}
+.fa-trophy {
+  color: gold
+}
+.fa-medal{
+  color: silver;
+}
+.fa-award{
+  color: brown;
+}
+.fa-seedling{
+  color: blue;
 }

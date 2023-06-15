@@ -1,6 +1,6 @@
 class DashboardsController < ApplicationController
   include ApplicationHelper
-  
+
   def index
     @user = current_user
 
@@ -8,7 +8,7 @@ class DashboardsController < ApplicationController
 
     @score = carbon_badge(@user.carbon_count)
 
-    date_range = Date.today..(Date.today + 7)
+    date_range = Date.today..(Date.today + 6)
     @events = current_user.events.where(due_date: date_range)
 
     @past_events = current_user.events.where(due_date: Date.today.last_week..Date.today, status: "accomplished")

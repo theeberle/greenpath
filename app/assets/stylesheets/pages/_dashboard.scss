@@ -1,10 +1,6 @@
-.container {
-  border-color: red;
-
-}
 
 .two-sides-view {
-  border: 1px solid green;
+  // border: 1px solid green;
   // margin: 5px;
   display: flex;
   justify-content: space-between;
@@ -12,15 +8,39 @@
   max-width: 100%;
 }
 
+.next-header {
+  // border: 1px solid green;
+  // margin: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // width: 100%;
+  // max-width: 100%;
+}
+// toggle
+
 .switching-container {
-  border: 1px solid orange;
-  margin: 5px;
+  // border: 1px solid orange;
   min-height: 100vh;
   width: 60%;
   position: sticky;
   top: 0;
-  padding: 20px;
+  padding: 15px;
+  margin: 5px;
 
+}
+.enrty-message {
+  // border: 1px solid red;
+}
+
+.switching-container {
+  position: relative;
+}
+
+.dashboard-link {
+  margin: 10px 0;
+  display: flex;
+  justify-content: end;
 }
 
 // TOGGLER button TBD
@@ -28,22 +48,22 @@
 // .toggle-top-right {
 //   align-self: flex-start;
 //   justify-self: flex-end;
+//   border: 1px solid red;
 // }
-
-.toggle {
-  position: relative;
-}
 
 .toggle input[type="checkbox"] {
   display: none;
 }
 
 .toggle label {
-  position: absolute;
-  top: 50%;
-  right: 0;
+  // position: absolute;
+  // top: 50%;
+  // right: 0;
   transform: translateY(-50%);
   cursor: pointer;
+  position: absolute;
+  top: 23px;
+  right: -8px;
 }
 
 .toggle label::before {
@@ -89,18 +109,15 @@
 .dashboard-title {
   justify-content: left;
   align-items: center;
-  height: 90px;
-  padding: 8px;
   color: black;
 }
 
 .dashboard-text {
   justify-content: left;
   align-items: center;
-  padding: 8px;
   color: black;
 }
-.challenge-no{
+.challenge-no {
   color: $green;
   text-shadow: .1px .1px .75px rgba(0, 0, 0, 0.3);
 }
@@ -150,48 +167,6 @@
 //   align-items: center;
 // }
 
-
-
-.calendar-side {
-  display: flex;
-  flex-direction: column;
-}
-
-.calendar-tabs {
-  display: flex;
-  gap: 10px;
-}
-
-.tab {
-  padding: 10px;
-  background-color: #e0e0e0;
-  border: none;
-  cursor: pointer;
-}
-
-.calendar-events {
-  display: flex;
-  overflow-x: scroll;
-}
-
-.events-container {
-  display: flex;
-}
-
-.event-column {
-  flex: 1;
-  padding: 10px;
-}
-
-.event-column h3 {
-  text-align: center;
-}
-
-.event-column > div {
-  margin-bottom: 10px;
-  padding: 10px;
-  background-color: #e0e0e0;
-}
 
 // button for all challenges
 .btn-one {
@@ -243,3 +218,12 @@
   transform: scale(0.1, 1);
 }
 // button end
+
+
+.statistic-side {
+  padding: 5px;
+}
+
+.statistics {
+  padding: 5px;
+}
