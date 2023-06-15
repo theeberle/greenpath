@@ -18,8 +18,8 @@
       <div class="col col-1" data-label="Rank"><%= index %></div>
       <div class="col col-2" data-label="Username"><%= user.username %></div>
       <div class="col col-3" data-label="City"><%= user.city %></div>
-      <div class="col col-4" data-label="Amount"><%= user.carbon_count %></div>
-      <div class="col col-5" data-label="Level"><i class="fa-solid fa-<%= carbon_badge(user.carbon_count)[:icon] %>"></i></div>
+      <div class="col col-4" data-label="Amount"><%= user.carbon_count.to_i %></div>
+      <div class="col col-5" data-label="Level"><i class="fa-solid fa-<%= carbon_badge(user.carbon_count)[:icon] %> badge-hight"></i></div>
     </li>
     <% end %>
   </ul>

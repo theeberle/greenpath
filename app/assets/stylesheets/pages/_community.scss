@@ -65,8 +65,10 @@ h1 {
     flex-basis: 15%;
   }
   .active {
-
     background-color: $dark-green; /* Apply your desired styling for the active row */
+  }
+  .badge-hight {
+    font-size: 25px;
   }
 
   @media all and (max-width: 767px) {
