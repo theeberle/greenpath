@@ -1,64 +1,70 @@
-<h2>Sign up</h2>
+<div class="signup-container">
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
-  <%= f.error_notification %>
+  <h2>Sign up! 🌳</h2>
 
-  <div class="form-inputs">
-    <%= f.input :username,
-                placeholder: "blubb78",
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "username" }%>
-    <%= f.input :first_name,
-                placeholder: "Max",
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "first_name" }%>
-    <%= f.input :last_name,
-                placeholder: "Mustermann",
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "last_name" }%>
-    <%= f.input :city,
-                placeholder: "Berlin",
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "city" }%>
-    <%= f.input :age_range,
-                label: "Age-range",
-                collection: User::AGE_RANGES,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "age_range" }%>
-    <%= f.input :email,
-                placeholder: "max@email.de",
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                placeholder: "*****",
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                placeholder: "*****",
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
-     <%= f.input :profile_description,
-                placeholder: "I am ....",
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "profile_description" }%>
-     <%= f.input :profile_picture, as: :file,
-                placeholder: "Your foto",
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "profile_picture" }%>
-  </div>
+  <br>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
+    <%= f.error_notification %>
 
-<%= render "devise/shared/links" %>
+    <div class="form-inputs">
+      <%= f.input :username,
+                  placeholder: "blubb78",
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "username" }%>
+      <%= f.input :first_name,
+                  placeholder: "Max",
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "first_name" }%>
+      <%= f.input :last_name,
+                  placeholder: "Mustermann",
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "last_name" }%>
+      <%= f.input :city,
+                  placeholder: "Berlin",
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "city" }%>
+      <%= f.input :age_range,
+                  label: "Age-range",
+                  collection: User::AGE_RANGES,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "age_range" }%>
+      <%= f.input :email,
+                  placeholder: "max@email.de",
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" }%>
+      <%= f.input :password,
+                  placeholder: "*****",
+                  required: true,
+                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                  input_html: { autocomplete: "new-password" } %>
+      <%= f.input :password_confirmation,
+                  placeholder: "*****",
+                  required: true,
+                  input_html: { autocomplete: "new-password" } %>
+      <%= f.input :profile_description,
+                  placeholder: "I am ....",
+                  required: false,
+                  autofocus: true,
+                  input_html: { autocomplete: "profile_description" }%>
+      <%= f.input :profile_picture, as: :file,
+                  placeholder: "Your foto",
+                  required: false,
+                  autofocus: true,
+                  input_html: { autocomplete: "profile_picture" }%>
+    </div>
+
+    <div>
+      <%= f.button :submit, "Sign up!", class: "signup-button" %>
+    </div>
+  <% end %>
+
+  <%# <%= render "devise/shared/links" %> 
+
+</div>
