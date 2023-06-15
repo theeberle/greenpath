@@ -29,9 +29,32 @@
 }
 
 // tab
+
+.nav-tabs {
+  --bs-nav-tabs-border-color: none;
+  --bs-nav-tabs-link-hover-border-color: #CCF4E5;
+  --bs-nav-tabs-link-active-color: $grey-blue;
+  --bs-nav-tabs-link-active-bg: none;
+  --bs-nav-tabs-link-active-border-color: #CCF4E5;
+  // --bs-nav-tabs-link-active-border-bottom-color: $grey-blue;
+}
+
+.calendar-day-button {
+  color: $light-grey;
+
+  &:hover, &.active {
+    background-color: none;
+    color: $grey-blue;
+  }
+}
+
+#my-tab {
+  width: 100%;
+}
 .tab-content {
   margin-top: 10px;
 }
+
 // events
 .event {
   display: flex;
