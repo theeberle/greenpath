@@ -8,11 +8,11 @@ module ApplicationHelper
     elsif carbon_savings < 100
       { icon: 'award',
         tree: "https://assets4.lottiefiles.com/packages/lf20_e3ux72wx.json",
-        level: "You are on the Level 2. Reach over 100 points and unlock the Silver Badge!"}
+        level: "Level 2! Reach over 100 points and unlock the Silver Badge!"}
     elsif carbon_savings > 100 && carbon_savings < 500
       { icon: 'medal',
         tree: "https://assets4.lottiefiles.com/private_files/lf30_vfgwrgqf.json",
-        level: "You are on the Level 3. Reach over 500 points and unlock the Golden Badge!"}
+        level: "Level 3! Reach over 500 points and unlock the Golden Badge!"}
     else
       { icon: 'trophy',
         tree: "https://assets3.lottiefiles.com/private_files/lf30_jdygihq2.json",

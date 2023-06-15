@@ -35,9 +35,12 @@
 }
 .badge-text{
   margin-bottom:0;
+  // box-shadow: 0 0 10px rgba(175, 168, 168, 0.5);
+  // width: 90%;
 }
-.fa-solid{
+.badge-class {
   font-size: 50px;
+  padding: 5px 10px;
 }
 .fa-trophy {
   color: gold

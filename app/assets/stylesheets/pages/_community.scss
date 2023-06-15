@@ -65,7 +65,8 @@ h1 {
     flex-basis: 15%;
   }
   .active {
-    background-color: #1EDD88;
+
+    background-color: $dark-green; /* Apply your desired styling for the active row */
   }
 
   @media all and (max-width: 767px) {
