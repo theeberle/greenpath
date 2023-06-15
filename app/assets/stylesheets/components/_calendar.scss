@@ -1,13 +1,16 @@
 .calendar-side {
   display: flex;
   flex-direction: column;
+
+  h2 {
+    margin-top: 30px;
+  }
 }
 
 .calendar-tabs {
   display: flex;
   gap: 10px;
 }
-
 
 .tab {
   padding: 10px;
@@ -23,11 +26,10 @@
 }
 
 .calendar-day-button {
-  font-size: 15px;
+  font-size: 20px;
   padding: 5px 10px;
 
 }
-
 // tab
 
 .nav-tabs {
@@ -40,7 +42,7 @@
 }
 
 .calendar-day-button {
-  color: $light-grey;
+  color: #a6adad;
 
   &:hover, &.active {
     background-color: none;
@@ -76,6 +78,20 @@
   align-items: center;
   justify-content: space-between;
   flex-grow: 1;
+
+  .event-content {
+    width: 200px;
+  }
+}
+
+.event-foot{
+  flex-grow: 1;
+  margin-left: 20%;
+
+  .carbon-footprint {
+    font-size: 15px;
+    padding: 10px;
+  }
 }
 
 .event-title {
@@ -90,12 +106,6 @@
   margin-right: 10px;
 }
 
-.event-foot{
-  flex-grow: 1;
-  margin-left: 20%;
-
-
-}
 
 .done-button i {
   color: $green; /* Change the color to green */

@@ -8,6 +8,17 @@
   overflow: hidden; /* to hide anything that's not fitting */
 }
 
+@media (min-width: 1700px){
+
+#tree-animation{
+height: 700px;
+}
+}
+
+
+
+
+
 .salutation{
   margin-bottom: 5px;
 }
@@ -38,6 +49,7 @@
   // box-shadow: 0 0 10px rgba(175, 168, 168, 0.5);
   font-size: 20px;
 }
+
 .badge-class {
   font-size: 50px;
   padding: 5px 10px;

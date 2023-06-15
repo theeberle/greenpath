@@ -7,7 +7,7 @@
       <div class="category-item">
         <%= link_to challenges_path, class: "category-filter-button #{params[:category].blank? ? 'active' : ''} filter-indicator-left" do %>
           <i class="fa-solid fa-border-all"></i>
-          Check All
+          All Challenges
         <% end %>
       </div>
       <% @categories.each_with_index do |category, index| %>
