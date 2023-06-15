@@ -1,0 +1,5 @@
+meta_product_name: "greenpath"
+meta_title: "greenpath - Make It Your Own"
+meta_description: "Did you know that even the smallest actions can make a remarkable impact on reducing your carbon footprint? Join the greenpath and make a change with a challenge everyday."
+meta_image: "home.png" # should exist in `app/assets/images/`
+twitter_account: "@greenpath"   # required for Twitter Cards

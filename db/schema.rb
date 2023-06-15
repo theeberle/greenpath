@@ -104,7 +104,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_09_102725) do
     t.integer "age_range"
     t.string "city"
     t.text "profile_description"
-    t.float "carbon_count", default: 0.0
+    t.float "carbon_count"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
