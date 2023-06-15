@@ -15,6 +15,7 @@
    </div>
     <div class="badge-space">
       <p>Badge: <i class="fa-solid fa-<%= badge %>"></i></p>
+       <p>Level: "<%= carbon_badge(current_user.carbon_count.to_i)[:level] %>" </p>
     </div>
 </div>
 
