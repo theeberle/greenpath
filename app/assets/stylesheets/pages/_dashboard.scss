@@ -8,6 +8,17 @@
   max-width: 100%;
 }
 
+.next-header {
+  // border: 1px solid green;
+  // margin: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // width: 100%;
+  // max-width: 100%;
+}
+// toggle
+
 .switching-container {
   border: 1px solid orange;
   min-height: 100vh;
@@ -45,11 +56,14 @@
 }
 
 .toggle label {
-  position: absolute;
-  top: 50%;
-  right: 0;
+  // position: absolute;
+  // top: 50%;
+  // right: 0;
   transform: translateY(-50%);
   cursor: pointer;
+  position: absolute;
+  top: 23px;
+  right: -8px;
 }
 
 .toggle label::before {
