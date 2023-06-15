@@ -20,21 +20,13 @@
   </head>
 
   <body>
-    <%= render "shared/flashes" %>
-    <%= render "shared/navbar" %></div>
-    <%= yield %></div>
 
-    <%# for someone who does the footer- adjust the logic from Skillwall to stick footer to the bottom, change the page styling after with new classes %>
-
-  <div class="footer">
-    <div class="footer-links">
-      <a href="https://github.com/BahaBasia/greenpath"><i class="fab fa-github"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
+    <div class="page-container">
+      <div class="navbar-container"><%= render "shared/navbar" %></div>
+      <%= render "shared/flashes" %>
+      <div class="content-container"><%= yield %></div>
+      <div class="footer-container"><%= render "shared/footer" %></div>
     </div>
-
-    <div class="footer-copyright">Make your <span class="green-text">greenpath.</span></div>
-  </div>
 
   </body>
 </html>

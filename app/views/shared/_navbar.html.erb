@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
     <% if user_signed_in? %>
         <div class="container-fluid recenter">
-      <%= link_to dashboard_path, class: "navbar-brand" do %>
+      <%= link_to challenges_path, class: "navbar-brand" do %>
           <%= image_tag "logolong.png", alt: "Logo" %>
       <% end %>
 
@@ -15,7 +15,7 @@
       </div>
     </div>
 
-
+    <%# old dropdown menu: %>
     <%# <ul style="list-style-type: none;">
       <li class="nav-item dropdown"> %>
         <%#= link_to root_path, class: "avatar dropdown-toggle",
@@ -34,7 +34,6 @@
         <%# </div>
       </li>
     </ul> %>
-
 
       <div class="navigation" data-controller="menu-toggle" data-menu-toggle-target="navigation" data-action="click->menu-toggle#toggle">
         <div class="userBx">

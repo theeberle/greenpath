@@ -4,15 +4,40 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10%;
+  padding: 1% 5% 1% 5%;
   height: 90vh;
   background-color: $light-green;
+}
+
+@media (min-width: 1700px) {
+  .landing-container {
+    // padding: 0 5%;
+    // width: 100vw;
+    // height: 100vh;
+    margin: 0 18px;
+  }
+
+  .right-side {
+    font-size: 170%;
+    width: 420px;
+    height: 400px;
+  }
+
+  .right-side h1{
+    margin: 0 auto 40px auto;
+    font-size: 60px;
+  }
+}
+
+.right-side p {
+  font-size: larger;
 }
 
 .greentext{
   color: $green;
   text-shadow: .1px .1px .75px rgba(0, 0, 0, 0.3);
 }
+
 .right-side {
   flex: 1;
 }
