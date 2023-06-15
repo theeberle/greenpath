@@ -1,6 +1,10 @@
 .calendar-side {
   display: flex;
   flex-direction: column;
+
+  h2 {
+    margin-top: 30px;
+  }
 }
 
 .calendar-tabs {
@@ -40,7 +44,7 @@
 }
 
 .calendar-day-button {
-  color: $light-grey;
+  color: #a6adad;
 
   &:hover, &.active {
     background-color: none;

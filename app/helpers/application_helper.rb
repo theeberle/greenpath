@@ -4,7 +4,7 @@ module ApplicationHelper
     if carbon_savings == 0 && carbon_savings < 100
       { icon: 'seedling',
         tree: "https://assets4.lottiefiles.com/packages/lf20_o32VvNhBlv.json",
-        level: "Blue Badge Owner, start your journey and unclock the Bronze Badge!" }
+        level: "Seed Badge Owner, start your journey and unlock the Bronze Badge!" }
     elsif carbon_savings < 500
       { icon: 'award',
         tree: "https://assets4.lottiefiles.com/packages/lf20_e3ux72wx.json",
