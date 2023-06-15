@@ -14,7 +14,7 @@
 
 
 .carbon{
-  color: $green;
+  color: $dark-green;
   font-weight: bold;
   font-size: 35px;
 }
@@ -55,7 +55,7 @@
 }
 
 .form-habit input[type="submit"] {
-  background-color: #20cd8d;
+  background-color: $dark-green;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -65,10 +65,10 @@
 }
 
 .form-habit input[type="submit"]:hover {
-  background-color: #2d4048;
+  background-color: $dark-green;
 }
 .btn-habit{
-  background-color: $green;
+  background-color: $dark-green;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -77,6 +77,19 @@
   margin-top: auto;
   margin-bottom: 20px;
   position: relative;
+}
+
+// popup: changing the button colour:
+.swal2-styled.swal2-cancel, .swal2-styled.swal2-confirm {
+  background-color: $dark-green !important;
+}
+
+//changing the dag color:
+
+.challenge-left-side .carbon-tag {
+  display: inline-block;
+  padding: 4px 8px;
+  background-color: $dark-green !important;
 }
 
 @media screen and (max-width: 768px) {
