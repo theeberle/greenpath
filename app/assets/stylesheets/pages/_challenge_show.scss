@@ -82,3 +82,26 @@ p {
     margin-top: 20px;
   }
 }
+
+@media (min-width: 1700px) {
+
+.challenge-content {
+  flex-direction: row;
+}
+
+.challenge-left-side {
+  flex: 1;
+  font-size: 18px;
+  margin-left: 20px;
+  padding: 30px;
+}
+
+.challenge-left-side .carbon-tag {
+  font-size: 30px;
+}
+
+.challenge-right-side {
+  flex: 1;
+  margin-left: 20px;
+}
+}

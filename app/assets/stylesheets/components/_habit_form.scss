@@ -4,10 +4,8 @@
   background-color: white;
   border-radius: 10px;
   padding: 20px;
-  width: 50%;
-  margin: 0 auto;
   width: 60%;
-  height: 70%;
+  margin: 0 auto;
   margin-top: 90px;
   position: relative;
 }
@@ -95,5 +93,22 @@
 @media screen and (max-width: 768px) {
   .booking-form {
     width: 90%;
+  }
+}
+
+
+@media (min-width: 1700px) {
+  .booking-form {
+    width: 60%;
+    margin-top: 50px;
+    height: 50%;
+  }
+
+  .habit-salutation h1 {
+    font-size: 40px;
+  }
+
+  .habit-salutation h2 {
+    font-size: 22px;
   }
 }

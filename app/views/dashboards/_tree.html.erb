@@ -19,7 +19,7 @@
         </div>
     </div>
       <div class="badge-space">
-        <i class="fa-solid fa-<%= badge %> badge-class" ></i>
+        <span> <i class="fa-solid fa-<%= badge %> badge-class" ></i> </span>
         <p class="badge-text"> <%= carbon_badge(current_user.carbon_count.to_i)[:level] %> </p>
       </div>
 </div>
@@ -32,3 +32,4 @@
       <%# <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> %>
       <%# tree 3- big %>
       <%# <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> %>
+

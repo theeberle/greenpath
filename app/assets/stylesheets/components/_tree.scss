@@ -39,21 +39,77 @@ height: 700px;
   position: relative;
   overflow: hidden;
 }
-.badge-space{
+
+
+// .badge-space{
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-evenly;
+// }
+// .badge-text{
+//   margin-bottom:0;
+//   // box-shadow: 0 0 10px rgba(175, 168, 168, 0.5);
+//   font-size: 20px;
+// }
+
+// .badge-class {
+//   font-size: 50px;
+//   padding: 5px 10px;
+// }
+
+.badge-space {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: flex-start; /* Align badge to the left */
+  padding: 15px;
+  background-color: $light-gray;
+  border-radius: 15px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
-.badge-text{
-  margin-bottom:0;
-  // box-shadow: 0 0 10px rgba(175, 168, 168, 0.5);
-  font-size: 20px;
+
+.badge-space:before,
+.badge-space:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  pointer-events: none;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: frame-animation;
+}
+
+@keyframes frame-animation {
+  0% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: $light-green;
+  }
+  100% {
+    border-color: transparent;
+  }
+}
+
+.badge-space .badge-text {
+  margin-left: 5px;
+  margin-bottom: 0;
+  font-size: 24px;
 }
 
 .badge-class {
   font-size: 50px;
   padding: 5px 10px;
 }
+
+
+
 .fa-trophy {
   color: gold
 }
