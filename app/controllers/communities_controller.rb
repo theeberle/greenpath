@@ -1,5 +1,4 @@
 class CommunitiesController < ApplicationController
-
   include ApplicationHelper
 
   def index

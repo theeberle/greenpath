@@ -3,6 +3,7 @@
       <h1 class="yay"><strong>Hooray!</strong></h1>
         <h3>Your total Co2 saving: <span class="carbon_saved"><%= current_user.carbon_count.to_i %></span> kg!</h3>
     </div>
+      <%# Tree animation %>
       <div class="tree-part">
         <div class="tree-wrapper">
         <lottie-player
@@ -18,18 +19,12 @@
           </lottie-player>
         </div>
     </div>
-      <div class="badge-space">
-        <span> <i class="fa-solid fa-<%= badge %> badge-class" ></i> </span>
-        <p class="badge-text"> <%= carbon_badge(current_user.carbon_count.to_i)[:level] %> </p>
-      </div>
+<%# badge section rendered by the application_helper.rb %>
+    <div class="badge-space">
+      <span> <i class="fa-solid fa-<%= badge %> badge-class" ></i> </span>
+      <p class="badge-text"> <%= carbon_badge(current_user.carbon_count.to_i)[:level] %> </p>
+    </div>
 </div>
 
-      <%# no tree %>
+      <%# tree javascript script %>
       <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-      <%# tree 1%>
-      <%# <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> %>
-      <%# tree 2 %>
-      <%# <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> %>
-      <%# tree 3- big %>
-      <%# <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> %>
-

@@ -1,4 +1,5 @@
 class ChallengesController < ApplicationController
+  #  Skip authentication for index and show actions
   skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
@@ -7,7 +8,7 @@ class ChallengesController < ApplicationController
     @category = params[:category]
     @description = "general description"
 
-    # filter with category
+    #  Filter challenges by category if category is present
     if @category.present?
       @challenges = @challenges.where(category: params[:category])
       @category_name = Category.find(@category).name
@@ -19,6 +20,4 @@ class ChallengesController < ApplicationController
     @challenge = Challenge.find(params[:id])
     @habit = Habit.new
   end
-
-
 end
