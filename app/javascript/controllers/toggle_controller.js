@@ -1,6 +1,6 @@
 import { Controller } from "@hotwired/stimulus";
 
-
+// Toggle the visibility of two divs
 export default class extends Controller {
   static targets = ["div1", "div2"];
 

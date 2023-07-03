@@ -1,3 +1,5 @@
+<%# # carousel of the categories (all challenges, food, energy, transport, waste, water) which filters the challenges in the index %>
+
 <div data-controller="carousel" class="carousel-container">
     <%# <div class="scroll-button scroll-button-left">
       <i class="fa-solid fa-angles-left"></i>
@@ -27,6 +29,7 @@
 
 <div class="two-sides">
   <div class="category-container-infos">
+  <%# Categories title with it's description %>
     <div>
       <% if params[:category].blank? %>
         <h1 class="title">All Categories</h1>
@@ -39,11 +42,13 @@
   </div>
 
   <div class="challenges-container">
+  <%# Challenges grid with all the challnges %>
     <h1 class="title">Choose your Challenges:</h1>
     <div class="challenges-grid">
       <% if params[:category].present? %>
         <% challenges = Challenge.where(category_id: params[:category]) %>
         <% challenges.each do |challenge| %>
+        <%# Every challenge and there link to their show page %>
           <div class="challenge-card">
             <%= link_to '', challenge_path(challenge), class: 'card-link'  %>
             <img class="challenge-image" src="<%= cl_image_path(challenge.picture.key) %>" alt="Challenge Image">

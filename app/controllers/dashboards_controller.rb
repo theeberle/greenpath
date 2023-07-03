@@ -3,16 +3,11 @@ class DashboardsController < ApplicationController
 
   def index
     @user = current_user
-
     @user_challenges = @user.habits
-
     @score = carbon_badge(@user.carbon_count)
-
     date_range = Date.today..(Date.today + 6)
     @events = current_user.events.where(due_date: date_range)
-
     @past_events = current_user.events.where(due_date: Date.today.last_week..Date.today, status: "accomplished")
-
     @user_events_completed = Event.joins(habit: :user).where(users: { id: @user.id }, status: "accomplished")
     # @user_carbon_completed = Event.joins(habit: :user).where(users: { id: @user.id }, status: "accomplished")
 
