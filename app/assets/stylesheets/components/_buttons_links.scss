@@ -1,0 +1,64 @@
+// creating a normal-sized button with hover-effect, also for the popup habit-form
+// !important used to overwrite other classes for the popup-habit-form buttons
+.button-normal, .swal2-styled.swal2-cancel, .swal2-styled.swal2-confirm {
+  background-color: $dark-green !important;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: $body-font;
+  box-shadow: 0 0 16px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  border: none;
+  border-color: none;
+  text-align: center;
+  padding: 12px 26px;
+  display: inline-block;
+  height: auto;
+  margin: 10px 0px 0px 0rem;
+
+   &:hover, &.active {
+     background-color: $light-rose !important;
+     color: $dark-green !important;
+     box-shadow: .5px;
+   }
+}
+
+// Specific margin for the communities page button
+.communities-top  {
+  margin: 10px 0px 20px 2rem;
+}
+
+// Specific margin for the navbar-buttons
+.navbar-margin {
+  margin-left: 10px;
+}
+
+// Specific margin for the habit-form button
+.habit-margin {
+  margin-top: auto;
+}
+
+// Specific margin for the popup habit-form button, spacing between the two buttons
+.swal2-styled.swal2-cancel {
+  margin-right: 10px;
+}
+
+// Removing the box shadow from the okay-button of the popup habit-form
+.swal2-styled.swal2-confirm:focus {
+  box-shadow: 0 0 0 3px white !important;
+}
+
+// Styling of links for devise actions
+.link-devise {
+  color: $dark-green;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: $body-font;
+  padding: 10px;
+
+  &:hover {
+    color: $dark-blue;
+  }
+ }
