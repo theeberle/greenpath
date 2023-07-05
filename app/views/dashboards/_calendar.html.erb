@@ -1,3 +1,4 @@
+<%# See all the users habits view %>
 <div data-controller="toggle1">
   <div class="box-1">
     <div data-action="click->toggle1#fire" class="btn btn-one">
@@ -10,7 +11,7 @@
 </div>
 
 <h2>Weekly View</h2>
-
+<%# Weekly calendar view with 7 days ahead %>
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <% @weekdays.each_with_index do |weekday, index| %>
     <li class="nav-item" role="presentation">

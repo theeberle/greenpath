@@ -1,5 +1,6 @@
 module ApplicationHelper
 
+  # scoring system for the badges and the carbon savings rendered in community page and dashboard tree.
   def carbon_badge(carbon_savings)
     if carbon_savings == 0 && carbon_savings < 100
       { icon: 'seedling',
