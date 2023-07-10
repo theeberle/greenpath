@@ -108,10 +108,11 @@
 
 
 .done-button i {
-  color: $green; /* Change the color to green */
+  color: $dark-green; /* Change the color to green */
   transition: $dark-blue 0.3s ease; /* Add transition effect for smooth color change */
-}
 
-.done-button i:hover {
-  color: $gray; /* Change the color on hover */
+  &:hover {
+    color: $rose; /* Change the color on hover */
+    box-shadow: .5px;
+  }
 }
