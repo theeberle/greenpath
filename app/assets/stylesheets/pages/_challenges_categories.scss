@@ -1,3 +1,4 @@
+// Formatting the two divisions for the titles of categories and challenges
 .title {
   display: flex;
   justify-content: center;
@@ -7,49 +8,44 @@
   margin: 0;
 }
 
+// Formatting the divison of the category text
 .category-container-infos .text {
   display: flex;
   justify-content: left;
   align-items: center;
   padding: 16px;
-  color: black;
+  // color: black;
   font-size: 18px;
 }
 
+// Creating a division which make it possible to display the category and the challenges divisions next to each other
 .two-sides {
   display: flex;
   justify-content: space-between;
-  // border: 1px solid blue;
 }
 
-// .category-container {
-
-// }
-
+// Formatting the carousel with the category-symbols
 .category-container-carousel {
-  // border: 1px solid blue;
   margin: 5px;
 }
 
+// Creating a division on the left side with category title and infos
 .category-container-infos {
-  // border: 1px solid black;
   height: 100vh;
   width: 40%;
   position: sticky;
   top: 0;
   padding: 20px;
-  // border: 1px solid green;
 }
 
+// Creating a division on the right side with challenges title and challenges-cards
 .challenges-container {
-  // height: 100vh;
   width: 60%;
-  // position: sticky;
   top: 0;
   padding: 20px;
-  // border: 1px solid $yellow;
 }
 
+// Creating a division, displaying the challenge-cards of the category-challenges-page in a grid
 .challenges-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -57,12 +53,15 @@
   padding: 16px;
 }
 
+// Creating a division, displaying the challenge-cards of the search-results-page in a grid
 .challenges-grid-search {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
   padding: 16px;
 }
+
+// Media-Formatting for the category-challenges-page:
 
 // Extra small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {
@@ -103,6 +102,8 @@
     // grid-template-rows: 1fr 1fr 1fr;
   }
 }
+
+// Media-Formatting for the search-results-page:
 
 // Extra small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {

@@ -1,3 +1,4 @@
+// Styling the challenge cards and applying hover effect
 .challenge-card {
   margin: 10px auto;
   border: 1px solid $middle-gray;
@@ -16,6 +17,7 @@
   }
 }
 
+// Making the whole card clickable
 .card-link {
   position: absolute;
   top: 0;
@@ -24,17 +26,16 @@
   width: 100%;
 }
 
+// Setting the size of the card-image
 .challenge-image {
     object-fit: cover;
-    // height: 60%;
     width: 229px;
     border-radius: 8px;
 }
 
+// Formatting the text-box of the card
 .challenge-details {
-  // padding: 16px;
   padding-top: 16px;
-  // padding-bottom: 16px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -42,12 +43,14 @@
   align-items: center;
 }
 
+// Formatting the title of the card
 .challenge-title {
   font-size: 20px;
   font-weight: bold;
   margin: 0;
 }
 
+// Formatting the carbon-footprint tag of the card
 .carbon-footprint {
   font-size: 14px;
   // font-weight: bold;

@@ -1,39 +1,34 @@
-
+// Creating a division in which the two sides (calendar&statistics and tree) can be displayed next to each other
 .two-sides-view {
-  // border: 1px solid green;
-  // margin: 5px;
   display: flex;
   justify-content: space-between;
   width: 100%;
   max-width: 100%;
 }
 
+// Creating a division, in which the title and the toggle button can be next to each other
 .next-header {
-  // border: 1px solid green;
-  // margin: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // width: 100%;
-  // max-width: 100%;
 }
 // toggle
 
+// Creating a division on the left side in which intro and either the calendar or the statistics are displayed
 .switching-container {
-  // border: 1px solid orange;
   min-height: 100vh;
   width: 60%;
   position: sticky;
   top: 0;
   padding: 15px;
   margin: 5px;
-
 }
 
 .switching-container {
   position: relative;
 }
 
+// Creating a division for displaying the "Go to community button" on both pages (calendar and statisitcs)
 .dashboard-link {
   margin: 10px 0;
   display: flex;
@@ -214,15 +209,14 @@
 // button end
 
 // Statistics
+// Division for displaying the 3 statistics
 .statistic-side {
   padding: 5px;
   margin-top: 50px;
 }
 
-.statistics {
-  padding: 5px;
-}
-
+// Creating space between and within the 3 statistic-elements
 .statistics-carbon {
+  padding: 5px;
   margin: 50px 0px;
 }
