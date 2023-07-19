@@ -34,10 +34,16 @@
               <h3 class="event-title"><%= event.habit.challenge.name %></h3>
               <p class="category-tag"><%= event.habit.challenge.category.name %></p>
             </div>
-              <div class="event-foot">
-                <span class="carbon-footprint"><%= event.habit.challenge.saving_carbonamount.to_i %> Co2</span>
-              </div>
+            <div class="event-foot">
+              <span class="carbon-footprint"><%= event.habit.challenge.saving_carbonamount.to_i %> Co2</span>
+            </div>
             <div class="event-button">
+              <%# delete event button %>
+              <%= link_to event_deleted_path(event_id: event.id), method: :deleted, class: "delete-button", data: { confirm: 'Are you sure you want to delete this event?' } do %>
+                <i class="fa-solid fa-circle-xmark"></i>
+                <span class="sr-only">Delete</span>
+              <% end %>
+              <%# accomplished event button %>
               <%= link_to event_completed_path(event_id: event.id), class: "done-button", onclick: "startAnimation()" do %>
                 <i class="fa-solid fa-circle-check"></i>
                 <span class="sr-only">Done</span> <!-- Screen reader-only text for accessibility -->

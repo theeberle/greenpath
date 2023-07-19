@@ -30,9 +30,5 @@ Rails.application.routes.draw do
 
   # create a route for the event completion post maybe ?
   get "event_completed", to: "habits#event_completed", as: :event_completed
-
-
-
-
-
+  get "event_deleted", to: "habits#event_deleted", as: :event_deleted
 end
