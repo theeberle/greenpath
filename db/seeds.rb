@@ -1,12 +1,12 @@
+# adding the gems connetion to the seed file
 
 require 'faker'
 require 'open-uri'
 require 'csv'
 
-
+# delete the DB everytime the seeds are run
 
 puts 'Seed: Deleting existing records...'
-# update when Friendship is done
 
 Event.destroy_all
 Habit.destroy_all
@@ -14,32 +14,37 @@ Challenge.destroy_all
 Category.destroy_all
 User.destroy_all
 
-# test user
+# creating test user to make sure the log in to the app is possible
 
 puts 'Seed: Creating test user...'
 
 user1 = User.create!(
-username: "Claraboo",
-first_name: "Clara",
-last_name: "Kane",
-age_range: 18,
-city: "Berlin",
-email: "clara@email.com",
-password: '123456',
-profile_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-carbon_count: 0
+  username: "Claraboo",
+  first_name: "Clara",
+  last_name: "Kane",
+  age_range: 18,
+  city: "Berlin",
+  email: "clara@email.com",
+  password: '123456',
+  profile_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  carbon_count: 0
 )
-# Picture for text user
+# Adding picture for text user separatelly from the DB
 filepaht = 'https://res.cloudinary.com/dd45bmmjg/image/upload/v1686248215/michael-dam-mEZ3PoFGs_k-unsplash_aoscdc.jpg'
 file = URI.open(filepaht)
 user1.profile_picture.attach(io: file, filename: "#{user1.username}.jgp", content_type: 'image/jpg')
 user1.save!
 puts 'Seed: Test user created...'
 
+# start actuall seeding based on the DB
 
 puts 'Seed: Seeding...'
 
+# DB is created based on the CSV files; if to change the DB use the working excel
+# file and load new data to seeds_data folder
+
 # create users
+# col_sep: ";" is used to separate the data in the CSV file
 
 CSV.foreach(Rails.root.join('db', 'users.csv'), headers: true, col_sep: ";") do |row|
   user = User.new
@@ -54,6 +59,7 @@ CSV.foreach(Rails.root.join('db', 'users.csv'), headers: true, col_sep: ";") do 
   user.carbon_count = row['carbon_count']
 
   # Upload and attach the user's profile picture using Cloudinary
+
   file = URI.open(row['picture_file_path'])
   user.profile_picture.attach(io: file, filename: File.basename(row['picture_file_path']), content_type: 'image/jpg')
   user.save!
@@ -89,55 +95,37 @@ CSV.foreach(Rails.root.join('db', 'challenges.csv'), headers: true, col_sep: ";"
   challenge.save!
 end
 
-
-
-# habit as booking for a test user> CREATE MANUALY
-
-# day = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-
-# habit1 = Habit.create!(
-# user: user1, # User.all.sample,
-# implementation_cycle: "daily", # ["daily", "weekly", "monthly", "one-off"].sample,
-# challenge: Challenge.all.sample, #challenge1
-# day_of_week: day.sample
-# )
-
-# habit2 = Habit.create!(
-# user: user1, # User.all.sample,
-# implementation_cycle: "weekly", # ["daily", "weekly", "monthly"].sample,
-# challenge: Challenge.all.sample, #challenge1
-# day_of_week: day.sample
-# )
+# Habits for test user
 
 habit1_clara = Habit.create!(
   user: user1, # User.all.sample,
   implementation_cycle: "Daily",
-  challenge: Challenge.all.sample, #challenge1
+  challenge: Challenge.all.sample, # challenge1
   day_of_week: "Monday"
 )
 
 habit2_clara = Habit.create!(
   user: user1, # User.all.sample,
   implementation_cycle: "Daily",
-  challenge: Challenge.all.sample, #challenge1
+  challenge: Challenge.all.sample, # challenge1
   day_of_week: "Monday"
 )
 
 habit3_clara = Habit.create!(
   user: user1, # User.all.sample,
   implementation_cycle: "Daily",
-  challenge: Challenge.all.sample, #challenge1
+  challenge: Challenge.all.sample, # challenge1
   day_of_week: "Monday"
 )
 
 habit4_clara = Habit.create!(
   user: user1, # User.all.sample,
   implementation_cycle: "Daily",
-  challenge: Challenge.all.sample, #challenge1
+  challenge: Challenge.all.sample, # challenge1
   day_of_week: "Monday"
 )
 
-# this is for the booked habit that a person can manipulate on their dashboard
+# Event for the test user: this is for the booked habit that a person can manipulate on their dashboard
 
 event1_clara = Event.create!(
   habit: habit1_clara,
@@ -253,14 +241,6 @@ event19_clara = Event.create!(
   due_date: "04/06/2023 11:00"
 )
 
-
 puts "created #{Habit.count}(habits), and #{Event.count}(events)"
-## skip for now
-
-# friendship= Friendship.create!(
-# user_id:
-# User_id:
-# Status: ["accepted", "rejected", "pending"].sample
-# )
 
 puts 'Seed: Finished seeding!'
