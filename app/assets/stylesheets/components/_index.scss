@@ -1,23 +1,17 @@
 // Import your components CSS files here.
 @import "alert";
 @import "avatar";
-@import "form_legend_clear";
-// @import "navbar";
-@import "carousel";
-@import "search-bar";
 @import "background";
+@import "banner";
 @import "buttons_links";
+@import "calendar"; // dashboard
+@import "carousel";
 @import "challenge_cards";
-
-
+@import "event"; // dashboard
 @import "footer";
+@import "form_legend_clear";
+@import "habit_form";
 @import "navbar";
-
-@import 'banner';
-@import 'habit_form';
-
-// dashboard
-@import "toggle";
-@import "event";
-@import 'tree';
-@import 'calendar';
+@import "search-bar";
+@import "toggle"; // dashboard
+@import "tree"; // dashboard

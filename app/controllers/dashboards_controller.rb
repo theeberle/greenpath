@@ -20,6 +20,7 @@ class DashboardsController < ApplicationController
 
   private
 
+  # Calculating for each of the last seven days the amounts of CO2 saved
   def set_carbon_chart_data
     @sorted_carbon = @past_events.sort_by{ |event| event.due_date }
     @display = {
@@ -35,6 +36,7 @@ class DashboardsController < ApplicationController
     end
   end
 
+  # Calculating for each of the last seven days the amounts of completed challenge-events
   def set_event_chart_data
     @sorted_events = @past_events.sort_by{ |event| event.due_date }
     @event_data = {
@@ -50,6 +52,7 @@ class DashboardsController < ApplicationController
     end
   end
 
+  # Calculating for the user the amount/percentage of chosen challenges, sorted by categories
   def set_pie_chart_data
     @grouped_data = @user.challenges.group(:category_id).count
     @pie_data = []

@@ -1,15 +1,19 @@
 <div class="full-container">
   <% if user_signed_in? %>
+    <%# Division in which the two sides (calendar&statistics and tree) can be displayed next to each other %>
     <div class="two-sides-view">
+      <%# Division on the left side in which intro and either the calendar or the statistics are displayed %>
       <div class="switching-container" data-controller="toggle">
-
+        <%# Division, in which the title and the toggle button can be next to each other %>
         <div class="next-header">
           <h2 class="dashboard-title">Hello, <strong><%= @user.username %></strong>!</h2>
+          <%# Division for toggle button between calendar and statistics%>
           <div class="toggle toggle-top-right">
             <input type="checkbox" id="temp" data-action="click->toggle#toggleDiv">
             <label for="temp"></label>
           </div>
         </div>
+
         <h3 class="dashboard-text">You have <strong class="challenge-no"><%= @user_challenges.count %></strong> active challenges!</h3>
 
 
@@ -29,6 +33,7 @@
         </div>
       </div>
 
+      <%# Tree side: %>
       <div class="tree-side">
         <%= render "dashboards/tree",
         tree: @score[:tree],

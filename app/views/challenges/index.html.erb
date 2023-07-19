@@ -27,6 +27,7 @@
     </div> %>
 </div>
 
+<%# Division for displaying both sides (category and challenges) %>
 <div class="two-sides">
   <div class="category-container-infos">
   <%# Categories title with it's description %>
@@ -41,9 +42,10 @@
     </div>
   </div>
 
+  <%# Division on the right to display challenges title and challenges-grid %>
   <div class="challenges-container">
-  <%# Challenges grid with all the challnges %>
     <h1 class="title">Choose your Challenges:</h1>
+    <%# Challenges grid with all the challnges %>
     <div class="challenges-grid">
       <% if params[:category].present? %>
         <% challenges = Challenge.where(category_id: params[:category]) %>
