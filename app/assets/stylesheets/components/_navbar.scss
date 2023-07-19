@@ -262,3 +262,40 @@
   visibility: visible;
   transition: opacity 0.3s ease-in-out;
 }
+
+
+  /* Adjust the navbar for mobile devices NOTE: just a basic change, not adjusted to all the pages */
+@media (max-width: 768px) {
+
+  /* Hide the search bar initially */
+  .search-form-control {
+    display: none;
+  }
+  /* Show the menu toggle button */
+  .menuToggle {
+    display: block;
+    cursor: pointer;
+    /* Add any styles for the menu toggle button */
+  }
+  .imgBx,
+  .username {
+    display: none;
+  }
+  /* Show the menu toggle button */
+  .menuToggle {
+    display: block;
+    cursor: pointer;
+    /* Add any styles for the menu toggle button */
+  }
+
+ /* Show the navigation when the menu toggle button is clicked */
+ .menuToggle.active + .navigation {
+  display: block;
+}
+
+/* Remove the border from the navigation */
+.navigation {
+  border: none;
+}
+
+}

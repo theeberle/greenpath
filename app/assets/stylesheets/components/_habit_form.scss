@@ -112,3 +112,50 @@
     font-size: 22px;
   }
 }
+
+
+/* Mobile Styles */
+
+@media (max-width: 768px) {
+  .booking-form {
+    width: 100%; /* Adjust the width to match the whole page on mobile devices */
+    margin: 0; /* Remove any margins to fill the whole width */
+    padding: 10px; /* Add some padding for spacing */
+  }
+
+  .habit-salutation h1 {
+    font-size: 28px; /* Adjust the font size for mobile devices */
+  }
+
+  .habit-salutation h2 {
+    font-size: 16px; /* Adjust the font size for mobile devices */
+  }
+
+  .form-habit input[type="text"],
+  .form-habit select {
+    padding: 8px;
+    margin-bottom: 8px;
+  }
+
+  .form-habit input[type="submit"],
+  .btn-habit {
+    padding: 8px 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .challenge-content {
+    display: flex;
+    flex-direction: column; /* Adjust the layout for mobile devices */
+  }
+
+  .challenge-left-side,
+  .challenge-right-side {
+    width: 100%; /* Set the width to match the whole page on mobile devices */
+  }
+
+  .challenge-left-side {
+    margin-bottom: 20px; /* Add some spacing between the left and right sides */
+  }
+
+}
