@@ -15,7 +15,7 @@
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <% @weekdays.each_with_index do |weekday, index| %>
     <li class="nav-item" role="presentation">
-      <button class="nav-link <%= index.zero? ? 'active' : '' %> calendar-day-button" id="<%= weekday.downcase %>-tab" data-bs-toggle="tab" data-bs-target="#<%= weekday.downcase %>-tab-pane" type="button" role="tab" aria-controls="<%= weekday.downcase %>-tab-pane" aria-selected="<%= index.zero? ? 'true' : 'false' %>">
+      <button class="cal-link <%= index.zero? ? 'active' : '' %> calendar-day-button" id="<%= weekday.downcase %>-tab" data-bs-toggle="tab" data-bs-target="#<%= weekday.downcase %>-tab-pane" type="button" role="tab" aria-controls="<%= weekday.downcase %>-tab-pane" aria-selected="<%= index.zero? ? 'true' : 'false' %>">
         <%= weekday %>
       </button>
     </li>

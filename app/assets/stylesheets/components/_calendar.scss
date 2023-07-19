@@ -31,16 +31,25 @@
 
 }
 // tab
-
 // Making the calendar-tabs simple and applying hover and active-effect
-// Keeping the colours grey-blue and light-green without name, so they apply
-.nav-tabs {
-  --bs-nav-tabs-border-color: none;
-  --bs-nav-tabs-link-hover-border-color: #CCF4E5;
-  --bs-nav-tabs-link-active-color: #2D4048;
-  --bs-nav-tabs-link-active-bg: none;
-  --bs-nav-tabs-link-active-border-color: #CCF4E5;
+.cal-link {
+  border: none;
+  background-color: $light-green;
+  margin-right: 10px;
+  padding-left: 0px;
+
+  &:hover, &.active {
+    color: $grey-blue;
+    border: none;
+  }
+
 }
+
+// Removing the border-line underneath the calendar-tabs
+#myTab {
+  border: none;
+}
+
 
 .calendar-day-button {
   color: #a6adad;
@@ -53,7 +62,8 @@
 
 #my-tab {
   width: 100%;
-}
+ }
+
 .tab-content {
   margin-top: 10px;
 }
