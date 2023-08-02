@@ -127,3 +127,12 @@
     box-shadow: .5px;
   }
 }
+
+.delete-button i {
+  color: #fd1015d1;
+
+  &:hover {
+    color: $rose; /* Change the color on hover */
+    box-shadow: .5px;
+  }
+}

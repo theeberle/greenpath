@@ -17,7 +17,7 @@ class HabitsController < ApplicationController
       event = Event.new(habit: @habit, status: "upcoming", due_date: calculate_due_date(@habit))
       event.save
       event.generate_recurring_events(event, Date.today.next_month.next_month)
-      
+
       redirect_to dashboard_path
     else
       render "challenges/show"
@@ -46,7 +46,7 @@ class HabitsController < ApplicationController
     end
   end
 
-# link the evnt completion with the carbon score
+# link the event completion with the carbon score
 
   def event_completed
 
@@ -60,12 +60,24 @@ class HabitsController < ApplicationController
     end
   end
 
+  def event_deleted
+    event = Event.find(params[:event_id])
+
+    if event.destroy
+      unless event.status == "deleted"
+        update_user_carbon_score(event.habit)
+      end
+      redirect_to dashboard_path, notice: "Event deleted successfully."
+    else
+      redirect_to dashboard_path, alert: "Failed to delete the event."
+    end
+  end
+
   private
 
   def set_challenge
     @challenge = Challenge.find(params[:challenge_id])
   end
-
 
   def generate_weekly_events_hash(habits)
     weekly_events = {}
@@ -87,7 +99,6 @@ class HabitsController < ApplicationController
   def habit_params
     params.require(:habit).permit(:day_of_week, :implementation_cycle)
   end
-
 
   def calculate_due_date(habit)
     if habit.implementation_cycle.downcase == "daily"
