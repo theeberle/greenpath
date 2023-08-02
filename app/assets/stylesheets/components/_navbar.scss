@@ -6,43 +6,49 @@
   display: flex;
 }
 
-.navbar-brand {
-  font-weight: bold;
-  color: white;
-}
+// Unused CSS? Commented out 02.08.23. Follow up with deletion if unused.
+// .navbar-brand {
+//   font-weight: bold;
+//   color: white;
+// }
 
-.nav-link {
-  color: white;
-  font-weight: 500;
-  margin-right: 10px;
-}
+// .nav-link {
+//   color: white;
+//   font-weight: 500;
+//   margin-right: 10px;
+// }
 
-.nav-link:hover {
-  color: $dark-green;
-}
+// .nav-link:hover {
+//   color: $dark-green;
+// }
 
 
 .navbar-collapse {
   flex-grow: 0;
 }
 
+// greenpath logo display in navbar.
 .navbar-brand img {
   width: 150px;
   margin: 0 8px;
 }
 
+// centers the search field within navbar.
 .recenter {
   justify-content: space-between;
   width: 68vw;
   margin: 0 0;
 }
 
-.recenter2 {
-  justify-content: space-between;
-  width: 68vw;
-  margin: 0 0;
-}
+// Originally used for testing the centering of the search bar in the nav bar. Unclear if it's still being implemented.
+// Commented out on 02.08.23. Follow up with deletion if unused.
+// .recenter2 {
+//   justify-content: space-between;
+//   width: 68vw;
+//   margin: 0 0;
+// }
 
+// drop down navbar with site navigation links, displayed while user is logged in.
 .navigation {
   position: absolute;
   top: 16px;
@@ -62,6 +68,7 @@
   cursor: pointer;
 }
 
+// Originally used for testing the drop down menu. Commented out. Follow up with deletion if unused.
 // .navhover {
 //   z-index: 10;
 //   background-color: transparent;
@@ -71,15 +78,18 @@
 //   background-color: $hover-color;
 // }
 
-.navigation:before:hover {
-    background-color: $light-green;
-}
+// Originally used for testing drop down menu. Commented out 02.08.2023. Follow up with deletion if unused.
+// .navigation:before:hover {
+//     background-color: $light-green;
+// }
 
-.navigation a:hover {
-  color: $dark-green;
-  opacity: 1;
-}
+// Originally used for testing drop down menu. Commented out 02.08.2023. Follow up with deletion if unused.
+// .navigation a:hover {
+//   color: $dark-green;
+//   opacity: 1;
+// }
 
+// Drop down menu activation when clicked.
 .navigation.active {
   width: 200px;
   height: 250px;
@@ -87,6 +97,7 @@
   transition-delay: 0s, 0.75s;
 }
 
+// Drop down button appearance.
 .navigation .userBx {
   position: relative;
   width: 60px;
@@ -99,17 +110,20 @@
   transition-delay: 0.5s;
 }
 
+// Displays user name in drop down menu and maintains a fixed width when clicked.
 .navigation.active .userBx {
   width: calc(100% - 60px);
   transition-delay: 0s;
 }
 
-.navigation .userBx .username {
-  white-space: nowrap;
-  color: $grey-blue;
-  font-size: 1.1em;
-}
+// Unused CSS? Commented out 02.08.23. Follow up with deletion if unused.
+// .navigation .userBx .username {
+//   white-space: nowrap;
+//   color: $grey-blue;
+//   font-size: 1.1em;
+// }
 
+// Drop down menu pfp appearance, allows user pfp to remain the same size and shape when drop down menu is activated.
 .navigation .userBx .imgBx {
   position: relative;
   min-width: 60px;
@@ -120,10 +134,7 @@
   border: 10px solid #fff;
 }
 
-// .navigation .userBx .imgBx:hover {
-//   background-color: red;
-// }
-
+// Continued drop down menu pfp appearance configuration.
 .navigation .userBx .imgBx img {
   position: absolute;
   top: 0;
@@ -133,6 +144,7 @@
   object-fit: cover;
 }
 
+// Enables drop down menu list items to be hidden until the drop down button is clicked.
 .menu {
   position: absolute;
   width: 100%;
@@ -142,10 +154,12 @@
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+// menu list items
 .menu li {
   list-style: none;
 }
 
+// menu list item links
 .menu li a {
   display: flex;
   align-items: center;
@@ -156,24 +170,29 @@
   color: $dark-blue;
 }
 
+// menu list items hover
 .menu li a:hover {
   color: $dark-green;
 }
 
-.menu li a ion-icon {
-  font-size: 1.5em;
-}
+// Unused CSS? Commented out 02.08.23. Follow up with deletion if unused.
+// .menu li a ion-icon {
+//   font-size: 1.5em;
+// }
 
+// hamburger icon displayed in drop down navigation menu.
 .navigation .menuToggle {
   position: relative;
   width: 60px;
   height: 60px;
-  background: white;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+
+// Enables hamburger icon animation when drop down menu is clicked. After activation, the hamburger icon is displayed as an "X" to indicate that the user can close the menu.
+// Specifically, this CSS object controls the bottom line of the hamburger icon.
 .navigation .menuToggle::before {
   content: "";
   position: absolute;
@@ -185,6 +204,8 @@
   transition: 0.5s;
 }
 
+// Enables hamburger icon animation when drop down menu is clicked. After activation, the hamburger icon is displayed as an "X" to indicate that the user can close the menu.
+// Specifically, this CSS object controls the top two lines of the hamburger icon.
 .navigation .menuToggle::after {
   content: "";
   position: absolute;
@@ -194,29 +215,24 @@
   transform: translateY(10px);
   transition: 0.5s;
 }
-
+// Additional hamburger icon animation functionality
 .navigation.active .menuToggle::before {
   transform: translateY(0px) rotate(45deg);
   box-shadow: 0 0 $grey-blue;
 }
-
+// Additional hamburger icon animation functionality
 .navigation.active .menuToggle::after {
   transform: translateY(0px) rotate(-45deg);
 }
 
-// .navigation:not(.active) .menuToggle:hover {
-//   background-color: red;
-// }
-
-// // .navigation:not(.active) .userBx:hover {
-// //   background-color: red;
-// // }
-
+// Continued drop down menu front end. Essential to the hover effect functionality.
+// When designed, these objected needed further configurations, as the drop down menu contains multiple objects that are all effected when activated.
+// Further investigation needed for thorough explanation of functionality. 02.08.23
 .navigation:not(.active)::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
+  // top: 0;
+  // left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(135, 248, 207, 0.212);
@@ -226,42 +242,43 @@
   z-index: 2;
 }
 
+// Nav bar drop down menu hover effect
 .navigation:not(.active):hover::before {
   visibility: visible;
   transition: opacity 0.3s ease-in-out;
 }
 
 
-  /* Adjust the navbar for mobile devices NOTE: just a basic change, not adjusted to all the pages */
+  // Adjust the navbar for mobile devices NOTE: just a basic change, not adjusted to all the pages //
 @media (max-width: 768px) {
 
-  /* Hide the search bar initially */
+  // Hide the search bar initially //
   .search-form-control {
     display: none;
   }
-  /* Show the menu toggle button */
+  // Show the menu toggle button //
   .menuToggle {
     display: block;
     cursor: pointer;
-    /* Add any styles for the menu toggle button */
+    // Add any styles for the menu toggle button //
   }
   .imgBx,
   .username {
     display: none;
   }
-  /* Show the menu toggle button */
+  // Show the menu toggle button //
   .menuToggle {
     display: block;
     cursor: pointer;
-    /* Add any styles for the menu toggle button */
+    // Add any styles for the menu toggle button //
   }
 
- /* Show the navigation when the menu toggle button is clicked */
+ // Show the navigation when the menu toggle button is clicked //
  .menuToggle.active + .navigation {
   display: block;
 }
 
-/* Remove the border from the navigation */
+// Remove the border from the navigation //
 .navigation {
   border: none;
 }

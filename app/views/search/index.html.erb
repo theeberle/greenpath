@@ -1,7 +1,9 @@
+<%# Container showing search results of challenges %>
 <div class="results-container">
   <h3>Showing results for "<%= params[:query] %>"</h3>
 </div>
 
+<%# Grid where challenges of search query are displayed. Shows challenge cards, name, details, and carbon saving amount %>
 <div class="challenges-grid-search">
 
   <% @challenges.each do |challenge| %>

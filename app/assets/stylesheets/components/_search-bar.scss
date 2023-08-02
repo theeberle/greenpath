@@ -1,44 +1,13 @@
+// search form front end
 .search-form-control {
   position: relative;
 }
 
+// search field for user input
 .search-form-control input[type="text"] {
-  padding-left: 30px; /* Adjust the value as needed */
+  padding-left: 30px;
   background-color: $light-green;
   box-shadow: 0 25px 35px #000000(0, 0, 0, 1);
   border: .5px solid #000000;
   border-radius: 4px;
 }
-
-.simple_form {
-  // position: relative;
-}
-
-.magnifier-position {
-  position: absolute;
-}
-
-.form-control:focus {
-  box-shadow: 0 0 0 0.25rem $light-rose;
-}
-
-// .search-form-control .search-icon {
-//   position: absolute;
-//   top: 50%;
-//   left: 10px;
-//   transform: translateY(-50%);
-// }
-
-// .search-form-control .search-text {
-//   position: absolute;
-//   top: 50%;
-//   left: 40px;
-//   transform: translateY(-50%);
-// }
-
-// .form-control.search {
-//   background-image: url("path/to/search-icon.png");
-//   background-position: right center;
-//   background-repeat: no-repeat;
-//   padding-right: 30px; /* Adjust the padding value as needed */
-// }
