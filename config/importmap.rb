@@ -12,3 +12,4 @@ pin "sweetalert2", to: "https://ga.jspm.io/npm:sweetalert2@11.7.1/dist/sweetaler
 # For statistics (Chartkick)
 pin "chartkick", to: "chartkick.js"
 pin "Chart.bundle", to: "Chart.bundle.js"
+pin "highcharts" # @11.1.0

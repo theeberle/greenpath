@@ -1,15 +1,15 @@
 <h3>See how you are contributing:</h3>
 
 <%# Column chart of saved Co2: %>
-<div class="statistics-carbon" >
+<div class="statistics-carbon grid-stats" >
   <h4>Your saved C02 emission:</h4>
-  <%= column_chart @display, empty: "No challenges", colors: ["#7e57c2"] %>
+  <%= column_chart @display, empty: "No completed challenges", colors: ["#7e57c2"] %>
 </div>
 
 <%# Column chart of completed events: %>
-<div class="statistics-carbon" >
+<div class="statistics-carbon grid-stats" >
   <h4>Your achieved challenges:</h4>
-  <%= column_chart @event_data, empty: "No challenges", colors: ["#7e57c2"] %>
+  <%= column_chart @event_data, empty: "No completed challenges", colors: ["#7e57c2"] %>
 </div>
 
 <%# Pie chart of chosen categories: %>
