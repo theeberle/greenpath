@@ -7,3 +7,5 @@ import "bootstrap"
 //  For statistics (Chartkick)
 import "chartkick"
 import "Chart.bundle"
+import Highcharts from "highcharts"
+window.Highcharts = Highcharts

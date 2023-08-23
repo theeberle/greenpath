@@ -64,7 +64,7 @@
   top: 50%;
   right: -25px;
   transform: translateX(-60%);
-  width: 50px;
+  width: 200px;
   height: 25px;
   background-color: $light-rose;
   border-radius: 25px;
@@ -81,7 +81,7 @@
   top: 50%;
   right: -15px;
   transform: translateX(-60%);
-  width: 20px;
+  width: 200px;
   height: 20px;
   background-color: #fff;
   border-radius: 50%;
@@ -220,3 +220,12 @@
   padding: 5px;
   margin: 50px 0px;
 }
+
+// Removing the grey grids in the column-charts of the statistics
+grid-stats {
+  display: none; /* Hide the grid lines */
+}
+
+// .chart-container .highcharts-border-box {
+//   border: none; /* Remove the border around the chart */
+// }
