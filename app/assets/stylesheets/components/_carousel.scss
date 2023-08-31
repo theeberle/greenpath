@@ -34,7 +34,7 @@
   padding: 10px;
   margin-bottom: 20px;
   overflow-x: scroll;
-  scrollbar-color: $light-grey;
+  scrollbar-color: $light-gray;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin; /* Hide the scrollbar for modern browsers */
   -ms-overflow-style: none; /* Hide the scrollbar for Internet Explorer and Edge */
@@ -98,7 +98,7 @@
 .category-filter-button:hover::after,
 .category-filter-button.active::after {
   opacity: 1; /* Show the underline on hover and when active */
-  background-color: bisque;
+  background-color: $light-rose;
 }
 
 .categories-carousel::before,

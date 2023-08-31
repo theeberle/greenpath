@@ -1,7 +1,7 @@
 // Styling the challenge cards and applying hover effect
 .challenge-card {
   margin: 10px auto;
-  border: 1px solid $middle-gray;
+  border: 1px solid $light-gray;
   background-color: $light-rose;
   padding: 10px;
   border-radius: 8px;
@@ -13,7 +13,7 @@
 
   &:hover {
     background-color: $rose;
-    color: $grey-blue;
+    color: $gray-blue;
   }
 }
 

@@ -12,9 +12,6 @@ p {
   align-items: flex-start;
   padding: 20px;
 }
-.challenge-show-container{
-  background-color: #ccf4e5;
-}
 
 .challenge-right-side {
   flex: 1;
@@ -37,7 +34,7 @@ p {
   // position: relative;
 }
 .icon{
-  color: $grey-blue;
+  color: $gray-blue;
   animation-name: spin;
   animation-duration: 2s;
   animation-iteration-count: infinite;
@@ -60,7 +57,7 @@ p {
 .challenge-left-side .carbon-tag {
   display: inline-block;
   padding: 4px 8px;
-  background-color:$green;
+  background-color:$dark-green;
   color: white;
   font-size: 35px;
   font-weight: bold;
