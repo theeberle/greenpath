@@ -39,10 +39,9 @@
   padding-left: 0px;
 
   &:hover, &.active {
-    color: $grey-blue;
+    color: $gray-blue;
     border: none;
   }
-
 }
 
 // Removing the border-line underneath the calendar-tabs
@@ -50,13 +49,12 @@
   border: none;
 }
 
-
 .calendar-day-button {
-  color: #a6adad;
+  color: $middle-gray;
 
   &:hover, &.active {
     background-color: none;
-    color: $grey-blue;
+    color: $gray-blue;
   }
 }
 
@@ -129,7 +127,7 @@
 }
 
 .delete-button i {
-  color: #fd1015d1;
+  color: $button-red;
 
   &:hover {
     color: $rose; /* Change the color on hover */

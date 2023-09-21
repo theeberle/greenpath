@@ -1,7 +1,7 @@
 // creating a normal-sized button with hover-effect, also for the popup habit-form
 // !important used to overwrite other classes for the popup-habit-form buttons
 .button-normal, .swal2-styled.swal2-cancel, .swal2-styled.swal2-confirm {
-  background-color: $dark-green !important;
+  background-color: $brown-gray !important;
   transition: background-color 0.3s ease;
   text-decoration: none;
   color: $white;
@@ -58,6 +58,6 @@
   font-family: $body-font;
 
   &:hover {
-    color: $dark-blue;
+    color: $brown-gray;
   }
  }

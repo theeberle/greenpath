@@ -1,5 +1,5 @@
 .navbar {
-  background-color: white;
+  background-color: $navbar-footer;
   padding: 10px;
   margin: 0 auto;
   justify-content: space-between;
@@ -119,7 +119,7 @@
 // Unused CSS? Commented out 02.08.23. Follow up with deletion if unused.
 // .navigation .userBx .username {
 //   white-space: nowrap;
-//   color: $grey-blue;
+//   color: $gray-blue;
 //   font-size: 1.1em;
 // }
 
@@ -198,9 +198,9 @@
   position: absolute;
   width: 32px;
   height: 2px;
-  background: $grey-blue;
+  background: $gray-blue;
   transform: translateY(-10px);
-  box-shadow: 0 10px $grey-blue;
+  box-shadow: 0 10px $gray-blue;
   transition: 0.5s;
 }
 
@@ -211,14 +211,14 @@
   position: absolute;
   width: 32px;
   height: 2px;
-  background: $grey-blue;
+  background: $gray-blue;
   transform: translateY(10px);
   transition: 0.5s;
 }
 // Additional hamburger icon animation functionality
 .navigation.active .menuToggle::before {
   transform: translateY(0px) rotate(45deg);
-  box-shadow: 0 0 $grey-blue;
+  box-shadow: 0 0 $gray-blue;
 }
 // Additional hamburger icon animation functionality
 .navigation.active .menuToggle::after {

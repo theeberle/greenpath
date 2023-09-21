@@ -32,7 +32,7 @@
 
 .card-product-infos p.category-tag {
   font-size: 14px;
-  color: #888;
+  color: $middle-gray;
 }
 
 .card-product-infos p {
@@ -42,8 +42,7 @@
 .carbon-saving {
   display: inline-block;
   padding: 5px 10px;
-  background-color: $green;
+  background-color: $dark-green;
   color: $white;
   border-radius: 4px;
 }
-
