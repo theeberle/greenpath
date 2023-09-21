@@ -6,7 +6,15 @@
   height: 60px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
 }
+
 .footer-links {
   display: flex;
   align-items: center;
